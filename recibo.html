@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo de Pagamento - Hospital Einstein</title>
+    <link rel="stylesheet" href="recibo.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="receipt-container">
+        <header>
+            <div class="logo">
+                <img src="/513541469_1149157287254662_3992765594615548177_n.jpg" alt="Logo do Hospital" class="receipt-logo-img">
+                <span>Hospital Israelita Albert Einstein</span>
+            </div>
+
+            <div class="hospital-info">
+                Avenida Albert Einstein, nº 627 – Morumbi<br>
+                São Paulo – SP – CEP 05652-900<br>
+                CNPJ: 60.765.823/0001-30
+            </div>
+        </header>
+
+        <h2>RECIBO DE PAGAMENTO</h2>
+
+        <div class="receipt-details">
+            <span>Número do Recibo</span>
+            <strong>REC-2025-001432</strong>
+            <span>Data de Emissão: 11/11/2025</span>
+        </div>
+
+        <div class="details-grid">
+            <div class="detail-item">
+                <span>Recebemos de</span>
+                <strong>MARINA SANTANA FREITAS</strong>
+                <span>CPF: 055.311.675-47</span>
+            </div>
+            <div class="detail-item">
+                <span>Na qualidade de</span>
+                <strong>Paciente / Pagadora</strong>
+                <span>Convênio: Particular</span>
+            </div>
+        </div>
+
+        <div class="payment-details">
+            <span class="label">A importância de</span>
+            <div class="value-box">
+                <strong>R$ 88.880,00</strong>
+                <span>(Oitenta e oito mil, oitocentos e oitenta reais)</span>
+            </div>
+
+            <div class="detail-item" style="margin-top: 20px;">
+                <span>Referente a</span>
+                <strong>Depósito de Segurança (Caução) referente ao Acordo de Parceria Einstein-Stanford, conforme Cláusula Dois do contrato assinado.</strong>
+                <span>Método de Pagamento: PIX</span>
+            </div>
+        </div>
+
+        <footer>
+            <div class="digital-signature-box">
+                <div class="qr-code-svg">
+            
+                </div>
+                
+                <div class="verification-details">
+                    <div class="verified-line">
+                        <svg class="verified-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                            <path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127.5Q252-817 325-848.5T480-880q83 0 155.5 31.5t127.5 86Q817-708 848.5-635T880-480q0 82-31.5 155t-86 127.5Q708-143 635-111.5T480-80Zm-58-185L330-357l43-43 107 107 213-213 43 43-256 256Z"/>
+                        </svg>
+                        RECIBO VERIFICADO DIGITALMENTE
+                    </div>
+                    <span class="detail-label">Código da Assinatura Digital (Hash):</span>
+                    <span class="signature-hash">a1b2c3d4-e5f6-7890-g1h2-i3j4k5l6m7n8-p9q0r1s2t3u4</span>
+                    
+                    <span class="detail-label">Carimbo de Data/Hora (Timestamp):</span>
+                    <span class="detail-text">11/11/2025 - 14:34:12 (GMT-03:00)</span>
+                    
+                    <span class="detail-label">Verifique a autenticidade em:</span>
+                    <span class="verification-link">https://www.einstein.br/portal/verificar-recibo</span>
+                </div>
+            </div>
+            
+            <div class="footer-note">
+                Este recibo refere-se exclusivamente ao valor de caução e será reembolsado conforme contrato.
+                <br>Este documento não possui valor fiscal.
+            </div>
+        </footer>
+        </div>
+
+</body>
+</html>

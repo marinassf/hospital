@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprovante de Pagamento</title>
+    <link rel="stylesheet" href="comprovante.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <div class="pix-receipt-container">
+        <div id="receiptToPrint">
+            <header class="pix-header">
+                <div class="c6-logo">
+                    <img src="/Logo_C6_Bank.svg.png" alt="C6 Bank Logo" class="c6-logo-img">
+                </div>
+            </header>
+
+            <section class="pix-status-timeline">
+                <div class="pix-status-node">
+                    <div class="icon">✓</div>
+                    <div class="label"><strong>transferência em andamento</strong><br>11/11/2025 14:32</div>
+                </div>
+                <div class="pix-status-node">
+                    <div class="icon">✓</div>
+                    <div class="label"><strong>transferência realizada</strong><br>11/11/2025 14:32</div>
+                </div>
+            </section>
+
+            <section class="pix-body">
+                <div class="pix-section">
+                    <p class="pix-recipient-name">SOC. BENEF. ISRAELITA BRAS. HOSP. ALBERT EINSTEIN</p>
+                    <p class="pix-recipient-details">
+                        Banco: 341 - ITAU UNIBANCO S.A.<br>
+                        Agência: 3100<br>
+                        Conta: ******5-6
+                    </p>
+                </div>
+
+                <div class="pix-data-pair">
+                    <span class="label">Código de autenticação</span>
+                    <span class="value code">E31872495202511101432SSIRBRI0KOAW</span>
+                </div>
+                <div class="pix-data-pair">
+                    <span class="label">ID da Transação</span>
+                    <span class="value code">0A454F52C6B499A1E318724952025111</span>
+                </div>
+                <div class="pix-data-pair">
+                    <span class="label">CNPJ</span>
+                    <span class="value">60.765.823/0001-30</span>
+                </div>
+                <div class="pix-data-pair">
+                    <span class="label">Identificação no extrato</span>
+                    <span class="value code">17D88D82964974501A280B449571F8A90</span>
+                </div>
+                <div class="pix-data-pair">
+                    <span class="label">Valor</span>
+                    <span class="value large-amount">R$ 86.880,00</span>
+                </div>
+                <div class="pix-data-pair">
+                    <span class="label">Descrição</span>
+                    <span class="value">Pagamento Caução - Parceria Einstein-Stanford</span>
+                </div>
+                <div class="pix-data-pair">
+                    <span class="label">Data e horário da transação</span>
+                    <span class="value">terça-feira, 11 de novembro de 2025, 14:32</span>
+                </div>
+
+                <div class="pix-section pix-origin-account">
+                    <span class="label">Conta de origem</span>
+                    <div class="account-details">
+                        <div class="icon">MS</div> 
+                        <div class="info">
+                            <p class="pix-recipient-name">MARINA SANTANA FREITAS</p>
+                            <p class="pix-recipient-details">
+                                Banco: 336 - Banco C6 S.A.<br>
+                                Agência: 0001<br>
+                                Conta: ******1-7
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="pix-footer">
+                <p class="pix-footer-info">
+                    Em caso de dúvidas ou se precisar de orientações, acesse o chat no app ou ligue para os telefones abaixo.
+                    Lembre-se de informar o ID da transação que aparece nesse comprovante.
+                </p>
+                <div class="pix-footer-contact">
+                    <span class="label">Central de Relacionamento - segunda a sexta (exceto feriados): 8h às 23h</span>
+                    <span class="label">Capitais e regiões metropolitanas</span>
+                    
+                    <div class="phone-line">
+                        <div class="phone-icon-background"> 
+                            <i class="ph ph-phone phone-icon"></i>
+                        </div>
+                        <span class="phone">3003 6116</span>
+                    </div>
+                    
+                    <span class="label">Demais regiões</span>
+                    <div class="phone-line">
+                        <div class="phone-icon-background">
+                            <i class="ph ph-phone phone-icon"></i>
+                        </div>
+                        <span class="phone">0800 660 6116</span>
+                    </div>
+                </div>
+                <div class="pix-footer-contact">
+                    <span class="label">SAC (reclamações, cancelamentos, dúvidas, informações e sugestões) Atendimento 24h</span>
+                    <div class="phone-line">
+                        <div class="phone-icon-background">
+                            <i class="ph ph-phone phone-icon"></i>
+                        </div>
+                        <span class="phone">0800 660 0060</span>
+                    </div>
+                </div>
+                <div class="pix-footer-contact">
+                    <span class="label">Ouvidoria - segunda a sexta, exceto feriados, das 9h às 18h.</span>
+                    <div class="phone-line">
+                        <div class="phone-icon-background">
+                            <i class="ph ph-phone phone-icon"></i>
+                        </div>
+                        <span class="phone">0800 660 6060</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+    </div>
+
+</body>
+</html>

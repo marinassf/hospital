@@ -1,0 +1,565 @@
+/* =========================================
+   CONFIGURAÇÕES GLOBAIS
+   ========================================= */
+:root {
+    --primary-color: #0d47a1;
+    --secondary-color: #1565c0;
+    --accent-color: #4caf50;
+    --bg-main: #f4f6f8;
+    --bg-card: #ffffff;
+    --text-dark: #333;
+    --border-color: #e0e0e0;
+
+    /* Cores de Monitoramento */
+    --danger-red: #d32f2f;
+    --warning-orange: #f57c00;
+    --mood-blue: #1976d2;
+    --chip-bg: #263238;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+}
+
+/* =========================================
+   LAYOUT DASHBOARD
+   ========================================= */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.content-area {
+    padding: 30px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* =========================================
+   SIDEBAR
+   ========================================= */
+.sidebar {
+    width: 260px;
+    background-color: var(--primary-color);
+    color: white;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 25px 20px;
+    border-bottom: 1px solid var(--secondary-color);
+    text-align: center;
+}
+
+.sidebar-logo-placeholder {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #e3f2fd;
+    transition: 0.2s;
+}
+
+.sidebar-nav a:hover {
+    background-color: var(--secondary-color);
+}
+
+.sidebar-nav a.active {
+    background-color: var(--bg-card);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Estilo especial para o link do Chip */
+.chip-link {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid transparent;
+}
+
+.chip-link.active {
+    border-left: 4px solid #00e676;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #00e676;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0 0 0 rgba(0, 230, 118, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(0, 230, 118, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 230, 118, 0);
+    }
+}
+
+.sidebar-footer {
+    padding: 20px;
+    margin-top: auto;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.sidebar-footer a {
+    color: #bbdefb;
+}
+
+/* =========================================
+   HEADER & CARDS GERAIS
+   ========================================= */
+.main-header {
+    background-color: var(--bg-card);
+    padding: 15px 30px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header h1 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.patient-info {
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.patient-info span {
+    display: block;
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 3px;
+}
+
+.alert-banner {
+    background-color: #fff3e0;
+    color: #e65100;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.alert-icon {
+    margin-right: 10px;
+}
+
+.content-section {
+    display: none;
+    animation: fadeIn 0.4s;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* =========================================
+   ESTILOS ESPECÍFICOS: NEUROCHIP MONITOR
+   ========================================= */
+#neurochip-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Tech */
+.chip-dashboard-header {
+    background: linear-gradient(135deg, #263238 0%, #37474f 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.chip-info h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.chip-badges {
+    display: flex;
+    gap: 15px;
+    font-size: 0.8rem;
+    font-family: monospace;
+}
+
+.badge-live {
+    color: #00e676;
+    font-weight: bold;
+}
+
+.badge-sync {
+    color: #b0bec5;
+}
+
+.chip-battery {
+    text-align: right;
+    font-size: 0.8rem;
+}
+
+.battery-bar {
+    width: 100px;
+    height: 6px;
+    background: #546e7a;
+    border-radius: 3px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.battery-bar div {
+    height: 100%;
+    background: #00e676;
+}
+
+/* Alerta Crítico */
+.health-alert {
+    padding: 15px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.health-alert.critical {
+    background-color: #ffebee;
+    border: 1px solid #ef9a9a;
+    border-left: 5px solid #d32f2f;
+    color: #c62828;
+    animation: alertPulse 3s infinite;
+}
+
+@keyframes alertPulse {
+    0% {
+        background-color: #ffebee;
+    }
+
+    50% {
+        background-color: #ffcdd2;
+    }
+
+    100% {
+        background-color: #ffebee;
+    }
+}
+
+.alert-symbol {
+    font-size: 1.8rem;
+}
+
+.alert-content h4 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+}
+
+.alert-content p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Grid de Métricas */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.metric-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.danger-card {
+    border-top: 4px solid var(--danger-red);
+}
+
+.warning-card {
+    border-top: 4px solid var(--warning-orange);
+}
+
+.info-card {
+    border-top: 4px solid var(--mood-blue);
+}
+
+.dark-card {
+    border-top: 4px solid #455a64;
+}
+
+.mc-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.mc-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin: 10px 0;
+}
+
+.mc-value small {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #777;
+}
+
+/* Barra de Progresso Interna */
+.mc-graph-bar {
+    height: 6px;
+    background: #eee;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 3px;
+}
+
+.bar-fill.critical {
+    background: var(--danger-red);
+}
+
+.bar-fill.low {
+    background: var(--mood-blue);
+}
+
+.mc-status {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.mc-desc {
+    font-size: 0.8rem;
+    color: #777;
+    margin: 0;
+}
+
+/* EKG Animado */
+.ekg-line {
+    height: 30px;
+    width: 100%;
+    margin: 5px 0 15px 0;
+}
+
+.ekg-line polyline {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: drawEKG 2s linear infinite;
+}
+
+@keyframes drawEKG {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Timeline */
+.bio-timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bio-timeline .event {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-left: 2px solid #eee;
+    padding-left: 20px;
+    position: relative;
+}
+
+.bio-timeline .event:last-child {
+    border: none;
+}
+
+.bio-timeline .event::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    border: 2px solid white;
+}
+
+.bio-timeline .danger::before {
+    background: var(--danger-red);
+}
+
+.bio-timeline .warning::before {
+    background: var(--warning-orange);
+}
+
+.bio-timeline .time {
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9rem;
+    min-width: 45px;
+}
+
+.bio-timeline .details strong {
+    display: block;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.bio-timeline .details p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-wrapper {
+        height: auto;
+        overflow: visible;
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Documentos */
+.document-viewer {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: 15px 0;
+    font-family: 'Times New Roman', serif;
+}
+
+.photo-feed-grid {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.photo-item {
+    width: 100px;
+    height: 120px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    border-radius: 4px;
+}

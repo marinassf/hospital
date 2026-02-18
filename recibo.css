@@ -1,0 +1,294 @@
+/* --- Configurações Globais --- */
+:root {
+    --einstein-blue: #0d47a1;
+    --accent-green: #2e7d32; /* Verde para verificação */
+    --text-dark: #333;
+    --text-light: #555;
+    --border-color: #ddd;
+    --bg-light: #f9f9f9;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* Adiciona 'Roboto Mono' para o hash */
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #f0f2f5;
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+.receipt-container {
+    width: 800px;
+    max-width: 100%;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    padding: 40px 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* --- Cabeçalho --- */
+.receipt-container header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    flex-wrap: wrap;
+    gap: 20px;
+    border-bottom: 3px solid var(--einstein-blue);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.receipt-container .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--einstein-blue);
+}
+
+.receipt-logo-img {
+    height: 50px; 
+    width: auto;
+    object-fit: contain;
+}
+
+.receipt-container .hospital-info {
+    font-size: 0.85rem;
+    text-align: right;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* --- Título e Detalhes --- */
+.receipt-container h2 {
+    text-align: center;
+    margin: 0 0 20px 0;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: var(--text-dark);
+}
+
+.receipt-container .receipt-details {
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+.receipt-container .receipt-details strong {
+    display: block;
+    font-size: 1rem;
+    color: #000;
+    font-weight: 700;
+    margin: 2px 0;
+}
+
+/* --- Grid de Pagador/Paciente --- */
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.detail-item {
+    background: var(--bg-light);
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.detail-item span {
+    font-size: 0.75rem;
+    color: #777;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.detail-item strong {
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    display: block;
+}
+
+/* --- Detalhes do Pagamento --- */
+.payment-details .label {
+    font-size: 0.8rem;
+    color: #777;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
+.payment-details .value-box {
+    border: 1px solid var(--einstein-blue);
+    padding: 20px;
+    text-align: center;
+    background: #f5f8fc;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+.payment-details .value-box strong {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--einstein-blue);
+}
+
+.payment-details .value-box span {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--text-light);
+}
+
+.payment-details .detail-item strong {
+    font-size: 0.95rem;
+}
+
+/* --- ▼▼▼ NOVOS ESTILOS DE ASSINATURA DIGITAL ▼▼▼ --- */
+.receipt-container footer {
+    margin-top: 40px;
+    text-align: left; /* Alinha o texto da nota de rodapé */
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+/* O container principal da assinatura */
+.digital-signature-box {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar em telas menores */
+    align-items: center;
+    gap: 25px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+/* O QR Code SVG */
+.qr-code-svg {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+}
+.qr-code-svg svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* O container de texto à direita */
+.verification-details {
+    flex: 1; /* Ocupa o espaço restante */
+    min-width: 250px;
+}
+
+/* Linha "RECIBO VERIFICADO" */
+.verified-line {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-green);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.verified-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--accent-green);
+    flex-shrink: 0;
+}
+
+/* Rótulos (ex: "Código da Assinatura") */
+.verification-details .detail-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #777;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+/* O código Hash */
+.signature-hash {
+    display: block;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    word-break: break-all; /* Quebra o código longo */
+    font-weight: 500;
+}
+
+/* Outros textos (timestamp) */
+.verification-details .detail-text {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+/* Link "verifique em" */
+.verification-link {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--einstein-blue);
+    font-weight: 500;
+    text-decoration: none;
+}
+.verification-link:hover {
+    text-decoration: underline;
+}
+
+/* Nota de rodapé */
+.receipt-container .footer-note {
+    text-align: center; /* Centraliza a nota final */
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #888;
+}
+/* --- ▲▲▲ FIM DOS NOVOS ESTILOS ▲▲▲ --- */
+
+
+/* --- Estilos de Impressão --- */
+@media print {
+    body {
+        background-color: #ffffff;
+        padding: 0;
+        margin: 0;
+    }
+
+    .receipt-container {
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .digital-signature-box {
+        background: #f9f9f9 !important; /* Força o fundo cinza claro na impressão */
+        -webkit-print-color-adjust: exact; /* Garante que o Chrome imprima cores de fundo */
+        color-adjust: exact; /* Padrão */
+    }
+
+    .verified-line, .verified-icon {
+        color: var(--accent-green) !important;
+        fill: var(--accent-green) !important;
+    }
+}

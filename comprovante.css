@@ -1,0 +1,291 @@
+/* --- 1. Configurações Globais (Reset & Variáveis) --- */
+:root {
+    --primary-color: #0d47a1;
+    --secondary-color: #1565c0;
+    --accent-color: #4caf50;
+    --bg-main: #f4f6f8;
+    --bg-card: #ffffff;
+    --text-dark: #333;
+    --text-light: #666;
+    --border-color: #e0e0e0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+    min-height: 100vh;
+}
+
+/* --- ESTILOS DO RECIBO PIX --- */
+
+.pix-receipt-container {
+    max-width: 450px;
+    width: 98%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.pix-header {
+    padding: 16px 20px 10px 20px;
+}
+
+/* ▼▼▼ ESTILO CORRIGIDO ▼▼▼ */
+/* Container do logo: removemos a altura fixa */
+.c6-logo {
+    display: flex; 
+    align-items: center;
+    justify-content: flex-start; 
+}
+
+/* Imagem do logo: altura corrigida para 25px */
+.c6-logo-img {
+    height: 25px; /* Altura corrigida (bem menor que 60px) */
+    width: auto; 
+    object-fit: contain; 
+}
+/* ▲▲▲ FIM DA CORREÇÃO ▲▲▲ */
+
+
+.pix-status-timeline {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: relative;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.pix-status-timeline::before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 28%;
+    right: 28%;
+    height: 1px;
+    border-top: 2px dashed #e0e0e0;
+    z-index: 1;
+}
+
+.pix-status-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    z-index: 2;
+}
+
+.pix-status-node .icon {
+    width: 16px;
+    height: 16px;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 16px;
+    margin-bottom: 8px;
+}
+
+.pix-status-node .label {
+    font-size: 0.75rem;
+    color: #777;
+    line-height: 1.4;
+}
+
+.pix-status-node .label strong {
+    font-size: 0.8rem;
+    color: #000;
+    font-weight: 700;
+}
+
+.pix-body {
+    padding: 0 20px;
+}
+
+.pix-section {
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.pix-recipient-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 4px 0;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.pix-recipient-details {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.pix-data-pair {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.pix-data-pair .label {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.pix-data-pair .value {
+    font-size: 0.9rem;
+    color: #000;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.pix-data-pair .value.code {
+    font-family: 'Courier New', Courier, monospace;
+    word-break: break-all;
+    font-weight: 700;
+}
+
+.pix-data-pair .value.large-amount {
+    font-size: 1.2rem; 
+    font-weight: 700;
+    line-height: 1.2; 
+}
+
+.pix-origin-account {
+    border-bottom: none;
+}
+
+.pix-origin-account .label {
+    font-size: 0.8rem;
+    color: #777;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.account-details {
+    display: flex;
+    align-items: center;
+}
+
+.account-details .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-right: 12px;
+}
+
+.account-details .info {
+    flex-grow: 1;
+}
+
+.pix-footer {
+    background-color: #f9f9f8; 
+    padding: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.pix-footer-info {
+    font-size: 0.8rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+}
+
+.pix-footer-contact {
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+}
+
+.pix-footer-contact:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.pix-footer-contact .label {
+    font-size: 0.8rem;
+    color: #777;
+    line-height: 1.4;
+    margin-bottom: 4px;
+    margin-top: 8px;
+}
+
+.pix-footer-contact .label:first-child {
+    margin-top: 0;
+}
+
+.phone-line {
+    display: flex;
+    align-items: center;
+    margin-top: 4px; 
+}
+
+.phone-icon-background {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.phone-icon {
+    color: #0465D5;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.pix-footer-contact .phone {
+    font-size: 1.1rem;
+    color: #0465D5;
+    font-weight: 700;
+    margin-top: 0;
+}
+
+/* --- ESTILOS DE IMPRESSÃO --- */
+@media print {
+    body {
+        background-color: #ffffff;
+        padding: 0;
+        margin: 0;
+    }
+
+    .pix-receipt-container {
+        box-shadow: none;
+        border-radius: 0;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+}
