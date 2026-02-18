@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const bpmDisplay = document.getElementById('live-bpm');
         if (bpmDisplay) {
             // Gera valor entre 102 e 108 (Ansiedade/Estresse)
-            const randomBPM = Math.floor(Math.random() * (108 - 102 + 1) + 102);
+            const randomBPM = Math.floor(Math.random() * (90 - 20 + 1) + 90);
             bpmDisplay.textContent = randomBPM;
             
             // Efeito visual sutil de cor
