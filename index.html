@@ -7,47 +7,6 @@
     <title>Portal do Paciente - Einstein NeuroChip</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"
-        rel="stylesheet">
-    <style>
-        /* Estilos inline para garantir a visualização correta neste exemplo */
-        .success-card {
-            border-left: 4px solid #4caf50 !important;
-        }
-
-        .bar-fill.success {
-            background-color: #4caf50 !important;
-        }
-
-        .bar-fill.optimal {
-            background-color: #2196f3 !important;
-        }
-
-        .badge-stable {
-            background-color: #e8f5e9;
-            color: #2e7d32;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 0.8rem;
-        }
-
-        .health-alert.success {
-            background-color: #e8f5e9;
-            border: 1px solid #c8e6c9;
-            color: #1b5e20;
-        }
-
-        .alert-symbol.success {
-            color: #2e7d32;
-        }
-
-        /* Classe para o texto de BPM ficar verde */
-        .bpm-normal {
-            color: #2e7d32 !important;
-            transition: color 0.3s ease;
-        }
-    </style>
 </head>
 
 <body>
@@ -61,9 +20,9 @@
             </div>
             <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="#" class="nav-link active" data-content="inicio">Início</a></li>
+                    <li><a href="#" class="nav-link" data-content="inicio">Início</a></li>
 
-                    <li><a href="#" class="nav-link chip-link" data-content="neurochip">
+                    <li><a href="#" class="nav-link chip-link active" data-content="neurochip">
                             <span class="pulse-dot status-ok"></span> Monitoramento (Chip)
                         </a></li>
 
@@ -83,10 +42,10 @@
 
         <div class="main-wrapper">
             <header class="main-header">
-                <h1 id="page-title">Monitoramento</h1>
+                <h1 id="page-title">Monitoramento (Chip)</h1>
                 <div class="patient-info">
                     Paciente: <strong>MARINA SANTANA FREITAS</strong>
-                    <span>ID CHIP: 884-XJ-09 (Ativo)</span>
+                    <span>ID CHIP: 884-XJ-09 (Ativo - Modo Diurno)</span>
                 </div>
             </header>
 
@@ -110,9 +69,9 @@
                             </div>
                         </div>
                         <div class="chip-battery">
-                            <span>Bateria do Implante: 98%</span>
+                            <span>Bateria do Implante: 96%</span>
                             <div class="battery-bar">
-                                <div style="width:98%; background-color: #4caf50;"></div>
+                                <div style="width:96%; background-color: #4caf50;"></div>
                             </div>
                         </div>
                     </div>
@@ -120,8 +79,8 @@
                     <div class="health-alert success">
                         <div class="alert-symbol success">✓</div>
                         <div class="alert-content">
-                            <h4>ESTADO DE HOMEOSTASE CONFIRMADO</h4>
-                            <p>Todos os biomarcadores estáveis. O sistema nervoso simpático está em repouso.</p>
+                            <h4>ESTABILIDADE MANTIDA</h4>
+                            <p>Parâmetros fisiológicos ideais para atividades diárias. Nenhuma anomalia detectada.</p>
                         </div>
                     </div>
 
@@ -129,28 +88,28 @@
 
                         <div class="metric-card success-card">
                             <div class="mc-header">
-                                <span>Nível de Cortisol (Estresse)</span>
-                                <i class="icon-stress" style="color: #4caf50;">Leaf</i>
+                                <span>Nível de Cortisol (Vigília)</span>
+                                <i class="icon-stress" style="color: #4caf50;">⚡</i>
                             </div>
-                            <div class="mc-value">4.2 <small>mcg/dL</small></div>
+                            <div class="mc-value">12.4 <small>mcg/dL</small></div>
                             <div class="mc-graph-bar">
-                                <div class="bar-fill success" style="width: 15%;"></div>
+                                <div class="bar-fill success" style="width: 40%;"></div>
                             </div>
-                            <div class="mc-status">Status: <strong>BAIXO (Ideal)</strong></div>
-                            <p class="mc-desc">Ausência de tensão. Níveis pré-sono.</p>
+                            <div class="mc-status">Status: <strong>Normal (Dia)</strong></div>
+                            <p class="mc-desc">Energia metabólica adequada.</p>
                         </div>
 
                         <div class="metric-card success-card">
                             <div class="mc-header">
-                                <span>Índice Dopaminérgico (Humor)</span>
+                                <span>Índice Dopaminérgico</span>
                                 <i class="icon-mood" style="color: #2196f3;">💧</i>
                             </div>
-                            <div class="mc-value">Estável <small>Fluxo</small></div>
+                            <div class="mc-value">Otimo <small>Fluxo</small></div>
                             <div class="mc-graph-bar">
-                                <div class="bar-fill optimal" style="width: 70%;"></div>
+                                <div class="bar-fill optimal" style="width: 85%;"></div>
                             </div>
-                            <div class="mc-status">Status: <strong>Equilibrado</strong></div>
-                            <p class="mc-desc">Recaptação serotonérgica normalizada.</p>
+                            <div class="mc-status">Status: <strong>Motivado/Focado</strong></div>
+                            <p class="mc-desc">Neurotransmissores em equilíbrio.</p>
                         </div>
 
                         <div class="metric-card success-card">
@@ -166,54 +125,53 @@
                                     style="fill:none;stroke:#4caf50;stroke-width:2" />
                             </svg>
 
-                            <div class="mc-status">Status: <strong>Normal</strong></div>
-                            <p class="mc-desc">Ritmo Sinusal (Regular).</p>
+                            <div class="mc-status">Status: <strong>Ritmo Sinusal</strong></div>
+                            <p class="mc-desc">Normocardia (Repouso Ativo).</p>
                         </div>
 
-                        <div class="metric-card dark-card">
+                        <div class="metric-card info-card">
                             <div class="mc-header">
                                 <span>Ciclo Circadiano</span>
-                                <i class="icon-moon">🌙</i>
+                                <i class="icon-sun" style="color: #f57c00;">☀️</i>
                             </div>
-                            <div class="mc-value">Indução <small>Fase 1</small></div>
+                            <div class="mc-value">Ativo <small>Dia</small></div>
                             <div class="sleep-detail">
-                                <span>Melatonina: 85% (Alto)</span>
-                                <span>Temp: 36.1°C</span>
+                                <span>Temp: 36.6°C</span>
+                                <span>Oxt: 99%</span>
                             </div>
-                            <div class="mc-status">Status: <strong>Preparando Sono</strong></div>
-                            <p class="mc-desc">Atividade cerebral Alpha predominante.</p>
+                            <div class="mc-status">Status: <strong>Plena Vigília</strong></div>
+                            <p class="mc-desc">Atividade Beta (Foco) predominante.</p>
                         </div>
                     </div>
 
                     <div class="card timeline-card">
-                        <h3>Registro de Eventos Biométricos (Hoje)</h3>
+                        <h3>Linha do Tempo Biológica (Hoje)</h3>
                         <ul class="bio-timeline">
+
                             <li class="event success"
                                 style="border-left: 3px solid #4caf50; padding-left: 15px; margin-bottom: 20px;">
-                                <span class="time" style="color: #4caf50; font-weight: bold;">00:38</span>
+                                <span class="time" id="last-update-time"
+                                    style="color: #4caf50; font-weight: bold;">--:--</span>
                                 <div class="details">
-                                    <strong style="color: #2e7d32;">Normalização Completa do Sistema</strong>
-                                    <p>O NeuroChip confirma estabilização de todos os sinais vitais.
-                                        <br><em>"Boa noite, Marina. Corpo pronto para descanso."</em>
+                                    <strong style="color: #2e7d32;">Checagem de Rotina: Normal</strong>
+                                    <p>Sistema operando em background. Níveis de hidratação e oxigenação satisfatórios.
                                     </p>
                                 </div>
                             </li>
+
                             <li class="event normal">
-                                <span class="time">21:15</span>
+                                <span class="time">09:10</span>
                                 <div class="details">
-                                    <strong>Início da Regulação</strong>
-                                    <p>Queda progressiva do Cortisol.</p>
+                                    <strong>Despertar Fisiológico</strong>
+                                    <p>Aumento natural de cortisol (ciclo circadiano) para induzir o despertar. Sono
+                                        reparador confirmado (8h40m).</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </section>
 
-                <section id="resultados-content" class="content-section">
-                    <div class="card">
-                        <h3>Carregando...</h3>
-                    </div>
-                </section>
+                <section id="resultados-content" class="content-section"></section>
                 <section id="consulta-dermatologica-content" class="content-section"></section>
                 <section id="laudos-content" class="content-section"></section>
                 <section id="exames-content" class="content-section"></section>
