@@ -10,14 +10,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"
         rel="stylesheet">
     <style>
-        /* Adicionei algumas classes inline de exemplo para garantir que a visualização 
-           das cores funcione mesmo sem o arquivo style.css externo neste exemplo */
-        .success-card { border-left: 4px solid #4caf50 !important; }
-        .bar-fill.success { background-color: #4caf50 !important; }
-        .bar-fill.optimal { background-color: #2196f3 !important; }
-        .badge-stable { background-color: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
-        .health-alert.success { background-color: #e8f5e9; border: 1px solid #c8e6c9; color: #1b5e20; }
-        .alert-symbol.success { color: #2e7d32; }
+        /* Estilos inline para garantir a visualização correta neste exemplo */
+        .success-card {
+            border-left: 4px solid #4caf50 !important;
+        }
+
+        .bar-fill.success {
+            background-color: #4caf50 !important;
+        }
+
+        .bar-fill.optimal {
+            background-color: #2196f3 !important;
+        }
+
+        .badge-stable {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .health-alert.success {
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            color: #1b5e20;
+        }
+
+        .alert-symbol.success {
+            color: #2e7d32;
+        }
+
+        /* Classe para o texto de BPM ficar verde */
+        .bpm-normal {
+            color: #2e7d32 !important;
+            transition: color 0.3s ease;
+        }
     </style>
 </head>
 
@@ -77,7 +106,7 @@
                             <h2>Bio-Monitoramento Integral</h2>
                             <div class="chip-badges">
                                 <span class="badge-live">● AO VIVO</span>
-                                <span class="badge-stable">Sincronizado: <span id="clock-live">23:38:05</span></span>
+                                <span class="badge-stable">Sincronizado: <span id="clock-live">--:--:--</span></span>
                             </div>
                         </div>
                         <div class="chip-battery">
@@ -92,7 +121,7 @@
                         <div class="alert-symbol success">✓</div>
                         <div class="alert-content">
                             <h4>ESTADO DE HOMEOSTASE CONFIRMADO</h4>
-                            <p>Todos os biomarcadores retornaram aos níveis basais. O sistema nervoso simpático está em repouso.</p>
+                            <p>Todos os biomarcadores estáveis. O sistema nervoso simpático está em repouso.</p>
                         </div>
                     </div>
 
@@ -127,16 +156,18 @@
                         <div class="metric-card success-card">
                             <div class="mc-header">
                                 <span>Frequência Cardíaca</span>
-                                <i class="icon-heart" style="color: #e91e63;">❤️</i>
+                                <i class="icon-heart" style="color: #4caf50;">❤️</i>
                             </div>
-                            <div class="mc-value"><span id="live-bpm">62</span> <small>bpm</small></div>
+                            <div class="mc-value"><span id="live-bpm" class="bpm-normal">72</span> <small>bpm</small>
+                            </div>
+
                             <svg class="ekg-line" viewBox="0 0 100 20" preserveAspectRatio="none">
-                                <polyline
-                                    points="0,10 20,10 25,5 30,15 35,10 60,10 65,5 70,15 75,10 100,10"
+                                <polyline points="0,10 30,10 35,5 40,15 45,10 80,10 85,5 90,15 95,10 100,10"
                                     style="fill:none;stroke:#4caf50;stroke-width:2" />
                             </svg>
-                            <div class="mc-status">Ritmo Sinusal (Repouso)</div>
-                            <p class="mc-desc">Coerência cardíaca excelente.</p>
+
+                            <div class="mc-status">Status: <strong>Normal</strong></div>
+                            <p class="mc-desc">Ritmo Sinusal (Regular).</p>
                         </div>
 
                         <div class="metric-card dark-card">
@@ -157,40 +188,21 @@
                     <div class="card timeline-card">
                         <h3>Registro de Eventos Biométricos (Hoje)</h3>
                         <ul class="bio-timeline">
-
-                            <li class="event success" style="border-left: 3px solid #4caf50; padding-left: 15px; margin-bottom: 20px;">
+                            <li class="event success"
+                                style="border-left: 3px solid #4caf50; padding-left: 15px; margin-bottom: 20px;">
                                 <span class="time" style="color: #4caf50; font-weight: bold;">23:38</span>
                                 <div class="details">
                                     <strong style="color: #2e7d32;">Normalização Completa do Sistema</strong>
-                                    <p>O NeuroChip confirma estabilização de todos os sinais vitais. Ansiedade dissipada.
-                                        <br>
-                                        <span style="color:#2e7d32; font-weight:500;">Mensagem do Sistema:</span>
-                                        <em>"Boa noite, Marina. Seu corpo está pronto para um descanso reparador."</em>
+                                    <p>O NeuroChip confirma estabilização de todos os sinais vitais.
+                                        <br><em>"Boa noite, Marina. Corpo pronto para descanso."</em>
                                     </p>
                                 </div>
                             </li>
-
-                             <li class="event normal">
+                            <li class="event normal">
                                 <span class="time">21:15</span>
                                 <div class="details">
                                     <strong>Início da Regulação</strong>
-                                    <p>Queda progressiva do Cortisol após ingestão calórica e repouso. FC reduzida para 80bpm.</p>
-                                </div>
-                            </li>
-
-                            <li class="event intervention" style="opacity: 0.7;">
-                                <span class="time">18:44</span>
-                                <div class="details">
-                                    <strong>Protocolo de Suporte Nutricional</strong>
-                                    <p>O jejum prolongado estava agravando a queda de neurotransmissores.</p>
-                                </div>
-                            </li>
-
-                            <li class="event danger" style="opacity: 0.5;">
-                                <span class="time">15:30</span>
-                                <div class="details">
-                                    <strong>Pico de Ansiedade (Histórico)</strong>
-                                    <p>Evento arquivado.</p>
+                                    <p>Queda progressiva do Cortisol.</p>
                                 </div>
                             </li>
                         </ul>
@@ -198,18 +210,10 @@
                 </section>
 
                 <section id="resultados-content" class="content-section">
-                    <div class="results-grid">
-                        <div class="card details-card">
-                            <h3>Detalhes do Procedimento</h3>
-                            <ul class="details-list">
-                                <li><span>Procedimento:</span> <strong>Cirurgia de Recontorno Facial (CRF)</strong></li>
-                                <li><span>Data da Cirurgia:</span> <strong>19/10/2025</strong></li>
-                                <li><span>Cirurgiã:</span> <strong>Dra. Isabela Mendes</strong></li>
-                            </ul>
-                        </div>
+                    <div class="card">
+                        <h3>Carregando...</h3>
                     </div>
                 </section>
-
                 <section id="consulta-dermatologica-content" class="content-section"></section>
                 <section id="laudos-content" class="content-section"></section>
                 <section id="exames-content" class="content-section"></section>

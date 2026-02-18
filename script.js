@@ -1,53 +1,43 @@
 document.addEventListener('DOMContentLoaded', function () {
     
-    // --- 1. NAVEGAÇÃO ENTRE ABAS ---
+    // --- 1. NAVEGAÇÃO ---
     const navLinks = document.querySelectorAll('.nav-link');
     const contentSections = document.querySelectorAll('.content-section');
     const pageTitle = document.getElementById('page-title');
 
     function activateTab(tabId) {
-        // Atualiza estilo dos links
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('data-content') === tabId) {
-                link.classList.add('active');
-            }
+            if (link.getAttribute('data-content') === tabId) link.classList.add('active');
         });
 
-        // Mostra a seção correta
         contentSections.forEach(section => {
             section.classList.remove('active');
         });
         
         const targetSection = document.getElementById(tabId + '-content');
-        if (targetSection) {
-            targetSection.classList.add('active');
-        }
+        if (targetSection) targetSection.classList.add('active');
 
-        // Atualiza Título da Página
         const activeLink = document.querySelector(`.nav-link[data-content="${tabId}"]`);
         if (activeLink && pageTitle) {
-            // Remove o emoji ou formatação extra para o título simples
             pageTitle.textContent = activeLink.innerText.replace('●', '').trim();
         }
     }
 
-    // Adiciona evento de clique
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const tabId = link.getAttribute('data-content');
-            activateTab(tabId);
+            activateTab(link.getAttribute('data-content'));
         });
     });
 
-    // Inicia na aba NeuroChip para demonstração (ou mude para 'inicio')
-    activateTab('inicio');
+    // Inicia na aba do NeuroChip
+    activateTab('neurochip');
 
 
-    // --- 2. SISTEMA DE MONITORAMENTO NEUROCHIP (SIMULAÇÃO) ---
+    // --- 2. SISTEMA DE MONITORAMENTO ---
     
-    // Relógio Digital
+    // Relógio
     function updateClock() {
         const clockElement = document.getElementById('clock-live');
         if (clockElement) {
@@ -58,35 +48,38 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(updateClock, 1000);
     updateClock();
 
-    // Simulação de BPM (Taquicardia Leve Variável)
+    // --- CORREÇÃO DO BATIMENTO CARDÍACO (68 - 77 BPM) ---
     function simulateHeartBeat() {
         const bpmDisplay = document.getElementById('live-bpm');
+        
         if (bpmDisplay) {
-            // Gera valor entre 102 e 108 (Ansiedade/Estresse)
-            const randomBPM = Math.floor(Math.random() * (90 - 20 + 1) + 90);
-            bpmDisplay.textContent = randomBPM;
+            // Intervalo estrito de normalidade
+            const minBPM = 68;
+            const maxBPM = 77;
             
-            // Efeito visual sutil de cor
-            if (randomBPM > 106) {
-                bpmDisplay.style.color = '#d32f2f'; // Vermelho mais forte nos picos
-            } else {
-                bpmDisplay.style.color = '#333';
-            }
+            // Gera número aleatório
+            const currentBPM = Math.floor(Math.random() * (maxBPM - minBPM + 1)) + minBPM;
+            
+            bpmDisplay.textContent = currentBPM;
+            
+            // Garante que a cor seja sempre VERDE FLORESTA (Saudável)
+            // Removemos qualquer lógica de cor vermelha
+            bpmDisplay.style.color = '#2e7d32'; 
+            
+            // Efeito visual sutil de pulsação normal
+            bpmDisplay.style.transition = "opacity 0.2s ease";
+            bpmDisplay.style.opacity = '0.7';
+            setTimeout(() => { 
+                bpmDisplay.style.opacity = '1'; 
+            }, 200);
         }
     }
-    // Atualiza a cada 2.5 segundos
-    setInterval(simulateHeartBeat, 2500);
+    
+    // Atualiza a cada 4 segundos (Ritmo mais lento e calmo que o anterior)
+    setInterval(simulateHeartBeat, 4000);
+    
+    // Chamada inicial
+    simulateHeartBeat();
 
-
-    // --- 3. ALERTAS GERAIS ---
-    const alertBanner = document.getElementById('medication-alert-banner');
-    const now = new Date();
-    // Exemplo: Mostrar alerta de medicamento se for depois das 8h da manhã
-    if (now.getHours() >= 8 && alertBanner) {
-        alertBanner.style.display = 'flex';
-        // Você pode adicionar classe para mudar cor se quiser
-    } else if (alertBanner) {
-        alertBanner.style.display = 'none';
-    }
-
+    console.log("Sistema NeuroChip: Parâmetros vitais normalizados.");
 });
