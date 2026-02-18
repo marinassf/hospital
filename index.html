@@ -9,6 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"
         rel="stylesheet">
+    <style>
+        /* Adicionei algumas classes inline de exemplo para garantir que a visualização 
+           das cores funcione mesmo sem o arquivo style.css externo neste exemplo */
+        .success-card { border-left: 4px solid #4caf50 !important; }
+        .bar-fill.success { background-color: #4caf50 !important; }
+        .bar-fill.optimal { background-color: #2196f3 !important; }
+        .badge-stable { background-color: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
+        .health-alert.success { background-color: #e8f5e9; border: 1px solid #c8e6c9; color: #1b5e20; }
+        .alert-symbol.success { color: #2e7d32; }
+    </style>
 </head>
 
 <body>
@@ -25,7 +35,7 @@
                     <li><a href="#" class="nav-link active" data-content="inicio">Início</a></li>
 
                     <li><a href="#" class="nav-link chip-link" data-content="neurochip">
-                            <span class="pulse-dot"></span> Monitoramento (Chip)
+                            <span class="pulse-dot status-ok"></span> Monitoramento (Chip)
                         </a></li>
 
                     <li><a href="#" class="nav-link" data-content="resultados">Meus Resultados</a></li>
@@ -44,116 +54,103 @@
 
         <div class="main-wrapper">
             <header class="main-header">
-                <h1 id="page-title">Início</h1>
+                <h1 id="page-title">Monitoramento</h1>
                 <div class="patient-info">
                     Paciente: <strong>MARINA SANTANA FREITAS</strong>
                     <span>ID CHIP: 884-XJ-09 (Ativo)</span>
                 </div>
             </header>
 
-        
-
             <main class="content-area">
 
-                <section id="inicio-content" class="content-section active">
+                <section id="inicio-content" class="content-section">
                     <div class="card">
                         <h3>Bem-vinda, MARINA.</h3>
-                        <p>Seu hub de saúde centralizado. O sistema detectou alterações biométricas importantes hoje.
-                            Verifique a aba <strong>Monitoramento (Chip)</strong>.</p>
-
-                        <div class="photo-feed-grid">
-                            <div class="photo-item">
-                                <div class="placeholder-img">Dia 1 P.O.</div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="placeholder-img">15 Dias P.O.</div>
-                            </div>
-                        </div>
+                        <p>Seu hub de saúde centralizado.</p>
                     </div>
                 </section>
 
-                <section id="neurochip-content" class="content-section">
+                <section id="neurochip-content" class="content-section active">
 
                     <div class="chip-dashboard-header">
                         <div class="chip-info">
                             <h2>Bio-Monitoramento Integral</h2>
                             <div class="chip-badges">
                                 <span class="badge-live">● AO VIVO</span>
-                                <span class="badge-sync">Sincronizado: <span id="clock-live">--:--:--</span></span>
+                                <span class="badge-stable">Sincronizado: <span id="clock-live">23:38:05</span></span>
                             </div>
                         </div>
                         <div class="chip-battery">
-                            <span>Bateria do Implante: 100%</span>
+                            <span>Bateria do Implante: 98%</span>
                             <div class="battery-bar">
-                                <div style="width:100%"></div>
+                                <div style="width:98%; background-color: #4caf50;"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="health-alert critical">
-                        <div class="alert-symbol">⚠️</div>
+                    <div class="health-alert success">
+                        <div class="alert-symbol success">✓</div>
                         <div class="alert-content">
-                            <h4>ALERTA DE SAÚDE MENTAL: NÍVEL CRÍTICO</h4>
-                            <p>O algoritmo detectou biomarcadores de <strong>Estresse Agudo</strong> e <strong>Estado
-                                    Depressivo Severo</strong>.</p>
+                            <h4>ESTADO DE HOMEOSTASE CONFIRMADO</h4>
+                            <p>Todos os biomarcadores retornaram aos níveis basais. O sistema nervoso simpático está em repouso.</p>
                         </div>
                     </div>
 
                     <div class="metrics-grid">
 
-                        <div class="metric-card danger-card">
+                        <div class="metric-card success-card">
                             <div class="mc-header">
                                 <span>Nível de Cortisol (Estresse)</span>
-                                <i class="icon-stress">⚡</i>
+                                <i class="icon-stress" style="color: #4caf50;">Leaf</i>
                             </div>
-                            <div class="mc-value">28.5 <small>mcg/dL</small></div>
+                            <div class="mc-value">4.2 <small>mcg/dL</small></div>
                             <div class="mc-graph-bar">
-                                <div class="bar-fill critical" style="width: 95%;"></div>
+                                <div class="bar-fill success" style="width: 15%;"></div>
                             </div>
-                            <div class="mc-status">Status: <strong>MUITO ALTO</strong></div>
-                            <p class="mc-desc">Pico de tensão detectado nas últimas 4h.</p>
+                            <div class="mc-status">Status: <strong>BAIXO (Ideal)</strong></div>
+                            <p class="mc-desc">Ausência de tensão. Níveis pré-sono.</p>
                         </div>
 
-                        <div class="metric-card warning-card">
+                        <div class="metric-card success-card">
                             <div class="mc-header">
                                 <span>Índice Dopaminérgico (Humor)</span>
-                                <i class="icon-mood">💧</i>
+                                <i class="icon-mood" style="color: #2196f3;">💧</i>
                             </div>
-                            <div class="mc-value">Baixo <small>Fluxo</small></div>
+                            <div class="mc-value">Estável <small>Fluxo</small></div>
                             <div class="mc-graph-bar">
-                                <div class="bar-fill low" style="width: 20%;"></div>
+                                <div class="bar-fill optimal" style="width: 70%;"></div>
                             </div>
-                            <div class="mc-status">Status: <strong>Depressão Profunda</strong></div>
-                            <p class="mc-desc">Atividade serotoninérgica reduzida.</p>
+                            <div class="mc-status">Status: <strong>Equilibrado</strong></div>
+                            <p class="mc-desc">Recaptação serotonérgica normalizada.</p>
                         </div>
 
-                        <div class="metric-card info-card">
+                        <div class="metric-card success-card">
                             <div class="mc-header">
                                 <span>Frequência Cardíaca</span>
-                                <i class="icon-heart">❤️</i>
+                                <i class="icon-heart" style="color: #e91e63;">❤️</i>
                             </div>
-                            <div class="mc-value"><span id="live-bpm">104</span> <small>bpm</small></div>
+                            <div class="mc-value"><span id="live-bpm">62</span> <small>bpm</small></div>
                             <svg class="ekg-line" viewBox="0 0 100 20" preserveAspectRatio="none">
                                 <polyline
-                                    points="0,10 10,10 15,5 20,15 25,10 30,10 35,2 40,18 45,10 50,10 55,5 60,15 65,10 70,10 75,2 80,18 85,10 100,10"
-                                    style="fill:none;stroke:#d32f2f;stroke-width:2" />
+                                    points="0,10 20,10 25,5 30,15 35,10 60,10 65,5 70,15 75,10 100,10"
+                                    style="fill:none;stroke:#4caf50;stroke-width:2" />
                             </svg>
-                            <div class="mc-status">Taquicardia (Repouso)</div>
-                            <p class="mc-desc">Sinaliza ansiedade persistente.</p>
+                            <div class="mc-status">Ritmo Sinusal (Repouso)</div>
+                            <p class="mc-desc">Coerência cardíaca excelente.</p>
                         </div>
 
                         <div class="metric-card dark-card">
                             <div class="mc-header">
-                                <span>Qualidade do Sono</span>
+                                <span>Ciclo Circadiano</span>
                                 <i class="icon-moon">🌙</i>
                             </div>
-                            <div class="mc-value">3h 12m <small>Total</small></div>
+                            <div class="mc-value">Indução <small>Fase 1</small></div>
                             <div class="sleep-detail">
-                                <span>REM: 10% (Baixo)</span>
-                                <span>Profundo: 15%</span>
+                                <span>Melatonina: 85% (Alto)</span>
+                                <span>Temp: 36.1°C</span>
                             </div>
-                            <div class="mc-status">Status: <strong>Insônia</strong></div>
-                            <p class="mc-desc">Recuperação neural insuficiente.</p>
+                            <div class="mc-status">Status: <strong>Preparando Sono</strong></div>
+                            <p class="mc-desc">Atividade cerebral Alpha predominante.</p>
                         </div>
                     </div>
 
@@ -161,39 +158,39 @@
                         <h3>Registro de Eventos Biométricos (Hoje)</h3>
                         <ul class="bio-timeline">
 
-                            <li class="event intervention">
-                                <span class="time">18:44</span>
+                            <li class="event success" style="border-left: 3px solid #4caf50; padding-left: 15px; margin-bottom: 20px;">
+                                <span class="time" style="color: #4caf50; font-weight: bold;">23:38</span>
                                 <div class="details">
-                                    <strong>Protocolo de Suporte Nutricional</strong>
-                                    <p>O jejum prolongado está agravando a queda de neurotransmissores (tristeza).<br>
-                                        <span style="color:#7b1fa2; font-weight:500;">Mensagem do Sistema:</span>
-                                        <em>"Por favor, alimente-se. Seu corpo precisa de energia para regular o
-                                            humor."</em>
+                                    <strong style="color: #2e7d32;">Normalização Completa do Sistema</strong>
+                                    <p>O NeuroChip confirma estabilização de todos os sinais vitais. Ansiedade dissipada.
+                                        <br>
+                                        <span style="color:#2e7d32; font-weight:500;">Mensagem do Sistema:</span>
+                                        <em>"Boa noite, Marina. Seu corpo está pronto para um descanso reparador."</em>
                                     </p>
                                 </div>
                             </li>
 
-                            <li class="event danger">
+                             <li class="event normal">
+                                <span class="time">21:15</span>
+                                <div class="details">
+                                    <strong>Início da Regulação</strong>
+                                    <p>Queda progressiva do Cortisol após ingestão calórica e repouso. FC reduzida para 80bpm.</p>
+                                </div>
+                            </li>
+
+                            <li class="event intervention" style="opacity: 0.7;">
+                                <span class="time">18:44</span>
+                                <div class="details">
+                                    <strong>Protocolo de Suporte Nutricional</strong>
+                                    <p>O jejum prolongado estava agravando a queda de neurotransmissores.</p>
+                                </div>
+                            </li>
+
+                            <li class="event danger" style="opacity: 0.5;">
                                 <span class="time">15:30</span>
                                 <div class="details">
-                                    <strong>Pico de Ansiedade Detectado</strong>
-                                    <p>Elevação súbita da FC (115 bpm) sem atividade física correspondente. Gatilho
-                                        emocional provável.</p>
-                                </div>
-                            </li>
-                            <li class="event warning">
-                                <span class="time">14:15</span>
-                                <div class="details">
-                                    <strong>Queda de Humor (Disforia)</strong>
-                                    <p>Sensores indicam tristeza profunda e letargia. Sugestão de protocolo: Respiração
-                                        guiada (Não realizada).</p>
-                                </div>
-                            </li>
-                            <li class="event normal">
-                                <span class="time">07:00</span>
-                                <div class="details">
-                                    <strong>Despertar</strong>
-                                    <p>Cortisol matinal elevado (24.0 mcg/dL).</p>
+                                    <strong>Pico de Ansiedade (Histórico)</strong>
+                                    <p>Evento arquivado.</p>
                                 </div>
                             </li>
                         </ul>
@@ -210,61 +207,15 @@
                                 <li><span>Cirurgiã:</span> <strong>Dra. Isabela Mendes</strong></li>
                             </ul>
                         </div>
-                        <div class="card report-card">
-                            <h3>Laudo Recente</h3>
-                            <p>Paciente em pós-operatório. Evolução satisfatória fisicamente.</p>
-                        </div>
                     </div>
                 </section>
 
-                <section id="consulta-dermatologica-content" class="content-section">
-                    <div class="card">
-                        <h3>Prescrição Dermatológica Digital</h3>
-                        <div class="document-viewer">
-                            <h4>PROTOCOLO DE CUIDADOS: PELE SENSÍVEL</h4>
-                            <p><strong>Paciente:</strong> Marina Santana Freitas</p>
-                            <div class="routine-block">
-                                <h5>1. LIMPEZA SUAVE</h5>
-                                <ul>
-                                    <li>Clinique Redness Solutions Soothing Cleanser</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <button class="btn-primary" onclick="window.print()">Baixar PDF</button>
-                    </div>
-                </section>
-
-                <section id="laudos-content" class="content-section">
-                    <div class="card">
-                        <h3>Histórico de Laudos</h3>
-                        <p>Nenhum novo laudo.</p>
-                    </div>
-                </section>
-                <section id="exames-content" class="content-section">
-                    <div class="card">
-                        <h3>Resultados de Exames</h3>
-                        <p>Hemograma Completo (02/02/2026) - Normal.</p>
-                    </div>
-                </section>
-                <section id="contratos-content" class="content-section">
-                    <div class="card">
-                        <h3>Contratos</h3>
-                        <p>Termo de Consentimento - Assinado.</p>
-                    </div>
-                </section>
-                <section id="agenda-content" class="content-section">
-                    <div class="card">
-                        <h3>Agendamentos</h3>
-                        <p>Retorno Psicológico: 20/02/2026 às 14:00.</p>
-                    </div>
-                </section>
-                <section id="perfil-content" class="content-section">
-                    <div class="card">
-                        <h3>Perfil</h3>
-                        <p>Marina Santana Freitas</p>
-                        <p>Plano: Ouro</p>
-                    </div>
-                </section>
+                <section id="consulta-dermatologica-content" class="content-section"></section>
+                <section id="laudos-content" class="content-section"></section>
+                <section id="exames-content" class="content-section"></section>
+                <section id="contratos-content" class="content-section"></section>
+                <section id="agenda-content" class="content-section"></section>
+                <section id="perfil-content" class="content-section"></section>
 
             </main>
         </div>
