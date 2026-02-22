@@ -103,40 +103,45 @@ body {
     font-weight: 700;
 }
 
-/* Estilo especial para o link do Chip */
+/* Estilo especial para o link do Chip - Alterado para vermelho (perigo) */
 .chip-link {
     background: rgba(255, 255, 255, 0.05);
     border-left: 4px solid transparent;
 }
 
 .chip-link.active {
-    border-left: 4px solid #00e676;
+    border-left: 4px solid var(--danger-red);
 }
 
 .pulse-dot {
     width: 8px;
     height: 8px;
-    background-color: #00e676;
     border-radius: 50%;
     margin-right: 10px;
-    box-shadow: 0 0 0 rgba(0, 230, 118, 0.4);
-    animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
+/* Bolinha pulsante vermelha para indicar alerta */
+.pulse-dot.status-danger {
+    background-color: var(--danger-red);
+    box-shadow: 0 0 0 rgba(211, 47, 47, 0.4);
+    animation: pulseDanger 1s infinite;
+    /* Pulsando mais rápido */
+}
+
+@keyframes pulseDanger {
     0% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7);
+        box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7);
     }
 
     70% {
         transform: scale(1);
-        box-shadow: 0 0 0 6px rgba(0, 230, 118, 0);
+        box-shadow: 0 0 0 8px rgba(211, 47, 47, 0);
     }
 
     100% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 230, 118, 0);
+        box-shadow: 0 0 0 0 rgba(211, 47, 47, 0);
     }
 }
 
@@ -177,7 +182,9 @@ body {
 .patient-info span {
     display: block;
     font-size: 0.75rem;
-    color: #666;
+    color: var(--danger-red);
+    /* Destacando o modo alerta no cabeçalho */
+    font-weight: bold;
     margin-top: 3px;
 }
 
@@ -221,7 +228,7 @@ body {
    NEUROCHIP MONITOR
    ========================================= */
 .chip-dashboard-header {
-    background: linear-gradient(135deg, #263238 0%, #37474f 100%);
+    background: linear-gradient(135deg, #37474f 0%, #212121 100%);
     color: white;
     padding: 20px;
     border-radius: 8px;
@@ -229,7 +236,9 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+    /* Sombra avermelhada */
+    border: 1px solid #d32f2f;
 }
 
 .chip-info h2 {
@@ -245,9 +254,22 @@ body {
     font-family: monospace;
 }
 
-.badge-live {
-    color: #00e676;
+.badge-live.danger {
+    color: #ff5252;
     font-weight: bold;
+    animation: blinkText 1s infinite;
+}
+
+@keyframes blinkText {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
 
 .badge-stable {
@@ -270,74 +292,7 @@ body {
     overflow: hidden;
 }
 
-/* =========================================
-   NOVA MENSAGEM DO MÉDICO
-   ========================================= */
-.doctor-message-card {
-    background-color: #e3f2fd;
-    border-left: 5px solid #1976d2;
-    border-radius: 8px;
-    padding: 20px 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.dm-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #bbdefb;
-    padding-bottom: 12px;
-    margin-bottom: 15px;
-}
-
-.dm-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.dm-icon {
-    font-size: 1.5rem;
-}
-
-.dm-title h3 {
-    margin: 0;
-    color: #1565c0;
-    font-size: 1.15rem;
-}
-
-.dm-date {
-    background-color: #1976d2;
-    color: white;
-    padding: 3px 10px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.dm-body p {
-    margin: 0 0 12px 0;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #2c3e50;
-}
-
-.dm-body p:last-of-type {
-    margin-bottom: 15px;
-}
-
-.dm-signature {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: #1565c0;
-    border-top: 1px dashed #90caf9;
-    padding-top: 15px;
-}
-
-/* Alertas de Estado */
+/* Alertas de Estado (Perigo/Estresse) */
 .health-alert {
     padding: 15px;
     border-radius: 6px;
@@ -347,15 +302,38 @@ body {
     margin-bottom: 25px;
 }
 
-.health-alert.success {
-    background-color: #e8f5e9;
-    border: 1px solid #c8e6c9;
-    color: #1b5e20;
+.health-alert.danger {
+    background-color: #ffebee;
+    border: 1px solid #ffcdd2;
+    color: #b71c1c;
 }
 
-.alert-symbol.success {
-    color: #2e7d32;
+.alert-symbol.danger {
+    color: #d32f2f;
     font-size: 1.5rem;
+    animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-2px);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    75% {
+        transform: translateX(2px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .alert-content h4 {
@@ -387,12 +365,14 @@ body {
     flex-direction: column;
 }
 
-.success-card {
-    border-top: 4px solid var(--success-green);
+.danger-card {
+    border-top: 4px solid var(--danger-red);
+    background-color: #fffafb;
 }
 
-.info-card {
-    border-top: 4px solid var(--mood-blue);
+.warning-card {
+    border-top: 4px solid var(--warning-orange);
+    background-color: #fffdfa;
 }
 
 .mc-header {
@@ -407,14 +387,12 @@ body {
 .mc-value {
     font-size: 2rem;
     font-weight: 700;
-    color: #333;
     margin: 10px 0;
 }
 
 .mc-value small {
     font-size: 0.9rem;
     font-weight: 400;
-    color: #777;
 }
 
 /* Barra Interna */
@@ -431,17 +409,16 @@ body {
     border-radius: 3px;
 }
 
-.bar-fill.success {
-    background: var(--success-green);
+.bar-fill.danger {
+    background: var(--danger-red);
 }
 
-.bar-fill.optimal {
-    background: #2196f3;
+.bar-fill.warning {
+    background: var(--warning-orange);
 }
 
 .mc-status {
     font-size: 0.9rem;
-    color: #333;
     margin-bottom: 5px;
 }
 
@@ -451,18 +428,18 @@ body {
     margin: 0;
 }
 
-/* EKG Animado (Calmo) */
+/* EKG Animado (Rápido/Taquicardia) */
 .ekg-line {
     height: 30px;
     width: 100%;
     margin: 5px 0 15px 0;
 }
 
-.ekg-line polyline {
+.ekg-line.fast polyline {
     stroke-dasharray: 100;
     stroke-dashoffset: 100;
-    animation: drawEKG 3s linear infinite;
-    /* 3s = mais lento/calmo */
+    animation: drawEKG 0.7s linear infinite;
+    /* 0.7s = batimento muito rápido */
 }
 
 @keyframes drawEKG {
@@ -503,8 +480,8 @@ body {
     border: 2px solid white;
 }
 
-.bio-timeline .success::before {
-    background: var(--success-green);
+.bio-timeline .danger::before {
+    background: var(--danger-red);
 }
 
 .bio-timeline .normal::before {
@@ -531,9 +508,9 @@ body {
 }
 
 /* Classe utilitária JS */
-.bpm-normal {
-    color: #2e7d32 !important;
-    transition: opacity 0.3s ease;
+.bpm-danger {
+    color: var(--danger-red) !important;
+    transition: opacity 0.1s ease;
 }
 
 @media (max-width: 768px) {

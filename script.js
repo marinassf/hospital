@@ -60,35 +60,35 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(updateClock, 1000);
     updateClock();
 
-    // --- 3. SIMULAÇÃO DE BATIMENTOS CARDÍACOS (68 - 77 BPM) ---
-    // Faixa estrita de normalidade para repouso/atividade leve
+    // --- 3. SIMULAÇÃO DE BATIMENTOS CARDÍACOS (Estresse: 115 - 135 BPM) ---
+    // Faixa de alerta/taquicardia devido ao pico de estresse
     function simulateHeartBeat() {
         const bpmDisplay = document.getElementById('live-bpm');
         
         if (bpmDisplay) {
-            const minBPM = 68;
-            const maxBPM = 77;
+            const minBPM = 115;
+            const maxBPM = 135;
             
-            // Gera valor randômico na faixa saudável
+            // Gera valor randômico na faixa de estresse
             const currentBPM = Math.floor(Math.random() * (maxBPM - minBPM + 1)) + minBPM;
             
             bpmDisplay.textContent = currentBPM;
             
-            // Garante cor verde
-            bpmDisplay.style.color = '#2e7d32'; 
+            // Garante cor vermelha de alerta
+            bpmDisplay.style.color = '#d32f2f'; 
             
-            // Animação de "pulso" suave via opacidade
-            bpmDisplay.style.opacity = '0.6';
+            // Animação de "pulso" mais rápida e agressiva
+            bpmDisplay.style.opacity = '0.4';
             setTimeout(() => { 
                 bpmDisplay.style.opacity = '1'; 
-            }, 300);
+            }, 150);
         }
     }
     
-    // Atualiza a cada 4 segundos (Ritmo calmo)
-    setInterval(simulateHeartBeat, 4000);
+    // Atualiza a cada 1.2 segundos (Ritmo acelerado simulando coração batendo rápido)
+    setInterval(simulateHeartBeat, 1200);
     simulateHeartBeat(); 
 
-    // Log de sistema
-    console.log("Einstein NeuroChip: Modo Diurno Ativo. Homeostase confirmada.");
+    // Log de sistema atualizado para o cenário
+    console.log("Einstein NeuroChip [ALERTA]: Pico de estresse detectado às 20:24. Monitorando parâmetros de taquicardia e hipercortisolismo.");
 });
