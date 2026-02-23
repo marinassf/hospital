@@ -13,8 +13,9 @@
     /* Cores de Monitoramento */
     --danger-red: #d32f2f;
     --warning-orange: #f57c00;
-    --mood-blue: #1976d2;
+    --mood-blue: #3f51b5; /* Azul índigo para representar a tristeza/apatia */
     --success-green: #4caf50;
+    --fatigue-gray: #78909c;
 }
 
 body {
@@ -103,14 +104,14 @@ body {
     font-weight: 700;
 }
 
-/* Estilo especial para o link do Chip - Alterado para vermelho (perigo) */
+/* Estilo para o link do Chip - Azul Índigo (Tristeza) */
 .chip-link {
     background: rgba(255, 255, 255, 0.05);
     border-left: 4px solid transparent;
 }
 
 .chip-link.active {
-    border-left: 4px solid var(--danger-red);
+    border-left: 4px solid var(--mood-blue);
 }
 
 .pulse-dot {
@@ -120,29 +121,17 @@ body {
     margin-right: 10px;
 }
 
-/* Bolinha pulsante vermelha para indicar alerta */
-.pulse-dot.status-danger {
-    background-color: var(--danger-red);
-    box-shadow: 0 0 0 rgba(211, 47, 47, 0.4);
-    animation: pulseDanger 1s infinite;
-    /* Pulsando mais rápido */
+/* Bolinha pulsante azul escuro (Atenção para Humor) */
+.pulse-dot.status-attention {
+    background-color: var(--mood-blue);
+    box-shadow: 0 0 0 rgba(63, 81, 181, 0.4);
+    animation: pulseMood 2.5s infinite; /* Pulso mais lento, melancólico */
 }
 
-@keyframes pulseDanger {
-    0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7);
-    }
-
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 8px rgba(211, 47, 47, 0);
-    }
-
-    100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(211, 47, 47, 0);
-    }
+@keyframes pulseMood {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(63, 81, 181, 0.6); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(63, 81, 181, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(63, 81, 181, 0); }
 }
 
 .sidebar-footer {
@@ -182,8 +171,7 @@ body {
 .patient-info span {
     display: block;
     font-size: 0.75rem;
-    color: var(--danger-red);
-    /* Destacando o modo alerta no cabeçalho */
+    color: var(--mood-blue);
     font-weight: bold;
     margin-top: 3px;
 }
@@ -198,15 +186,8 @@ body {
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .card {
@@ -228,7 +209,7 @@ body {
    NEUROCHIP MONITOR
    ========================================= */
 .chip-dashboard-header {
-    background: linear-gradient(135deg, #37474f 0%, #212121 100%);
+    background: linear-gradient(135deg, #283593 0%, #1a237e 100%); /* Fundo azul noturno/melancólico */
     color: white;
     padding: 20px;
     border-radius: 8px;
@@ -236,9 +217,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
-    /* Sombra avermelhada */
-    border: 1px solid #d32f2f;
+    box-shadow: 0 4px 15px rgba(26, 35, 126, 0.3);
 }
 
 .chip-info h2 {
@@ -254,22 +233,9 @@ body {
     font-family: monospace;
 }
 
-.badge-live.danger {
-    color: #ff5252;
+.badge-live.attention {
+    color: #8c9eff;
     font-weight: bold;
-    animation: blinkText 1s infinite;
-}
-
-@keyframes blinkText {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
 }
 
 .badge-stable {
@@ -286,13 +252,13 @@ body {
 .battery-bar {
     width: 100px;
     height: 6px;
-    background: #546e7a;
+    background: #3949ab;
     border-radius: 3px;
     margin-top: 5px;
     overflow: hidden;
 }
 
-/* Alertas de Estado (Perigo/Estresse) */
+/* Alertas de Estado (Tristeza/Atenção) */
 .health-alert {
     padding: 15px;
     border-radius: 6px;
@@ -302,38 +268,15 @@ body {
     margin-bottom: 25px;
 }
 
-.health-alert.danger {
-    background-color: #ffebee;
-    border: 1px solid #ffcdd2;
-    color: #b71c1c;
+.health-alert.attention {
+    background-color: #e8eaf6;
+    border: 1px solid #c5cae9;
+    color: #1a237e;
 }
 
-.alert-symbol.danger {
-    color: #d32f2f;
-    font-size: 1.5rem;
-    animation: shake 0.5s infinite;
-}
-
-@keyframes shake {
-    0% {
-        transform: translateX(0);
-    }
-
-    25% {
-        transform: translateX(-2px);
-    }
-
-    50% {
-        transform: translateX(0);
-    }
-
-    75% {
-        transform: translateX(2px);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
+.alert-symbol.attention {
+    color: #3f51b5;
+    font-size: 1.8rem;
 }
 
 .alert-content h4 {
@@ -344,6 +287,7 @@ body {
 .alert-content p {
     margin: 0;
     font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 /* Grid de Métricas */
@@ -365,14 +309,13 @@ body {
     flex-direction: column;
 }
 
-.danger-card {
-    border-top: 4px solid var(--danger-red);
-    background-color: #fffafb;
+.success-card {
+    border-top: 4px solid var(--success-green);
 }
 
-.warning-card {
-    border-top: 4px solid var(--warning-orange);
-    background-color: #fffdfa;
+.mood-card {
+    border-top: 4px solid var(--mood-blue);
+    background-color: #f8f9fa; /* Fundo levemente cinza */
 }
 
 .mc-header {
@@ -409,12 +352,12 @@ body {
     border-radius: 3px;
 }
 
-.bar-fill.danger {
-    background: var(--danger-red);
+.bar-fill.success {
+    background: var(--success-green);
 }
 
-.bar-fill.warning {
-    background: var(--warning-orange);
+.bar-fill.mood {
+    background: var(--mood-blue);
 }
 
 .mc-status {
@@ -428,24 +371,21 @@ body {
     margin: 0;
 }
 
-/* EKG Animado (Rápido/Taquicardia) */
+/* EKG Animado (Calmo/Normal) */
 .ekg-line {
     height: 30px;
     width: 100%;
     margin: 5px 0 15px 0;
 }
 
-.ekg-line.fast polyline {
+.ekg-line.calm polyline {
     stroke-dasharray: 100;
     stroke-dashoffset: 100;
-    animation: drawEKG 0.7s linear infinite;
-    /* 0.7s = batimento muito rápido */
+    animation: drawEKG 3.5s linear infinite; /* Batimento lento e calmo */
 }
 
 @keyframes drawEKG {
-    to {
-        stroke-dashoffset: 0;
-    }
+    to { stroke-dashoffset: 0; }
 }
 
 /* Timeline */
@@ -480,13 +420,9 @@ body {
     border: 2px solid white;
 }
 
-.bio-timeline .danger::before {
-    background: var(--danger-red);
-}
-
-.bio-timeline .normal::before {
-    background: #90a4ae;
-}
+.bio-timeline .attention::before { background: var(--mood-blue); }
+.bio-timeline .success::before { background: var(--success-green); }
+.bio-timeline .danger::before { background: var(--danger-red); }
 
 .bio-timeline .time {
     font-weight: bold;
@@ -508,18 +444,12 @@ body {
 }
 
 /* Classe utilitária JS */
-.bpm-danger {
-    color: var(--danger-red) !important;
-    transition: opacity 0.1s ease;
+.bpm-normal {
+    color: var(--success-green) !important;
+    transition: opacity 0.5s ease;
 }
 
 @media (max-width: 768px) {
-    .dashboard-container {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        height: auto;
-    }
+    .dashboard-container { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; }
 }

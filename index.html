@@ -23,7 +23,7 @@
                     <li><a href="#" class="nav-link" data-content="inicio">Início</a></li>
 
                     <li><a href="#" class="nav-link chip-link active" data-content="neurochip">
-                            <span class="pulse-dot status-danger"></span> Monitoramento (Chip)
+                            <span class="pulse-dot status-attention"></span> Monitoramento (Chip)
                         </a></li>
 
                     <li><a href="#" class="nav-link" data-content="resultados">Meus Resultados</a></li>
@@ -45,7 +45,7 @@
                 <h1 id="page-title">Monitoramento (Chip)</h1>
                 <div class="patient-info">
                     Paciente: <strong>MARINA SANTANA FREITAS</strong>
-                    <span>ID CHIP: 884-XJ-09 (Ativo - Modo Alerta)</span>
+                    <span>ID CHIP: 884-XJ-09 (Ativo - Modo Recuperação)</span>
                 </div>
             </header>
 
@@ -64,118 +64,111 @@
                         <div class="chip-info">
                             <h2>Bio-Monitoramento Integral</h2>
                             <div class="chip-badges">
-                                <span class="badge-live danger">● ALERTA ATIVO</span>
+                                <span class="badge-live attention">● RECUPERAÇÃO ATIVA</span>
                                 <span class="badge-stable">Sincronizado: <span id="clock-live">--:--:--</span></span>
                             </div>
                         </div>
                         <div class="chip-battery">
-                            <span>Bateria do Implante: 96%</span>
+                            <span>Bateria do Implante: 95%</span>
                             <div class="battery-bar">
-                                <div style="width:96%; background-color: #4caf50;"></div>
+                                <div style="width:95%; background-color: #4caf50;"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="health-alert danger">
-                        <div class="alert-symbol danger">⚠️</div>
+                    <div class="health-alert attention">
+                        <div class="alert-symbol attention">🧠</div>
                         <div class="alert-content">
-                            <h4>ANOMALIA FISIOLÓGICA DETECTADA</h4>
-                            <p>Parâmetros indicam resposta aguda de estresse/ansiedade. Recomenda-se pausa imediata e
-                                exercícios de respiração.</p>
+                            <h4>ATENÇÃO: ESTADO DE HUMOR BAIXO</h4>
+                            <p>Sinais vitais (coração e respiração) normalizados após o pico de estresse. No entanto, os níveis de neurotransmissores indicam acentuada apatia e tristeza. Recomendamos atividades relaxantes e acolhimento.</p>
                         </div>
                     </div>
 
                     <div class="metrics-grid">
 
-                        <div class="metric-card danger-card">
+                        <div class="metric-card success-card">
                             <div class="mc-header">
-                                <span>Nível de Cortisol (Vigília)</span>
-                                <i class="icon-stress" style="color: #d32f2f;">⚡</i>
+                                <span>Nível de Cortisol</span>
+                                <i class="icon-stress" style="color: #4caf50;">⚡</i>
                             </div>
-                            <div class="mc-value" style="color: #d32f2f;">28.7 <small>mcg/dL</small></div>
+                            <div class="mc-value" style="color: #333;">11.2 <small>mcg/dL</small></div>
                             <div class="mc-graph-bar">
-                                <div class="bar-fill danger" style="width: 92%;"></div>
+                                <div class="bar-fill success" style="width: 35%;"></div>
                             </div>
-                            <div class="mc-status">Status: <strong>Pico Elevado</strong></div>
-                            <p class="mc-desc">Sobrecarga metabólica detectada.</p>
+                            <div class="mc-status">Status: <strong>Normalizado</strong></div>
+                            <p class="mc-desc">Resposta de estresse dissipada.</p>
                         </div>
 
-                        <div class="metric-card warning-card">
+                        <div class="metric-card mood-card">
                             <div class="mc-header">
-                                <span>Índice Dopaminérgico</span>
-                                <i class="icon-mood" style="color: #f57c00;">💧</i>
+                                <span>Índice Dopamina/Serotonina</span>
+                                <i class="icon-mood" style="color: #3f51b5;">💧</i>
                             </div>
-                            <div class="mc-value" style="color: #f57c00;">Baixo <small>Fluxo</small></div>
+                            <div class="mc-value" style="color: #3f51b5;">Crítico <small>Baixo</small></div>
                             <div class="mc-graph-bar">
-                                <div class="bar-fill warning" style="width: 30%;"></div>
+                                <div class="bar-fill mood" style="width: 15%;"></div>
                             </div>
-                            <div class="mc-status">Status: <strong>Tensão/Irritabilidade</strong></div>
-                            <p class="mc-desc">Desequilíbrio de neurotransmissores.</p>
+                            <div class="mc-status" style="color: #3f51b5;">Status: <strong>Tristeza / Apatia</strong></div>
+                            <p class="mc-desc">Queda pós-estresse. Déficit de motivação.</p>
                         </div>
 
-                        <div class="metric-card danger-card">
+                        <div class="metric-card success-card">
                             <div class="mc-header">
                                 <span>Frequência Cardíaca</span>
-                                <i class="icon-heart" style="color: #d32f2f;">❤️</i>
+                                <i class="icon-heart" style="color: #4caf50;">❤️</i>
                             </div>
-                            <div class="mc-value"><span id="live-bpm" class="bpm-danger">124</span> <small>bpm</small>
-                            </div>
+                            <div class="mc-value"><span id="live-bpm" class="bpm-normal">65</span> <small>bpm</small></div>
 
-                            <svg class="ekg-line fast" viewBox="0 0 100 20" preserveAspectRatio="none">
-                                <polyline points="0,10 20,10 25,2 30,18 35,10 60,10 65,2 70,18 75,10 100,10"
-                                    style="fill:none;stroke:#d32f2f;stroke-width:2" />
+                            <svg class="ekg-line calm" viewBox="0 0 100 20" preserveAspectRatio="none">
+                                <polyline points="0,10 30,10 35,5 40,15 45,10 80,10 85,5 90,15 95,10 100,10"
+                                    style="fill:none;stroke:#4caf50;stroke-width:2" />
                             </svg>
 
-                            <div class="mc-status" style="color: #d32f2f;">Status: <strong>Taquicardia Leve</strong>
-                            </div>
-                            <p class="mc-desc">Ritmo acelerado induzido por estresse.</p>
+                            <div class="mc-status">Status: <strong>Bradicardia Leve (Repouso)</strong></div>
+                            <p class="mc-desc">Ritmo cardíaco calmo e estável.</p>
                         </div>
 
-                        <div class="metric-card warning-card">
+                        <div class="metric-card mood-card">
                             <div class="mc-header">
-                                <span>Ciclo Circadiano</span>
-                                <i class="icon-sun" style="color: #f57c00;">🧠</i>
+                                <span>Estado Energético</span>
+                                <i class="icon-sun" style="color: #78909c;">🔋</i>
                             </div>
-                            <div class="mc-value" style="color: #f57c00;">Hiper <small>Alerta</small></div>
+                            <div class="mc-value" style="color: #78909c;">Fadiga <small>Mental</small></div>
                             <div class="sleep-detail">
-                                <span style="color: #d32f2f;">Temp: 37.2°C</span>
-                                <span>Oxt: 97%</span>
+                                <span>Temp: 36.5°C</span>
+                                <span>Oxt: 98%</span>
                             </div>
-                            <div class="mc-status">Status: <strong>Sobrecarga Sensorial</strong></div>
-                            <p class="mc-desc">Atividade Gama/Beta excessiva.</p>
+                            <div class="mc-status">Status: <strong>Letargia</strong></div>
+                            <p class="mc-desc">Baixa energia corporal detectada.</p>
                         </div>
                     </div>
 
                     <div class="card timeline-card">
-                        <h3>Linha do Tempo Biológica (Hoje)</h3>
+                        <h3>Linha do Tempo Biológica (Atualização Recente)</h3>
                         <ul class="bio-timeline">
 
-                            <li class="event danger"
-                                style="border-left: 3px solid #d32f2f; padding-left: 15px; margin-bottom: 20px;">
-                                <span class="time" id="last-update-time"
-                                    style="color: #d32f2f; font-weight: bold;">--:--</span>
+                            <li class="event attention"
+                                style="border-left: 3px solid #3f51b5; padding-left: 15px; margin-bottom: 20px;">
+                                <span class="time" style="color: #3f51b5; font-weight: bold;">10:33</span>
                                 <div class="details">
-                                    <strong style="color: #b71c1c;">Monitoramento Ativo: Tentando Estabilizar</strong>
-                                    <p>Sistema registrando variações contínuas. Reações de luta ou fuga fisiológicas
-                                        ainda presentes em background.</p>
+                                    <strong style="color: #283593;">Queda de Humor Registrada</strong>
+                                    <p>Após a dissipação do cortisol, os receptores de serotonina entraram em refratariedade. O paciente encontra-se em estado fisiológico de tristeza e exaustão emocional.</p>
                                 </div>
                             </li>
 
-                            <li class="event danger"
-                                style="border-left: 3px solid #d32f2f; padding-left: 15px; margin-bottom: 20px;">
+                            <li class="event success" style="border-left: 3px solid #4caf50; padding-left: 15px; margin-bottom: 20px;">
+                                <span class="time" style="color: #2e7d32; font-weight: bold;">21:45</span>
+                                <div class="details">
+                                    <strong style="color: #1b5e20;">Estabilização Fisiológica</strong>
+                                    <p>Os batimentos cardíacos voltaram à casa dos 60 bpm. A respiração estável foi retomada.</p>
+                                </div>
+                            </li>
+
+                            <li class="event danger" style="border-left: 3px solid #d32f2f; padding-left: 15px; margin-bottom: 20px;">
                                 <span class="time" style="color: #d32f2f; font-weight: bold;">20:24</span>
                                 <div class="details">
                                     <strong style="color: #b71c1c;">Pico de Estresse Agudo Detectado</strong>
-                                    <p>Elevação súbita de cortisol plasmático e aumento rápido da frequência cardíaca.
-                                        Disparo do sistema nervoso simpático.</p>
-                                </div>
-                            </li>
-
-                            <li class="event normal">
-                                <span class="time">08:50</span>
-                                <div class="details">
-                                    <strong>Despertar Fisiológico</strong>
-                        
+                                    <p>Elevação súbita de cortisol plasmático e aumento rápido da frequência cardíaca.</p>
                                 </div>
                             </li>
                         </ul>
