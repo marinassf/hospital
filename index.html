@@ -23,7 +23,7 @@
                     <li><a href="#" class="nav-link" data-content="inicio">Início</a></li>
 
                     <li><a href="#" class="nav-link chip-link active" data-content="neurochip">
-                            <span class="pulse-dot status-attention"></span> Monitoramento (Chip)
+                            <span class="pulse-dot status-ok"></span> Monitoramento (Chip)
                         </a></li>
 
                     <li><a href="#" class="nav-link" data-content="resultados">Meus Resultados</a></li>
@@ -45,7 +45,7 @@
                 <h1 id="page-title">Monitoramento (Chip)</h1>
                 <div class="patient-info">
                     Paciente: <strong>MARINA SANTANA FREITAS</strong>
-                    <span>ID CHIP: 884-XJ-09 (Ativo - Modo Recuperação)</span>
+                    <span>ID CHIP: 884-XJ-09 (Ativo - Modo Padrão)</span>
                 </div>
             </header>
 
@@ -64,7 +64,7 @@
                         <div class="chip-info">
                             <h2>Bio-Monitoramento Integral</h2>
                             <div class="chip-badges">
-                                <span class="badge-live attention">● RECUPERAÇÃO ATIVA</span>
+                                <span class="badge-live success">● ESTÁVEL (AO VIVO)</span>
                                 <span class="badge-stable">Sincronizado: <span id="clock-live">--:--:--</span></span>
                             </div>
                         </div>
@@ -76,11 +76,11 @@
                         </div>
                     </div>
 
-                    <div class="health-alert attention">
-                        <div class="alert-symbol attention">🧠</div>
+                    <div class="health-alert success">
+                        <div class="alert-symbol success">✓</div>
                         <div class="alert-content">
-                            <h4>ATENÇÃO: ESTADO DE HUMOR BAIXO</h4>
-                            <p>Sinais vitais (coração e respiração) normalizados após o pico de estresse. No entanto, os níveis de neurotransmissores indicam acentuada apatia e tristeza. Recomendamos atividades relaxantes e acolhimento.</p>
+                            <h4>HOMEOSTASE MANTIDA</h4>
+                            <p>Todos os parâmetros fisiológicos e neurológicos encontram-se dentro da faixa ideal. Nenhuma anomalia detectada no momento.</p>
                         </div>
                     </div>
 
@@ -88,28 +88,28 @@
 
                         <div class="metric-card success-card">
                             <div class="mc-header">
-                                <span>Nível de Cortisol</span>
+                                <span>Nível de Cortisol (Vigília)</span>
                                 <i class="icon-stress" style="color: #4caf50;">⚡</i>
                             </div>
-                            <div class="mc-value" style="color: #333;">11.2 <small>mcg/dL</small></div>
+                            <div class="mc-value" style="color: #333;">12.4 <small>mcg/dL</small></div>
                             <div class="mc-graph-bar">
-                                <div class="bar-fill success" style="width: 35%;"></div>
+                                <div class="bar-fill success" style="width: 40%;"></div>
                             </div>
-                            <div class="mc-status">Status: <strong>Normalizado</strong></div>
-                            <p class="mc-desc">Resposta de estresse dissipada.</p>
+                            <div class="mc-status">Status: <strong>Normal (Dia)</strong></div>
+                            <p class="mc-desc">Energia metabólica adequada.</p>
                         </div>
 
-                        <div class="metric-card mood-card">
+                        <div class="metric-card optimal-card">
                             <div class="mc-header">
-                                <span>Índice Dopamina/Serotonina</span>
-                                <i class="icon-mood" style="color: #3f51b5;">💧</i>
+                                <span>Índice Dopaminérgico</span>
+                                <i class="icon-mood" style="color: #2196f3;">💧</i>
                             </div>
-                            <div class="mc-value" style="color: #3f51b5;">Crítico <small>Baixo</small></div>
+                            <div class="mc-value" style="color: #1976d2;">Ótimo <small>Fluxo</small></div>
                             <div class="mc-graph-bar">
-                                <div class="bar-fill mood" style="width: 15%;"></div>
+                                <div class="bar-fill optimal" style="width: 85%;"></div>
                             </div>
-                            <div class="mc-status" style="color: #3f51b5;">Status: <strong>Tristeza / Apatia</strong></div>
-                            <p class="mc-desc">Queda pós-estresse. Déficit de motivação.</p>
+                            <div class="mc-status" style="color: #1565c0;">Status: <strong>Focado / Bem-estar</strong></div>
+                            <p class="mc-desc">Neurotransmissores em equilíbrio.</p>
                         </div>
 
                         <div class="metric-card success-card">
@@ -117,58 +117,58 @@
                                 <span>Frequência Cardíaca</span>
                                 <i class="icon-heart" style="color: #4caf50;">❤️</i>
                             </div>
-                            <div class="mc-value"><span id="live-bpm" class="bpm-normal">65</span> <small>bpm</small></div>
+                            <div class="mc-value"><span id="live-bpm" class="bpm-normal">72</span> <small>bpm</small></div>
 
                             <svg class="ekg-line calm" viewBox="0 0 100 20" preserveAspectRatio="none">
                                 <polyline points="0,10 30,10 35,5 40,15 45,10 80,10 85,5 90,15 95,10 100,10"
                                     style="fill:none;stroke:#4caf50;stroke-width:2" />
                             </svg>
 
-                            <div class="mc-status">Status: <strong>Bradicardia Leve (Repouso)</strong></div>
-                            <p class="mc-desc">Ritmo cardíaco calmo e estável.</p>
+                            <div class="mc-status">Status: <strong>Ritmo Sinusal</strong></div>
+                            <p class="mc-desc">Normocardia (Repouso Ativo).</p>
                         </div>
 
-                        <div class="metric-card mood-card">
+                        <div class="metric-card optimal-card">
                             <div class="mc-header">
-                                <span>Estado Energético</span>
-                                <i class="icon-sun" style="color: #78909c;">🔋</i>
+                                <span>Ciclo Circadiano</span>
+                                <i class="icon-sun" style="color: #f57c00;">☀️</i>
                             </div>
-                            <div class="mc-value" style="color: #78909c;">Fadiga <small>Mental</small></div>
+                            <div class="mc-value" style="color: #e65100;">Ativo <small>Dia</small></div>
                             <div class="sleep-detail">
-                                <span>Temp: 36.5°C</span>
-                                <span>Oxt: 98%</span>
+                                <span>Temp: 36.6°C</span>
+                                <span>Oxt: 99%</span>
                             </div>
-                            <div class="mc-status">Status: <strong>Letargia</strong></div>
-                            <p class="mc-desc">Baixa energia corporal detectada.</p>
+                            <div class="mc-status">Status: <strong>Plena Vigília</strong></div>
+                            <p class="mc-desc">Atividade Beta predominante.</p>
                         </div>
                     </div>
 
                     <div class="card timeline-card">
-                        <h3>Linha do Tempo Biológica (Atualização Recente)</h3>
+                        <h3>Linha do Tempo Biológica (Hoje)</h3>
                         <ul class="bio-timeline">
 
-                            <li class="event attention"
-                                style="border-left: 3px solid #3f51b5; padding-left: 15px; margin-bottom: 20px;">
+                            <li class="event success"
+                                style="border-left: 3px solid #4caf50; padding-left: 15px; margin-bottom: 20px;">
+                                <span class="time" style="color: #2e7d32; font-weight: bold;">17:57</span>
+                                <div class="details">
+                                    <strong style="color: #1b5e20;">Homeostase Restaurada</strong>
+                                    <p>Todos os parâmetros vitais, de humor e níveis de neurotransmissores voltaram à normalidade. O paciente encontra-se estável, calmo e com humor equilibrado.</p>
+                                </div>
+                            </li>
+
+                            <li class="event attention" style="border-left: 3px solid #3f51b5; padding-left: 15px; margin-bottom: 20px;">
                                 <span class="time" style="color: #3f51b5; font-weight: bold;">10:33</span>
                                 <div class="details">
                                     <strong style="color: #283593;">Queda de Humor Registrada</strong>
-                                    <p>Após a dissipação do cortisol, os receptores de serotonina entraram em refratariedade. O paciente encontra-se em estado fisiológico de tristeza e exaustão emocional.</p>
+                                    <p>Baixa transitória de serotonina identificada. Quadro revertido ao longo do dia com sucesso.</p>
                                 </div>
                             </li>
 
-                            <li class="event success" style="border-left: 3px solid #4caf50; padding-left: 15px; margin-bottom: 20px;">
-                                <span class="time" style="color: #2e7d32; font-weight: bold;">21:45</span>
+                            <li class="event normal">
+                                <span class="time">09:10</span>
                                 <div class="details">
-                                    <strong style="color: #1b5e20;">Estabilização Fisiológica</strong>
-                                    <p>Os batimentos cardíacos voltaram à casa dos 60 bpm. A respiração estável foi retomada.</p>
-                                </div>
-                            </li>
-
-                            <li class="event danger" style="border-left: 3px solid #d32f2f; padding-left: 15px; margin-bottom: 20px;">
-                                <span class="time" style="color: #d32f2f; font-weight: bold;">20:24</span>
-                                <div class="details">
-                                    <strong style="color: #b71c1c;">Pico de Estresse Agudo Detectado</strong>
-                                    <p>Elevação súbita de cortisol plasmático e aumento rápido da frequência cardíaca.</p>
+                                    <strong>Despertar Fisiológico</strong>
+                                    <p>Aumento natural de cortisol (ciclo circadiano) para induzir o despertar. Sono reparador confirmado (8h40m).</p>
                                 </div>
                             </li>
                         </ul>

@@ -47,23 +47,23 @@ document.addEventListener('DOMContentLoaded', function () {
             const timeString = now.toLocaleTimeString('pt-BR');
             
             clockElement.textContent = timeString;
-            // O horário da timeline foi fixado no HTML e não é mais alterado aqui.
+            // O horário da timeline foi fixado estaticamente em 17:57 no HTML.
         }
     }
     // Atualiza a cada segundo
     setInterval(updateClock, 1000);
     updateClock();
 
-    // --- 3. SIMULAÇÃO DE BATIMENTOS CARDÍACOS (Recuperação: 62 - 68 BPM) ---
-    // Faixa normal de batimentos, coração calmo pós-estresse.
+    // --- 3. SIMULAÇÃO DE BATIMENTOS CARDÍACOS (Normal: 68 - 75 BPM) ---
+    // Faixa estritamente saudável, sem estresse e sem letargia.
     function simulateHeartBeat() {
         const bpmDisplay = document.getElementById('live-bpm');
         
         if (bpmDisplay) {
-            const minBPM = 62;
-            const maxBPM = 68;
+            const minBPM = 68;
+            const maxBPM = 75;
             
-            // Gera valor randômico na faixa relaxada
+            // Gera valor randômico na faixa normal
             const currentBPM = Math.floor(Math.random() * (maxBPM - minBPM + 1)) + minBPM;
             
             bpmDisplay.textContent = currentBPM;
@@ -71,18 +71,18 @@ document.addEventListener('DOMContentLoaded', function () {
             // Garante a cor verde (Sinal Vital OK)
             bpmDisplay.style.color = '#4caf50'; 
             
-            // Animação de "pulso" lenta (coração batendo devagar e tranquilo)
-            bpmDisplay.style.opacity = '0.5';
+            // Animação de "pulso" com ritmo saudável e constante
+            bpmDisplay.style.opacity = '0.6';
             setTimeout(() => { 
                 bpmDisplay.style.opacity = '1'; 
-            }, 500);
+            }, 300);
         }
     }
     
-    // Atualiza a cada 3.5 segundos (Ritmo lento simulando relaxamento/apatia)
-    setInterval(simulateHeartBeat, 3500);
+    // Atualiza a cada 2.5 segundos (Ritmo cardíaco de repouso saudável e não letárgico)
+    setInterval(simulateHeartBeat, 2500);
     simulateHeartBeat(); 
 
-    // Log de sistema atualizado para o novo cenário
-    console.log("Einstein NeuroChip [ATENÇÃO]: Sinais vitais cardiovasculares estabilizados. Detectada redução acentuada nos receptores de serotonina. Acompanhando estado de apatia.");
+    // Log de sistema limpo e normal
+    console.log("Einstein NeuroChip [OK]: Parâmetros totalmente normalizados. Homeostase atingida e mantida com sucesso.");
 });

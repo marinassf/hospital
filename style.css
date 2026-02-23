@@ -13,9 +13,9 @@
     /* Cores de Monitoramento */
     --danger-red: #d32f2f;
     --warning-orange: #f57c00;
-    --mood-blue: #3f51b5; /* Azul índigo para representar a tristeza/apatia */
+    --mood-blue: #3f51b5; 
     --success-green: #4caf50;
-    --fatigue-gray: #78909c;
+    --optimal-blue: #2196f3;
 }
 
 body {
@@ -104,14 +104,14 @@ body {
     font-weight: 700;
 }
 
-/* Estilo para o link do Chip - Azul Índigo (Tristeza) */
+/* Estilo para o link do Chip - Verde (Tudo OK) */
 .chip-link {
     background: rgba(255, 255, 255, 0.05);
     border-left: 4px solid transparent;
 }
 
 .chip-link.active {
-    border-left: 4px solid var(--mood-blue);
+    border-left: 4px solid #00e676;
 }
 
 .pulse-dot {
@@ -121,17 +121,17 @@ body {
     margin-right: 10px;
 }
 
-/* Bolinha pulsante azul escuro (Atenção para Humor) */
-.pulse-dot.status-attention {
-    background-color: var(--mood-blue);
-    box-shadow: 0 0 0 rgba(63, 81, 181, 0.4);
-    animation: pulseMood 2.5s infinite; /* Pulso mais lento, melancólico */
+/* Bolinha pulsante verde (Tudo OK) */
+.pulse-dot.status-ok {
+    background-color: #00e676;
+    box-shadow: 0 0 0 rgba(0, 230, 118, 0.4);
+    animation: pulseOk 2s infinite; 
 }
 
-@keyframes pulseMood {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(63, 81, 181, 0.6); }
-    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(63, 81, 181, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(63, 81, 181, 0); }
+@keyframes pulseOk {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(0, 230, 118, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 230, 118, 0); }
 }
 
 .sidebar-footer {
@@ -171,8 +171,8 @@ body {
 .patient-info span {
     display: block;
     font-size: 0.75rem;
-    color: var(--mood-blue);
-    font-weight: bold;
+    color: #666; /* Cor neutra para o modo normal */
+    font-weight: normal;
     margin-top: 3px;
 }
 
@@ -209,7 +209,7 @@ body {
    NEUROCHIP MONITOR
    ========================================= */
 .chip-dashboard-header {
-    background: linear-gradient(135deg, #283593 0%, #1a237e 100%); /* Fundo azul noturno/melancólico */
+    background: linear-gradient(135deg, #263238 0%, #37474f 100%); /* Fundo escuro padrão */
     color: white;
     padding: 20px;
     border-radius: 8px;
@@ -217,7 +217,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(26, 35, 126, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .chip-info h2 {
@@ -233,8 +233,8 @@ body {
     font-family: monospace;
 }
 
-.badge-live.attention {
-    color: #8c9eff;
+.badge-live.success {
+    color: #00e676;
     font-weight: bold;
 }
 
@@ -252,13 +252,13 @@ body {
 .battery-bar {
     width: 100px;
     height: 6px;
-    background: #3949ab;
+    background: #546e7a;
     border-radius: 3px;
     margin-top: 5px;
     overflow: hidden;
 }
 
-/* Alertas de Estado (Tristeza/Atenção) */
+/* Alertas de Estado (Sucesso/Tudo OK) */
 .health-alert {
     padding: 15px;
     border-radius: 6px;
@@ -268,15 +268,15 @@ body {
     margin-bottom: 25px;
 }
 
-.health-alert.attention {
-    background-color: #e8eaf6;
-    border: 1px solid #c5cae9;
-    color: #1a237e;
+.health-alert.success {
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    color: #1b5e20;
 }
 
-.alert-symbol.attention {
-    color: #3f51b5;
-    font-size: 1.8rem;
+.alert-symbol.success {
+    color: #2e7d32;
+    font-size: 1.5rem;
 }
 
 .alert-content h4 {
@@ -313,9 +313,8 @@ body {
     border-top: 4px solid var(--success-green);
 }
 
-.mood-card {
-    border-top: 4px solid var(--mood-blue);
-    background-color: #f8f9fa; /* Fundo levemente cinza */
+.optimal-card {
+    border-top: 4px solid var(--optimal-blue);
 }
 
 .mc-header {
@@ -352,13 +351,8 @@ body {
     border-radius: 3px;
 }
 
-.bar-fill.success {
-    background: var(--success-green);
-}
-
-.bar-fill.mood {
-    background: var(--mood-blue);
-}
+.bar-fill.success { background: var(--success-green); }
+.bar-fill.optimal { background: var(--optimal-blue); }
 
 .mc-status {
     font-size: 0.9rem;
@@ -381,7 +375,7 @@ body {
 .ekg-line.calm polyline {
     stroke-dasharray: 100;
     stroke-dashoffset: 100;
-    animation: drawEKG 3.5s linear infinite; /* Batimento lento e calmo */
+    animation: drawEKG 2.5s linear infinite; /* Ritmo saudável, um pouco mais dinâmico que letargia */
 }
 
 @keyframes drawEKG {
@@ -422,7 +416,7 @@ body {
 
 .bio-timeline .attention::before { background: var(--mood-blue); }
 .bio-timeline .success::before { background: var(--success-green); }
-.bio-timeline .danger::before { background: var(--danger-red); }
+.bio-timeline .normal::before { background: #90a4ae; }
 
 .bio-timeline .time {
     font-weight: bold;
@@ -446,7 +440,7 @@ body {
 /* Classe utilitária JS */
 .bpm-normal {
     color: var(--success-green) !important;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.3s ease;
 }
 
 @media (max-width: 768px) {
