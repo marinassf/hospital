@@ -104,7 +104,6 @@ body {
     font-weight: 700;
 }
 
-/* Estilo para o link do Chip - Verde (Tudo OK) */
 .chip-link {
     background: rgba(255, 255, 255, 0.05);
     border-left: 4px solid transparent;
@@ -121,7 +120,6 @@ body {
     margin-right: 10px;
 }
 
-/* Bolinha pulsante verde (Tudo OK) */
 .pulse-dot.status-ok {
     background-color: #00e676;
     box-shadow: 0 0 0 rgba(0, 230, 118, 0.4);
@@ -171,7 +169,7 @@ body {
 .patient-info span {
     display: block;
     font-size: 0.75rem;
-    color: #666; /* Cor neutra para o modo normal */
+    color: #666;
     font-weight: normal;
     margin-top: 3px;
 }
@@ -209,7 +207,7 @@ body {
    NEUROCHIP MONITOR
    ========================================= */
 .chip-dashboard-header {
-    background: linear-gradient(135deg, #263238 0%, #37474f 100%); /* Fundo escuro padrão */
+    background: linear-gradient(135deg, #263238 0%, #37474f 100%);
     color: white;
     padding: 20px;
     border-radius: 8px;
@@ -258,7 +256,79 @@ body {
     overflow: hidden;
 }
 
-/* Alertas de Estado (Sucesso/Tudo OK) */
+/* MENSAGEM DO MÉDICO */
+.doctor-message-card {
+    background-color: #e3f2fd;
+    border-left: 5px solid #1976d2;
+    border-radius: 8px;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.dm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #bbdefb;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+}
+
+.dm-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dm-icon {
+    font-size: 1.5rem;
+}
+
+.dm-title h3 {
+    margin: 0;
+    color: #1565c0;
+    font-size: 1.15rem;
+}
+
+.dm-date {
+    background-color: #1976d2;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.dm-body p {
+    margin: 0 0 12px 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+.doctor-recommendations {
+    margin: 10px 0 15px 0;
+    padding-left: 20px;
+    color: #2c3e50;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.doctor-recommendations li {
+    margin-bottom: 5px;
+}
+
+.dm-signature {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #1565c0;
+    border-top: 1px dashed #90caf9;
+    padding-top: 15px;
+}
+
+/* ALERTAS DE ESTADO */
 .health-alert {
     padding: 15px;
     border-radius: 6px;
@@ -290,7 +360,7 @@ body {
     line-height: 1.4;
 }
 
-/* Grid de Métricas */
+/* GRID DE MÉTRICAS */
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -309,13 +379,8 @@ body {
     flex-direction: column;
 }
 
-.success-card {
-    border-top: 4px solid var(--success-green);
-}
-
-.optimal-card {
-    border-top: 4px solid var(--optimal-blue);
-}
+.success-card { border-top: 4px solid var(--success-green); }
+.optimal-card { border-top: 4px solid var(--optimal-blue); }
 
 .mc-header {
     display: flex;
@@ -337,7 +402,6 @@ body {
     font-weight: 400;
 }
 
-/* Barra Interna */
 .mc-graph-bar {
     height: 6px;
     background: #eee;
@@ -365,7 +429,6 @@ body {
     margin: 0;
 }
 
-/* EKG Animado (Calmo/Normal) */
 .ekg-line {
     height: 30px;
     width: 100%;
@@ -375,14 +438,12 @@ body {
 .ekg-line.calm polyline {
     stroke-dasharray: 100;
     stroke-dashoffset: 100;
-    animation: drawEKG 2.5s linear infinite; /* Ritmo saudável, um pouco mais dinâmico que letargia */
+    animation: drawEKG 2.5s linear infinite; 
 }
 
-@keyframes drawEKG {
-    to { stroke-dashoffset: 0; }
-}
+@keyframes drawEKG { to { stroke-dashoffset: 0; } }
 
-/* Timeline */
+/* TIMELINE */
 .bio-timeline {
     list-style: none;
     padding: 0;
@@ -437,10 +498,263 @@ body {
     color: #666;
 }
 
-/* Classe utilitária JS */
 .bpm-normal {
     color: var(--success-green) !important;
     transition: opacity 0.3s ease;
+}
+
+/* =========================================
+   SKINCARE ROUTINE - NOVO DESIGN
+   ========================================= */
+
+.derm-intro-card {
+    background-color: #fce4ec;
+    border-left: 5px solid #d81b60;
+    border-radius: 8px;
+    padding: 20px 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.derm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f8bbd0;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+}
+
+.derm-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.derm-title h3 {
+    margin: 0;
+    color: #ad1457;
+    font-size: 1.15rem;
+}
+
+.derm-date {
+    background-color: #d81b60;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.derm-body p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4a148c;
+}
+
+.skincare-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+@media (min-width: 992px) {
+    .skincare-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.skincare-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.morning-card .sc-header {
+    background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+    border-bottom: 2px solid #ffca28;
+    color: #f57f17;
+}
+
+.night-card .sc-header {
+    background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+    border-bottom: 2px solid #5c6bc0;
+    color: #283593;
+}
+
+.sc-header {
+    padding: 20px;
+}
+
+.sc-header h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sc-header span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.sc-body {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.routine-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.routine-steps li {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+}
+
+.routine-steps li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.step-title {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.step-tag {
+    font-size: 0.75rem;
+    background: #e0e0e0;
+    color: #555;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 5px;
+    font-weight: 500;
+}
+
+.step-tag.important {
+    background: #ffebee;
+    color: #d32f2f;
+}
+
+.step-product {
+    font-size: 0.95rem;
+    color: #1565c0;
+    font-weight: 500;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.product-or {
+    font-size: 0.8rem;
+    color: #888;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.step-note {
+    font-size: 0.85rem;
+    color: #666;
+    background: #f9f9f9;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border-left: 3px solid #ccc;
+}
+
+.step-note.highlight {
+    background: #fff3e0;
+    border-left: 3px solid #ff9800;
+    color: #e65100;
+}
+
+/* Blocos de Alternância Noturna */
+.smart-alternation {
+    margin-top: 25px;
+    border-top: 2px solid #e0e0e0;
+    padding-top: 20px;
+}
+
+.sa-header h5 {
+    margin: 0 0 5px 0;
+    color: #283593;
+    font-size: 1.1rem;
+}
+
+.sa-header p {
+    margin: 0 0 15px 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.alt-block {
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.blue-block {
+    background-color: #e3f2fd;
+    border: 1px solid #90caf9;
+}
+
+.purple-block {
+    background-color: #f3e5f5;
+    border: 1px solid #ce93d8;
+}
+
+.alt-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.blue-block .alt-title { color: #1565c0; }
+.purple-block .alt-title { color: #6a1b9a; }
+
+.alt-products {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+.alt-products li {
+    margin-bottom: 5px;
+}
+
+.warning-box {
+    display: flex;
+    gap: 10px;
+    background: #fff;
+    padding: 12px;
+    border-radius: 4px;
+    margin-top: 15px;
+    border-left: 3px solid #f44336;
+}
+
+.warning-icon {
+    font-size: 1.2rem;
+}
+
+.warning-box p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #d32f2f;
+    line-height: 1.4;
 }
 
 @media (max-width: 768px) {

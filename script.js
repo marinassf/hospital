@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const targetSection = document.getElementById(tabId + '-content');
         if (targetSection) targetSection.classList.add('active');
 
-        // Atualiza Título
+        // Atualiza Título Superior da Página
         const activeLink = document.querySelector(`.nav-link[data-content="${tabId}"]`);
         if (activeLink && pageTitle) {
             pageTitle.textContent = activeLink.innerText.replace('●', '').trim();
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Inicia na aba do NeuroChip
+    // Inicia na aba do NeuroChip por padrão
     activateTab('neurochip');
 
 
@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const timeString = now.toLocaleTimeString('pt-BR');
             
             clockElement.textContent = timeString;
-            // O horário da timeline foi fixado estaticamente em 17:57 no HTML.
         }
     }
     // Atualiza a cada segundo
@@ -55,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
     updateClock();
 
     // --- 3. SIMULAÇÃO DE BATIMENTOS CARDÍACOS (Normal: 68 - 75 BPM) ---
-    // Faixa estritamente saudável, sem estresse e sem letargia.
     function simulateHeartBeat() {
         const bpmDisplay = document.getElementById('live-bpm');
         
@@ -79,10 +77,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     
-    // Atualiza a cada 2.5 segundos (Ritmo cardíaco de repouso saudável e não letárgico)
+    // Atualiza a cada 2.5 segundos
     setInterval(simulateHeartBeat, 2500);
     simulateHeartBeat(); 
 
-    // Log de sistema limpo e normal
-    console.log("Einstein NeuroChip [OK]: Parâmetros totalmente normalizados. Homeostase atingida e mantida com sucesso.");
+    // Log de sistema
+    console.log("Einstein NeuroChip [OK]: Parâmetros estabilizados. Nova mensagem médica inserida no sistema de notificações com sucesso.");
 });
