@@ -12,10 +12,9 @@
 
     /* Cores de Monitoramento */
     --danger-red: #d32f2f;
-    --warning-orange: #f57c00;
-    --mood-blue: #3f51b5; 
+    --warning-orange: #ff9800;
+    --mood-blue: #1976d2;
     --success-green: #4caf50;
-    --optimal-blue: #2196f3;
 }
 
 body {
@@ -116,20 +115,28 @@ body {
 .pulse-dot {
     width: 8px;
     height: 8px;
+    background-color: #00e676;
     border-radius: 50%;
     margin-right: 10px;
-}
-
-.pulse-dot.status-ok {
-    background-color: #00e676;
     box-shadow: 0 0 0 rgba(0, 230, 118, 0.4);
-    animation: pulseOk 2s infinite; 
+    animation: pulse 2s infinite;
 }
 
-@keyframes pulseOk {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(0, 230, 118, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 230, 118, 0); }
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(0, 230, 118, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 230, 118, 0);
+    }
 }
 
 .sidebar-footer {
@@ -170,7 +177,6 @@ body {
     display: block;
     font-size: 0.75rem;
     color: #666;
-    font-weight: normal;
     margin-top: 3px;
 }
 
@@ -184,8 +190,15 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .card {
@@ -231,7 +244,7 @@ body {
     font-family: monospace;
 }
 
-.badge-live.success {
+.badge-live {
     color: #00e676;
     font-weight: bold;
 }
@@ -256,7 +269,9 @@ body {
     overflow: hidden;
 }
 
-/* MENSAGEM DO MÉDICO */
+/* =========================================
+   MENSAGENS DO MÉDICO
+   ========================================= */
 .doctor-message-card {
     background-color: #e3f2fd;
     border-left: 5px solid #1976d2;
@@ -299,6 +314,7 @@ body {
     font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .dm-body p {
@@ -308,16 +324,37 @@ body {
     color: #2c3e50;
 }
 
-.doctor-recommendations {
-    margin: 10px 0 15px 0;
+/* Caixa de Receitas e Dicas */
+.dm-recipe-box {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 1px dashed #64b5f6;
+}
+
+.dm-recipe-box h4 {
+    color: #1565c0;
+    margin: 20px 0 10px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid #bbdefb;
+    padding-bottom: 5px;
+}
+
+.dm-recipe-box h4:first-of-type {
+    margin-top: 10px;
+}
+
+.dm-recipe-box ul {
+    margin: 0 0 15px 0;
     padding-left: 20px;
     color: #2c3e50;
     font-size: 0.95rem;
-    line-height: 1.6;
 }
 
-.doctor-recommendations li {
-    margin-bottom: 5px;
+.dm-recipe-box li {
+    margin-bottom: 6px;
+    line-height: 1.5;
 }
 
 .dm-signature {
@@ -328,7 +365,7 @@ body {
     padding-top: 15px;
 }
 
-/* ALERTAS DE ESTADO */
+/* Alertas de Estado */
 .health-alert {
     padding: 15px;
     border-radius: 6px;
@@ -357,10 +394,9 @@ body {
 .alert-content p {
     margin: 0;
     font-size: 0.9rem;
-    line-height: 1.4;
 }
 
-/* GRID DE MÉTRICAS */
+/* Grid de Métricas */
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -379,8 +415,13 @@ body {
     flex-direction: column;
 }
 
-.success-card { border-top: 4px solid var(--success-green); }
-.optimal-card { border-top: 4px solid var(--optimal-blue); }
+.success-card {
+    border-top: 4px solid var(--success-green);
+}
+
+.info-card {
+    border-top: 4px solid var(--mood-blue);
+}
 
 .mc-header {
     display: flex;
@@ -394,14 +435,17 @@ body {
 .mc-value {
     font-size: 2rem;
     font-weight: 700;
+    color: #333;
     margin: 10px 0;
 }
 
 .mc-value small {
     font-size: 0.9rem;
     font-weight: 400;
+    color: #777;
 }
 
+/* Barra Interna */
 .mc-graph-bar {
     height: 6px;
     background: #eee;
@@ -415,11 +459,17 @@ body {
     border-radius: 3px;
 }
 
-.bar-fill.success { background: var(--success-green); }
-.bar-fill.optimal { background: var(--optimal-blue); }
+.bar-fill.success {
+    background: var(--success-green);
+}
+
+.bar-fill.optimal {
+    background: #2196f3;
+}
 
 .mc-status {
     font-size: 0.9rem;
+    color: #333;
     margin-bottom: 5px;
 }
 
@@ -429,21 +479,26 @@ body {
     margin: 0;
 }
 
+/* EKG Animado (Calmo) */
 .ekg-line {
     height: 30px;
     width: 100%;
     margin: 5px 0 15px 0;
 }
 
-.ekg-line.calm polyline {
+.ekg-line polyline {
     stroke-dasharray: 100;
     stroke-dashoffset: 100;
-    animation: drawEKG 2.5s linear infinite; 
+    animation: drawEKG 3s linear infinite;
 }
 
-@keyframes drawEKG { to { stroke-dashoffset: 0; } }
+@keyframes drawEKG {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
 
-/* TIMELINE */
+/* Timeline */
 .bio-timeline {
     list-style: none;
     padding: 0;
@@ -475,9 +530,22 @@ body {
     border: 2px solid white;
 }
 
-.bio-timeline .attention::before { background: var(--mood-blue); }
-.bio-timeline .success::before { background: var(--success-green); }
-.bio-timeline .normal::before { background: #90a4ae; }
+.bio-timeline .success::before {
+    background: var(--success-green);
+}
+
+.bio-timeline .normal::before {
+    background: #90a4ae;
+}
+
+/* Nova classe para o alerta de estresse */
+.bio-timeline .warning {
+    border-left-color: #ffcc80;
+}
+
+.bio-timeline .warning::before {
+    background: var(--warning-orange);
+}
 
 .bio-timeline .time {
     font-weight: bold;
@@ -498,266 +566,19 @@ body {
     color: #666;
 }
 
+/* Classe utilitária JS */
 .bpm-normal {
-    color: var(--success-green) !important;
+    color: #2e7d32 !important;
     transition: opacity 0.3s ease;
 }
 
-/* =========================================
-   SKINCARE ROUTINE - NOVO DESIGN
-   ========================================= */
-
-.derm-intro-card {
-    background-color: #fce4ec;
-    border-left: 5px solid #d81b60;
-    border-radius: 8px;
-    padding: 20px 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.derm-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #f8bbd0;
-    padding-bottom: 12px;
-    margin-bottom: 15px;
-}
-
-.derm-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.derm-title h3 {
-    margin: 0;
-    color: #ad1457;
-    font-size: 1.15rem;
-}
-
-.derm-date {
-    background-color: #d81b60;
-    color: white;
-    padding: 3px 10px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.derm-body p {
-    margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #4a148c;
-}
-
-.skincare-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
-}
-
-@media (min-width: 992px) {
-    .skincare-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-.skincare-card {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.morning-card .sc-header {
-    background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
-    border-bottom: 2px solid #ffca28;
-    color: #f57f17;
-}
-
-.night-card .sc-header {
-    background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
-    border-bottom: 2px solid #5c6bc0;
-    color: #283593;
-}
-
-.sc-header {
-    padding: 20px;
-}
-
-.sc-header h4 {
-    margin: 0 0 5px 0;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.sc-header span {
-    font-size: 0.85rem;
-    font-weight: 500;
-    opacity: 0.8;
-}
-
-.sc-body {
-    padding: 20px;
-    flex-grow: 1;
-}
-
-.routine-steps {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.routine-steps li {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px dashed #eee;
-}
-
-.routine-steps li:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.step-title {
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 5px;
-    font-size: 1rem;
-}
-
-.step-tag {
-    font-size: 0.75rem;
-    background: #e0e0e0;
-    color: #555;
-    padding: 2px 8px;
-    border-radius: 10px;
-    margin-left: 5px;
-    font-weight: 500;
-}
-
-.step-tag.important {
-    background: #ffebee;
-    color: #d32f2f;
-}
-
-.step-product {
-    font-size: 0.95rem;
-    color: #1565c0;
-    font-weight: 500;
-    margin-bottom: 8px;
-    line-height: 1.4;
-}
-
-.product-or {
-    font-size: 0.8rem;
-    color: #888;
-    font-style: italic;
-    font-weight: normal;
-}
-
-.step-note {
-    font-size: 0.85rem;
-    color: #666;
-    background: #f9f9f9;
-    padding: 8px 12px;
-    border-radius: 4px;
-    border-left: 3px solid #ccc;
-}
-
-.step-note.highlight {
-    background: #fff3e0;
-    border-left: 3px solid #ff9800;
-    color: #e65100;
-}
-
-/* Blocos de Alternância Noturna */
-.smart-alternation {
-    margin-top: 25px;
-    border-top: 2px solid #e0e0e0;
-    padding-top: 20px;
-}
-
-.sa-header h5 {
-    margin: 0 0 5px 0;
-    color: #283593;
-    font-size: 1.1rem;
-}
-
-.sa-header p {
-    margin: 0 0 15px 0;
-    font-size: 0.85rem;
-    color: #666;
-}
-
-.alt-block {
-    border-radius: 6px;
-    padding: 15px;
-    margin-bottom: 15px;
-}
-
-.blue-block {
-    background-color: #e3f2fd;
-    border: 1px solid #90caf9;
-}
-
-.purple-block {
-    background-color: #f3e5f5;
-    border: 1px solid #ce93d8;
-}
-
-.alt-title {
-    font-weight: 700;
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-}
-
-.blue-block .alt-title { color: #1565c0; }
-.purple-block .alt-title { color: #6a1b9a; }
-
-.alt-products {
-    margin: 0;
-    padding-left: 20px;
-    font-size: 0.9rem;
-    color: #444;
-    line-height: 1.5;
-}
-
-.alt-products li {
-    margin-bottom: 5px;
-}
-
-.warning-box {
-    display: flex;
-    gap: 10px;
-    background: #fff;
-    padding: 12px;
-    border-radius: 4px;
-    margin-top: 15px;
-    border-left: 3px solid #f44336;
-}
-
-.warning-icon {
-    font-size: 1.2rem;
-}
-
-.warning-box p {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #d32f2f;
-    line-height: 1.4;
-}
-
 @media (max-width: 768px) {
-    .dashboard-container { flex-direction: column; }
-    .sidebar { width: 100%; height: auto; }
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
 }
