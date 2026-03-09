@@ -60,35 +60,34 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(updateClock, 1000);
     updateClock();
 
-    // --- 3. SIMULAÇÃO DE BATIMENTOS CARDÍACOS (68 - 77 BPM) ---
-    // Faixa estrita de normalidade para repouso/atividade leve
+    // --- 3. SIMULAÇÃO DE BATIMENTOS CARDÍACOS (ALERTA - 100 a 115 BPM) ---
     function simulateHeartBeat() {
         const bpmDisplay = document.getElementById('live-bpm');
         
         if (bpmDisplay) {
-            const minBPM = 68;
-            const maxBPM = 77;
+            const minBPM = 100; // Piso de taquicardia leve
+            const maxBPM = 115; // Pico de ansiedade
             
-            // Gera valor randômico na faixa saudável
+            // Gera valor randômico no estado atual
             const currentBPM = Math.floor(Math.random() * (maxBPM - minBPM + 1)) + minBPM;
             
             bpmDisplay.textContent = currentBPM;
             
-            // Garante cor verde
-            bpmDisplay.style.color = '#2e7d32'; 
+            // Garante cor de alerta
+            bpmDisplay.style.color = '#d32f2f'; 
             
-            // Animação de "pulso" suave via opacidade
+            // Animação de "pulso" mais rápida via opacidade
             bpmDisplay.style.opacity = '0.6';
             setTimeout(() => { 
                 bpmDisplay.style.opacity = '1'; 
-            }, 300);
+            }, 150);
         }
     }
     
-    // Atualiza a cada 4 segundos (Ritmo calmo)
-    setInterval(simulateHeartBeat, 4000);
+    // Atualiza a cada 2 segundos para dar sensação de ansiedade
+    setInterval(simulateHeartBeat, 2000);
     simulateHeartBeat(); 
 
     // Log de sistema
-    console.log("Einstein NeuroChip: Modo Diurno Ativo. Homeostase confirmada.");
+    console.log("Einstein NeuroChip: ALERTA. Pico de estresse e ansiedade mantidos. Aconselhando descanso.");
 });

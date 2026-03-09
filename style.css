@@ -12,7 +12,7 @@
 
     /* Cores de Monitoramento */
     --danger-red: #d32f2f;
-    --warning-orange: #ff9800;
+    --warning-orange: #f57c00;
     --mood-blue: #1976d2;
     --success-green: #4caf50;
 }
@@ -109,32 +109,23 @@ body {
 }
 
 .chip-link.active {
-    border-left: 4px solid #00e676;
+    border-left: 4px solid #ff5252;
 }
 
-.pulse-dot {
+.pulse-dot.status-alert {
     width: 8px;
     height: 8px;
-    background-color: #00e676;
+    background-color: #ff5252;
     border-radius: 50%;
     margin-right: 10px;
-    box-shadow: 0 0 0 rgba(0, 230, 118, 0.4);
-    animation: pulse 2s infinite;
+    box-shadow: 0 0 0 rgba(255, 82, 82, 0.4);
+    animation: pulseAlert 1s infinite;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7);
-    }
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 6px rgba(0, 230, 118, 0);
-    }
-    100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 230, 118, 0);
-    }
+@keyframes pulseAlert {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(255, 82, 82, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 82, 82, 0); }
 }
 
 .sidebar-footer {
@@ -188,14 +179,8 @@ body {
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .card {
@@ -242,7 +227,6 @@ body {
 }
 
 .badge-live {
-    color: #00e676;
     font-weight: bold;
 }
 
@@ -321,6 +305,35 @@ body {
     color: #2c3e50;
 }
 
+.dm-recipe-box {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 1px dashed #64b5f6;
+}
+
+.dm-recipe-box h4 {
+    color: #1565c0;
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #bbdefb;
+    padding-bottom: 5px;
+}
+
+.dm-recipe-box ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #2c3e50;
+    font-size: 0.95rem;
+    list-style-type: square;
+}
+
+.dm-recipe-box li {
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
 .dm-signature {
     margin-top: 20px;
     font-size: 0.9rem;
@@ -339,14 +352,14 @@ body {
     margin-bottom: 25px;
 }
 
-.health-alert.success {
-    background-color: #e8f5e9;
-    border: 1px solid #c8e6c9;
-    color: #1b5e20;
+.health-alert.danger {
+    background-color: #ffebee;
+    border: 1px solid #ffcdd2;
+    color: #b71c1c;
 }
 
-.alert-symbol.success {
-    color: #2e7d32;
+.alert-symbol.danger {
+    color: var(--danger-red);
     font-size: 1.5rem;
 }
 
@@ -379,12 +392,12 @@ body {
     flex-direction: column;
 }
 
-.success-card {
-    border-top: 4px solid var(--success-green);
+.danger-card {
+    border-top: 4px solid var(--danger-red);
 }
 
-.info-card {
-    border-top: 4px solid var(--mood-blue);
+.warning-card {
+    border-top: 4px solid var(--warning-orange);
 }
 
 .mc-header {
@@ -423,12 +436,12 @@ body {
     border-radius: 3px;
 }
 
-.bar-fill.success {
-    background: var(--success-green);
+.bar-fill.danger {
+    background: var(--danger-red);
 }
 
-.bar-fill.optimal {
-    background: #2196f3;
+.bar-fill.warning {
+    background: var(--warning-orange);
 }
 
 .mc-status {
@@ -443,23 +456,22 @@ body {
     margin: 0;
 }
 
-/* EKG Animado (Calmo) */
+/* EKG Animado (Acelerado para o Alerta) */
 .ekg-line {
     height: 30px;
     width: 100%;
     margin: 5px 0 15px 0;
 }
 
-.ekg-line polyline {
+.ekg-line.fast polyline {
     stroke-dasharray: 100;
     stroke-dashoffset: 100;
-    animation: drawEKG 3s linear infinite;
+    animation: drawEKG 1s linear infinite; /* Rápido! */
+    stroke: var(--danger-red);
 }
 
 @keyframes drawEKG {
-    to {
-        stroke-dashoffset: 0;
-    }
+    to { stroke-dashoffset: 0; }
 }
 
 /* Timeline */
@@ -494,18 +506,16 @@ body {
     border: 2px solid white;
 }
 
-.bio-timeline .success::before {
-    background: var(--success-green);
+.bio-timeline .danger {
+    border-left-color: #ef9a9a;
 }
-
-.bio-timeline .normal::before {
-    background: #90a4ae;
+.bio-timeline .danger::before {
+    background: var(--danger-red);
 }
 
 .bio-timeline .warning {
     border-left-color: #ffcc80;
 }
-
 .bio-timeline .warning::before {
     background: var(--warning-orange);
 }
@@ -530,18 +540,12 @@ body {
 }
 
 /* Classe utilitária JS */
-.bpm-normal {
-    color: #2e7d32 !important;
-    transition: opacity 0.3s ease;
+.bpm-danger {
+    color: var(--danger-red) !important;
+    transition: opacity 0.2s ease;
 }
 
 @media (max-width: 768px) {
-    .dashboard-container {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        height: auto;
-    }
+    .dashboard-container { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; }
 }

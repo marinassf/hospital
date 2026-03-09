@@ -23,7 +23,7 @@
                     <li><a href="#" class="nav-link" data-content="inicio">Início</a></li>
 
                     <li><a href="#" class="nav-link chip-link active" data-content="neurochip">
-                            <span class="pulse-dot status-ok"></span> Monitoramento (Chip)
+                            <span class="pulse-dot status-alert"></span> Monitoramento (Chip)
                         </a></li>
 
                     <li><a href="#" class="nav-link" data-content="resultados">Meus Resultados</a></li>
@@ -60,11 +60,12 @@
 
                 <section id="neurochip-content" class="content-section active">
 
-                    <div class="chip-dashboard-header">
+                    <div class="chip-dashboard-header"
+                        style="background: linear-gradient(135deg, #37474f 0%, #b71c1c 100%);">
                         <div class="chip-info">
                             <h2>Bio-Monitoramento Integral</h2>
                             <div class="chip-badges">
-                                <span class="badge-live">● AO VIVO</span>
+                                <span class="badge-live" style="color: #ff5252;">● ALERTA ATIVO</span>
                                 <span class="badge-stable">Sincronizado: <span id="clock-live">--:--:--</span></span>
                             </div>
                         </div>
@@ -80,116 +81,159 @@
                         <div class="dm-header">
                             <div class="dm-title">
                                 <span class="dm-icon">📩</span>
-                                <h3>Retorno sobre avaliação do ambiente</h3>
+                                <h3>Nova Dieta - Resistência à Insulina / SOP</h3>
                             </div>
                             <span class="dm-date">Novo</span>
                         </div>
                         <div class="dm-body">
-                            <p>Boa tarde, Marina!</p>
-                            <p>O tipo de ferrugem que você me mostrou faz mal até para alguém saudável, então sugiro que
-                                se desfaça desses itens o quanto antes.</p>
-                            <p>Esse bichinho que você me mostrou é uma larva de mosca-de-ralo. Em tese, não faz mal
-                                diretamente ao ser humano, mas indica que há muita sujeira nesse local e, como você me
-                                disse que é um lugar um tanto antigo, talvez seja muito difícil para você conseguir
-                                limpar completamente.</p>
-                            <p>Espero que trate desses problemas o quanto antes e que já esteja seguindo seu plano
-                                alimentar.</p>
-                            <p>Nos falamos em breve. Até mais!</p>
+                            <p>Bom dia, Marina!</p>
+                            <p>Solicitei à nossa nutricionista uma dieta para te dar um norte nesse início. Lembre de
+                                tirar um dia livre e não se privar, sem exageros, de comer o que você gosta.</p>
+
+                            <div class="dm-recipe-box">
+                                <h4>Dieta – 7 dias</h4>
+                                <ul>
+                                    <li><strong>Dia 1:</strong> Café da manhã: pão francês + ovo mexido + queijo <br>
+                                        Almoço: frango grelhado, arroz, feijão, salada de alface, tomate e cenoura <br>
+                                        Lanche: castanhas ou chocolate 70% <br> Jantar: panqueca de banana com cacau
+                                    </li>
+                                    <br>
+                                    <li><strong>Dia 2:</strong> Café da manhã: panqueca de banana com cacau <br> Almoço:
+                                        carne moída, arroz, feijão, couve refogada <br> Lanche: pão com pasta de atum
+                                        <br> Jantar: omelete com tomate + salada de rúcula</li>
+                                    <br>
+                                    <li><strong>Dia 3:</strong> Café da manhã: pão francês + ovo + queijo <br> Almoço:
+                                        frango desfiado, arroz, cenoura refogada, salada de alface <br> Lanche:
+                                        castanhas ou chocolate 70% <br> Jantar: atum com tomate + salada de alface ou
+                                        rúcula</li>
+                                    <br>
+                                    <li><strong>Dia 4:</strong> Café da manhã: mingau de banana com cacau e aveia <br>
+                                        Almoço: frango grelhado, arroz, feijão, couve refogada <br> Lanche: chocolate
+                                        70% <br> Jantar: hambúrguer caseiro (pão, carne, queijo, tomate, alface)</li>
+                                    <br>
+                                    <li><strong>Dia 5:</strong> Café da manhã: pão francês + ovo mexido <br> Almoço:
+                                        frango, arroz, feijão, salada de alface, tomate e cenoura <br> Lanche: pão com
+                                        atum <br> Jantar: panqueca de banana com cacau</li>
+                                    <br>
+                                    <li><strong>Dia 6:</strong> Café da manhã: panqueca de banana <br> Almoço: frango
+                                        desfiado, arroz, batata cozida, salada de alface e rúcula <br> Lanche: castanhas
+                                        ou queijo <br> Jantar: omelete com tomate</li>
+                                    <br>
+                                    <li><strong>Dia 7:</strong> Café da manhã: mingau de banana com cacau <br> Almoço:
+                                        atum, arroz, feijão, couve refogada <br> Lanche: chocolate 70% <br> Jantar:
+                                        frango desfiado + salada de alface, tomate e rúcula</li>
+                                </ul>
+                            </div>
+
                             <div class="dm-signature">
-                                <strong>Equipe Médica & Infectologia</strong>
+                                <strong>Equipe Médica & Nutrição</strong>
                             </div>
                         </div>
                     </div>
-                    <div class="health-alert success">
-                        <div class="alert-symbol success">✓</div>
+                    <div class="health-alert danger">
+                        <div class="alert-symbol danger">⚠</div>
                         <div class="alert-content">
-                            <h4>ESTABILIDADE MANTIDA</h4>
-                            <p>Parâmetros fisiológicos ideais para atividades diárias. Nenhuma anomalia detectada no
-                                momento.</p>
+                            <h4>ALERTA DE SISTEMA: INDÍCIOS DE ANSIEDADE</h4>
+                            <p>Temperatura corporal elevada e estresse não normalizado. Aconselhamos a paciente a
+                                deitar, descansar e respirar com muita calma.</p>
                         </div>
                     </div>
 
                     <div class="metrics-grid">
 
-                        <div class="metric-card success-card">
+                        <div class="metric-card danger-card">
                             <div class="mc-header">
                                 <span>Nível de Cortisol (Vigília)</span>
-                                <i class="icon-stress" style="color: #4caf50;">⚡</i>
+                                <i class="icon-stress" style="color: var(--danger-red);">⚡</i>
                             </div>
-                            <div class="mc-value">11.8 <small>mcg/dL</small></div>
+                            <div class="mc-value">25.3 <small>mcg/dL</small></div>
                             <div class="mc-graph-bar">
-                                <div class="bar-fill success" style="width: 40%;"></div>
+                                <div class="bar-fill danger" style="width: 90%;"></div>
                             </div>
-                            <div class="mc-status">Status: <strong>Normal (Tarde)</strong></div>
-                            <p class="mc-desc">Energia metabólica em equilíbrio.</p>
+                            <div class="mc-status" style="color: var(--danger-red);">Status: <strong>Elevado (Pico
+                                    Contínuo)</strong></div>
+                            <p class="mc-desc">O estresse ainda não normalizou.</p>
                         </div>
 
-                        <div class="metric-card success-card">
+                        <div class="metric-card warning-card">
                             <div class="mc-header">
                                 <span>Índice Dopaminérgico</span>
-                                <i class="icon-mood" style="color: #2196f3;">💧</i>
+                                <i class="icon-mood" style="color: var(--warning-orange);">💧</i>
                             </div>
-                            <div class="mc-value">Ótimo <small>Fluxo</small></div>
+                            <div class="mc-value">Baixo <small>Fluxo</small></div>
                             <div class="mc-graph-bar">
-                                <div class="bar-fill optimal" style="width: 85%;"></div>
+                                <div class="bar-fill warning" style="width: 35%;"></div>
                             </div>
-                            <div class="mc-status">Status: <strong>Motivado/Focado</strong></div>
-                            <p class="mc-desc">Neurotransmissores em equilíbrio.</p>
+                            <div class="mc-status" style="color: var(--warning-orange);">Status: <strong>Tenso /
+                                    Ansioso</strong></div>
+                            <p class="mc-desc">Neurotransmissores em desequilíbrio.</p>
                         </div>
 
-                        <div class="metric-card success-card">
+                        <div class="metric-card danger-card">
                             <div class="mc-header">
                                 <span>Frequência Cardíaca</span>
-                                <i class="icon-heart" style="color: #4caf50;">❤️</i>
+                                <i class="icon-heart" style="color: var(--danger-red);">❤️</i>
                             </div>
-                            <div class="mc-value"><span id="live-bpm" class="bpm-normal">72</span> <small>bpm</small>
+                            <div class="mc-value"><span id="live-bpm" class="bpm-danger">105</span> <small>bpm</small>
                             </div>
 
-                            <svg class="ekg-line" viewBox="0 0 100 20" preserveAspectRatio="none">
-                                <polyline points="0,10 30,10 35,5 40,15 45,10 80,10 85,5 90,15 95,10 100,10"
-                                    style="fill:none;stroke:#4caf50;stroke-width:2" />
+                            <svg class="ekg-line fast" viewBox="0 0 100 20" preserveAspectRatio="none">
+                                <polyline
+                                    points="0,10 15,10 20,5 25,15 30,10 45,10 50,5 55,15 60,10 75,10 80,5 85,15 90,10 100,10"
+                                    style="fill:none;stroke-width:2" />
                             </svg>
 
-                            <div class="mc-status">Status: <strong>Ritmo Sinusal</strong></div>
-                            <p class="mc-desc">Normocardia (Repouso Ativo).</p>
+                            <div class="mc-status" style="color: var(--danger-red);">Status: <strong>Taquicardia
+                                    Leve</strong></div>
+                            <p class="mc-desc">Batimentos acelerados. Respire fundo.</p>
                         </div>
 
-                        <div class="metric-card info-card">
+                        <div class="metric-card danger-card">
                             <div class="mc-header">
                                 <span>Ciclo Circadiano</span>
-                                <i class="icon-sun" style="color: #f57c00;">☀️</i>
+                                <i class="icon-sun" style="color: var(--danger-red);">☀️</i>
                             </div>
-                            <div class="mc-value">Ativo <small>Dia</small></div>
+                            <div class="mc-value">Alerta <small>Dia</small></div>
                             <div class="sleep-detail">
-                                <span>Temp: 36.6°C</span>
-                                <span>Oxt: 99%</span>
+                                <span style="color: var(--danger-red); font-weight: bold;">Temp: 37.9°C</span>
+                                <span>Oxt: 97%</span>
                             </div>
-                            <div class="mc-status">Status: <strong>Plena Vigília</strong></div>
-                            <p class="mc-desc">Atividade Beta (Foco) predominante.</p>
+                            <div class="mc-status">Status: <strong>Vigília Tensa</strong></div>
+                            <p class="mc-desc">Temperatura do corpo alta registrada.</p>
                         </div>
                     </div>
 
                     <div class="card timeline-card">
-                        <h3>Linha do Tempo Biológica (Hoje)</h3>
+                        <h3>Linha do Tempo Biológica (Histórico Crítico)</h3>
                         <ul class="bio-timeline">
 
-                            <li class="event success"
-                                style="border-left: 3px solid #4caf50; padding-left: 15px; margin-bottom: 20px;">
+                            <li class="event danger"
+                                style="border-left: 3px solid var(--danger-red); padding-left: 15px; margin-bottom: 20px;">
                                 <span class="time" id="last-update-time"
-                                    style="color: #4caf50; font-weight: bold;">--:--</span>
+                                    style="color: var(--danger-red); font-weight: bold;">--:--</span>
                                 <div class="details">
-                                    <strong style="color: #2e7d32;">Checagem de Rotina: Homeostase Confirmada</strong>
-                                    <p>Sistema operando perfeitamente em background. Parâmetros dentro da normalidade
-                                        para o período ativo.</p>
+                                    <strong style="color: var(--danger-red);">Checagem de Rotina: Crise de
+                                        Ansiedade</strong>
+                                    <p>Sistema detecta hipertermia, batimentos cardíacos acelerados e cortisol alto
+                                        contínuo. Recomendação: descansar imediatamente.</p>
                                 </div>
                             </li>
 
-                            <li class="event normal">
-                                <span class="time">11:05</span>
+                            <li class="event warning">
+                                <span class="time">10:45 (Hoje)</span>
                                 <div class="details">
-                                    <strong>Despertar</strong>
-                                    <p>Transição de ondas cerebrais (Delta para Beta). Aumento fisiológico da frequência
-                                        cardíaca e normalização respiratória após o repouso.</p>
+                                    <strong style="color: var(--warning-orange);">Despertar sob Tensão</strong>
+                                    <p>Paciente acordou, porém o estresse não normalizou. Temperatura corporal marcando
+                                        elevação fora do padrão matinal.</p>
+                                </div>
+                            </li>
+
+                            <li class="event danger">
+                                <span class="time">14:32 (Ontem)</span>
+                                <div class="details">
+                                    <strong style="color: var(--danger-red);">Pico de Estresse Muito Forte</strong>
+                                    <p>Registro de elevação severa de cortisol e instabilidade no sistema nervoso
+                                        autônomo. Início do quadro atual de tensão.</p>
                                 </div>
                             </li>
 
