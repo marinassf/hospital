@@ -60,34 +60,34 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(updateClock, 1000);
     updateClock();
 
-    // --- 3. SIMULAÇÃO DE BATIMENTOS CARDÍACOS (ATENÇÃO - 82 a 92 BPM) ---
+    // --- 3. SIMULAÇÃO DE BATIMENTOS CARDÍACOS (ALERTA - 105 a 120 BPM) ---
     function simulateHeartBeat() {
         const bpmDisplay = document.getElementById('live-bpm');
         
         if (bpmDisplay) {
-            const minBPM = 82; // Levemente acelerado
-            const maxBPM = 92; // Taquicardia muito leve / normalizando
+            const minBPM = 105; // Piso da taquicardia ativa
+            const maxBPM = 120; // Pico do resquício de pânico
             
             // Gera valor randômico no estado atual
             const currentBPM = Math.floor(Math.random() * (maxBPM - minBPM + 1)) + minBPM;
             
             bpmDisplay.textContent = currentBPM;
             
-            // Garante cor de alerta moderado (laranja)
-            bpmDisplay.style.color = '#f57c00'; 
+            // Garante cor de alerta (vermelho)
+            bpmDisplay.style.color = '#d32f2f'; 
             
-            // Animação de "pulso" intermediária
-            bpmDisplay.style.opacity = '0.7';
+            // Animação de "pulso" rápida
+            bpmDisplay.style.opacity = '0.5';
             setTimeout(() => { 
                 bpmDisplay.style.opacity = '1'; 
-            }, 200);
+            }, 150);
         }
     }
     
-    // Atualiza a cada 3 segundos (Ritmo moderado)
-    setInterval(simulateHeartBeat, 3000);
+    // Atualiza a cada 2 segundos (Ritmo acelerado do pânico)
+    setInterval(simulateHeartBeat, 2000);
     simulateHeartBeat(); 
 
     // Log de sistema
-    console.log("Einstein NeuroChip: ESTADO DE ATENÇÃO. Monitorando quadro de êmese e estabilização de batimentos.");
+    console.log("Einstein NeuroChip: ALERTA CRÍTICO. Pico de pânico recente detectado. Sugerindo exercícios de respiração.");
 });

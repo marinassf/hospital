@@ -109,33 +109,33 @@ body {
 }
 
 .chip-link.active {
-    border-left: 4px solid var(--warning-orange);
+    border-left: 4px solid var(--danger-red);
 }
 
-.pulse-dot.status-warning {
+.pulse-dot.status-alert {
     width: 8px;
     height: 8px;
-    background-color: var(--warning-orange);
+    background-color: #ff5252;
     border-radius: 50%;
     margin-right: 10px;
-    box-shadow: 0 0 0 rgba(245, 124, 0, 0.4);
-    animation: pulseWarning 1.5s infinite;
+    box-shadow: 0 0 0 rgba(255, 82, 82, 0.4);
+    animation: pulseAlert 1s infinite;
 }
 
-@keyframes pulseWarning {
+@keyframes pulseAlert {
     0% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(245, 124, 0, 0.7);
+        box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
     }
 
     70% {
         transform: scale(1);
-        box-shadow: 0 0 0 6px rgba(245, 124, 0, 0);
+        box-shadow: 0 0 0 6px rgba(255, 82, 82, 0);
     }
 
     100% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(245, 124, 0, 0);
+        box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
     }
 }
 
@@ -370,14 +370,14 @@ body {
     margin-bottom: 25px;
 }
 
-.health-alert.warning {
-    background-color: #fff3e0;
-    border: 1px solid #ffe0b2;
-    color: #e65100;
+.health-alert.danger {
+    background-color: #ffebee;
+    border: 1px solid #ffcdd2;
+    color: #b71c1c;
 }
 
-.alert-symbol.warning {
-    color: var(--warning-orange);
+.alert-symbol.danger {
+    color: var(--danger-red);
     font-size: 1.5rem;
 }
 
@@ -490,19 +490,19 @@ body {
     margin: 0;
 }
 
-/* EKG Animado (Moderado para Atenção) */
+/* EKG Animado (Acelerado para o Alerta) */
 .ekg-line {
     height: 30px;
     width: 100%;
     margin: 5px 0 15px 0;
 }
 
-.ekg-line.moderate polyline {
+.ekg-line.fast polyline {
     stroke-dasharray: 100;
     stroke-dashoffset: 100;
-    animation: drawEKG 2s linear infinite;
-    /* Ritmo intermediário */
-    stroke: var(--warning-orange);
+    animation: drawEKG 1s linear infinite;
+    /* Rápido! */
+    stroke: var(--danger-red);
 }
 
 @keyframes drawEKG {
@@ -587,8 +587,8 @@ body {
 }
 
 /* Classe utilitária JS */
-.bpm-warning {
-    color: var(--warning-orange) !important;
+.bpm-danger {
+    color: var(--danger-red) !important;
     transition: opacity 0.2s ease;
 }
 
