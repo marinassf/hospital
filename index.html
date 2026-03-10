@@ -23,7 +23,7 @@
                     <li><a href="#" class="nav-link" data-content="inicio">Início</a></li>
 
                     <li><a href="#" class="nav-link chip-link active" data-content="neurochip">
-                            <span class="pulse-dot status-alert"></span> Monitoramento (Chip)
+                            <span class="pulse-dot status-recovery"></span> Monitoramento (Chip)
                         </a></li>
 
                     <li><a href="#" class="nav-link" data-content="resultados">Meus Resultados</a></li>
@@ -45,7 +45,7 @@
                 <h1 id="page-title">Monitoramento (Chip)</h1>
                 <div class="patient-info">
                     Paciente: <strong>MARINA SANTANA FREITAS</strong>
-                    <span>ID CHIP: 884-XJ-09 (Ativo - Modo Noturno)</span>
+                    <span>ID CHIP: 884-XJ-09 (Ativo - Modo Diurno)</span>
                 </div>
             </header>
 
@@ -61,32 +61,60 @@
                 <section id="neurochip-content" class="content-section active">
 
                     <div class="chip-dashboard-header"
-                        style="background: linear-gradient(135deg, #37474f 0%, #b71c1c 100%);">
+                        style="background: linear-gradient(135deg, #37474f 0%, #0277bd 100%);">
                         <div class="chip-info">
                             <h2>Bio-Monitoramento Integral</h2>
                             <div class="chip-badges">
-                                <span class="badge-live" style="color: #ff5252;">● ALERTA ATIVO</span>
+                                <span class="badge-live" style="color: #81d4fa;">● RECUPERAÇÃO ATIVA</span>
                                 <span class="badge-stable">Sincronizado: <span id="clock-live">--:--:--</span></span>
                             </div>
                         </div>
                         <div class="chip-battery">
-                            <span>Bateria do Implante: 94%</span>
+                            <span>Bateria do Implante: 93%</span>
                             <div class="battery-bar">
-                                <div style="width:94%; background-color: #4caf50;"></div>
+                                <div style="width:93%; background-color: #4caf50;"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="doctor-message-card">
-                        <div class="dm-header">
+                    <div class="doctor-message-card" style="border-left-color: #0288d1; background-color: #e1f5fe;">
+                        <div class="dm-header" style="border-bottom-color: #b3e5fc;">
                             <div class="dm-title">
                                 <span class="dm-icon">📩</span>
-                                <h3>Nova Dieta - Resistência à Insulina / SOP</h3>
+                                <h3 style="color: #0277bd;">Recomendação de Repouso Absoluto</h3>
                             </div>
-                            <span class="dm-date">Novo</span>
+                            <span class="dm-date" style="background-color: #0288d1;">Urgente</span>
                         </div>
                         <div class="dm-body">
                             <p>Bom dia, Marina!</p>
+                            <p>Vi pelo seu monitoramento que a madrugada foi muito difícil e você conseguiu ter apenas
+                                <strong>1 hora e 48 minutos de sono</strong>. A crise de pânico finalmente passou e seus
+                                sinais vitais cardíacos se estabilizaram, mas é natural que o seu corpo esteja em um
+                                estado de exaustão extrema agora.</p>
+                            <p>Por isso, a indicação de hoje é clara: <strong>esqueça a dieta ou qualquer obrigação
+                                    estressante.</strong></p>
+                            <p>Tire o dia inteiramente para você relaxar. Faça as coisas que você gosta, assista a algo
+                                leve, e coma aquilo que te der vontade e te trouxer conforto emocional hoje. Não se
+                                prive neste momento.</p>
+                            <p>O seu sistema nervoso precisa de acolhimento para se recuperar da descarga de adrenalina
+                                e da privação de sono. Tente descansar e cochilar se sentir sono ao longo do dia. Estou
+                                acompanhando tudo daqui.</p>
+
+                            <div class="dm-signature" style="color: #0277bd; border-top-color: #81d4fa;">
+                                <strong>Equipe Médica & Psiquiatria</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doctor-message-card" style="opacity: 0.9;">
+                        <div class="dm-header">
+                            <div class="dm-title">
+                                <span class="dm-icon" style="filter: grayscale(1);">📩</span>
+                                <h3>Nova Dieta - Resistência à Insulina / SOP</h3>
+                            </div>
+                            <span class="dm-date" style="background-color: #90caf9; color: #1565c0;">Histórico</span>
+                        </div>
+                        <div class="dm-body">
                             <p>Solicitei à nossa nutricionista uma dieta para te dar um norte nesse início. Lembre de
                                 tirar um dia livre e não se privar, sem exageros, de comer o que você gosta.</p>
 
@@ -133,29 +161,31 @@
                             </div>
                         </div>
                     </div>
-                    <div class="health-alert danger">
-                        <div class="alert-symbol danger">⚠</div>
+                    <div class="health-alert info"
+                        style="background-color: #e3f2fd; border: 1px solid #bbdefb; color: #0d47a1;">
+                        <div class="alert-symbol info" style="color: #1976d2;">ℹ</div>
                         <div class="alert-content">
-                            <h4>ALERTA DE SISTEMA: CRISE RECENTE</h4>
-                            <p>Sinais vitais alterados devido a pico agudo de ansiedade/pânico ocorrido há poucos
-                                minutos. Recomendado uso de técnicas de respiração guiada e repouso imediato.</p>
+                            <h4 style="margin:0 0 5px 0;">INFORMATIVO: FADIGA EXTREMA</h4>
+                            <p style="margin:0; font-size: 0.9rem;">Crise de ansiedade normalizada. O sistema acusa
+                                privação severa de sono (1h48m). Reflexos, digestão e humor podem estar comprometidos
+                                hoje.</p>
                         </div>
                     </div>
 
                     <div class="metrics-grid">
 
-                        <div class="metric-card danger-card">
+                        <div class="metric-card warning-card">
                             <div class="mc-header">
                                 <span>Nível de Cortisol</span>
-                                <i class="icon-stress" style="color: var(--danger-red);">⚡</i>
+                                <i class="icon-stress" style="color: var(--warning-orange);">⚡</i>
                             </div>
-                            <div class="mc-value">27.5 <small>mcg/dL</small></div>
+                            <div class="mc-value">14.5 <small>mcg/dL</small></div>
                             <div class="mc-graph-bar">
-                                <div class="bar-fill danger" style="width: 95%;"></div>
+                                <div class="bar-fill warning" style="width: 55%;"></div>
                             </div>
-                            <div class="mc-status" style="color: var(--danger-red);">Status: <strong>Pico Agudo</strong>
-                            </div>
-                            <p class="mc-desc">Descarga hormonal recente detectada.</p>
+                            <div class="mc-status" style="color: var(--warning-orange);">Status: <strong>Residual
+                                    (Cansaço)</strong></div>
+                            <p class="mc-desc">Hormônios do estresse em declínio pós-crise.</p>
                         </div>
 
                         <div class="metric-card warning-card">
@@ -163,76 +193,84 @@
                                 <span>Índice Dopaminérgico</span>
                                 <i class="icon-mood" style="color: var(--warning-orange);">💧</i>
                             </div>
-                            <div class="mc-value">Baixo <small>Fluxo</small></div>
+                            <div class="mc-value">Baixo <small>Nível</small></div>
                             <div class="mc-graph-bar">
-                                <div class="bar-fill warning" style="width: 30%;"></div>
+                                <div class="bar-fill warning" style="width: 20%;"></div>
                             </div>
                             <div class="mc-status" style="color: var(--warning-orange);">Status: <strong>Exaustão
-                                    Nervosa</strong></div>
-                            <p class="mc-desc">Esgotamento pós-crise.</p>
+                                    Mental</strong></div>
+                            <p class="mc-desc">Receptores fadigados pela falta de sono.</p>
                         </div>
 
-                        <div class="metric-card danger-card">
+                        <div class="metric-card success-card">
                             <div class="mc-header">
                                 <span>Frequência Cardíaca</span>
-                                <i class="icon-heart" style="color: var(--danger-red);">❤️</i>
+                                <i class="icon-heart" style="color: var(--success-green);">❤️</i>
                             </div>
-                            <div class="mc-value"><span id="live-bpm" class="bpm-danger">112</span> <small>bpm</small>
+                            <div class="mc-value"><span id="live-bpm" class="bpm-normal">78</span> <small>bpm</small>
                             </div>
 
-                            <svg class="ekg-line fast" viewBox="0 0 100 20" preserveAspectRatio="none">
-                                <polyline
-                                    points="0,10 15,10 20,5 25,15 30,10 45,10 50,5 55,15 60,10 75,10 80,5 85,15 90,10 100,10"
-                                    style="fill:none;stroke-width:2" />
+                            <svg class="ekg-line normal" viewBox="0 0 100 20" preserveAspectRatio="none">
+                                <polyline points="0,10 30,10 35,5 40,15 45,10 80,10 85,5 90,15 95,10 100,10"
+                                    style="fill:none;stroke:#4caf50;stroke-width:2" />
                             </svg>
 
-                            <div class="mc-status" style="color: var(--danger-red);">Status: <strong>Taquicardia
-                                    Ativa</strong></div>
-                            <p class="mc-desc">Batimentos acelerados. Tente respirar fundo.</p>
+                            <div class="mc-status" style="color: var(--success-green);">Status:
+                                <strong>Normalizado</strong></div>
+                            <p class="mc-desc">Taquicardia dissipada. Ritmo calmo.</p>
                         </div>
 
-                        <div class="metric-card danger-card">
+                        <div class="metric-card warning-card">
                             <div class="mc-header">
                                 <span>Ciclo Circadiano</span>
-                                <i class="icon-sun" style="color: var(--danger-red);">🌙</i>
+                                <i class="icon-sun" style="color: var(--warning-orange);">🌙</i>
                             </div>
-                            <div class="mc-value">Alerta <small>Madrugada</small></div>
+                            <div class="mc-value">Déficit <small>Sono</small></div>
                             <div class="sleep-detail">
-                                <span style="color: var(--danger-red); font-weight: bold;">Temp: 37.6°C</span>
-                                <span>Oxt: 96%</span>
+                                <span style="color: var(--warning-orange); font-weight: bold;">Duração: 1h48m</span>
+                                <span>Oxt: 97%</span>
                             </div>
-                            <div class="mc-status">Status: <strong>Vigília Interrompida</strong></div>
-                            <p class="mc-desc">Alteração térmica por hiperventilação.</p>
+                            <div class="mc-status" style="color: var(--warning-orange);">Status: <strong>Privação de
+                                    Sono</strong></div>
+                            <p class="mc-desc">Bateria corporal operando na reserva.</p>
                         </div>
                     </div>
 
                     <div class="card timeline-card">
-                        <h3>Linha do Tempo Biológica (Histórico Crítico)</h3>
+                        <h3>Linha do Tempo Biológica (Histórico Completo)</h3>
                         <ul class="bio-timeline">
 
-                            <li class="event danger"
-                                style="border-left: 3px solid var(--danger-red); padding-left: 15px; margin-bottom: 20px;">
+                            <li class="event info"
+                                style="border-left: 3px solid #2196f3; padding-left: 15px; margin-bottom: 20px;">
                                 <span class="time" id="last-update-time"
-                                    style="color: var(--danger-red); font-weight: bold;">--:--</span>
+                                    style="color: #2196f3; font-weight: bold;">--:--</span>
                                 <div class="details">
-                                    <strong style="color: var(--danger-red);">Monitoramento: Estabilização
-                                        Pós-Crise</strong>
-                                    <p>O sistema está acompanhando a taquicardia remanescente da crise que acabou de
-                                        acontecer. Recomendamos focar na respiração.</p>
+                                    <strong style="color: #1976d2;">Monitoramento: Estabilização e Fadiga</strong>
+                                    <p>Crise de pânico dissipada. Coração e respiração operando normalmente, porém o
+                                        cérebro acusa alta necessidade de descanso reparador.</p>
+                                </div>
+                            </li>
+
+                            <li class="event warning">
+                                <span class="time">07:20 </span>
+                                <div class="details">
+                                    <strong style="color: var(--warning-orange);">Despertar Exausto</strong>
+                                    <p>Fim do ciclo de repouso. Paciente registrou apenas 1 hora e 48 minutos de sono
+                                        consolidado após a crise.</p>
                                 </div>
                             </li>
 
                             <li class="event danger">
                                 <span class="time">01:35 </span>
                                 <div class="details">
-                                    <strong style="color: var(--danger-red);">Crise de Pânico (Evento Recente)</strong>
-                                    <p>Alerta Crítico: Novo episódio agudo de ansiedade. Taquicardia severa, tremores e
-                                        hiperventilação detectadas de forma repentina.</p>
+                                    <strong style="color: var(--danger-red);">Crise de Pânico na Madrugada</strong>
+                                    <p>Alerta Crítico: Despertar abrupto com taquicardia severa, tremores e descarga
+                                        aguda de adrenalina.</p>
                                 </div>
                             </li>
 
                             <li class="event warning">
-                                <span class="time">20:43 </span>
+                                <span class="time">20:43</span>
                                 <div class="details">
                                     <strong style="color: var(--warning-orange);">Episódio de Êmese (Vômito)</strong>
                                     <p>Espasmos gástricos moderados detectados. Secundário ao desequilíbrio autonômico
@@ -261,8 +299,8 @@
                                 <span class="time">23:23 </span>
                                 <div class="details">
                                     <strong style="color: var(--danger-red);">Crise de Pânico Noturna</strong>
-                                    <p>Alerta Crítico: Despertar abrupto com ansiedade extrema. Forte descarga de
-                                        adrenalina dificultando o retorno ao sono.</p>
+                                    <p>Primeiro evento de descarga autonômica severa prejudicando a iniciação do sono.
+                                    </p>
                                 </div>
                             </li>
 

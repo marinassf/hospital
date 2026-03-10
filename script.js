@@ -60,34 +60,34 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(updateClock, 1000);
     updateClock();
 
-    // --- 3. SIMULAÇÃO DE BATIMENTOS CARDÍACOS (ALERTA - 105 a 120 BPM) ---
+    // --- 3. SIMULAÇÃO DE BATIMENTOS CARDÍACOS (NORMALIZADO / FATIGADO - 74 a 84 BPM) ---
     function simulateHeartBeat() {
         const bpmDisplay = document.getElementById('live-bpm');
         
         if (bpmDisplay) {
-            const minBPM = 105; // Piso da taquicardia ativa
-            const maxBPM = 120; // Pico do resquício de pânico
+            const minBPM = 74; 
+            const maxBPM = 84; 
             
             // Gera valor randômico no estado atual
             const currentBPM = Math.floor(Math.random() * (maxBPM - minBPM + 1)) + minBPM;
             
             bpmDisplay.textContent = currentBPM;
             
-            // Garante cor de alerta (vermelho)
-            bpmDisplay.style.color = '#d32f2f'; 
+            // Garante cor normal
+            bpmDisplay.style.color = '#4caf50'; 
             
-            // Animação de "pulso" rápida
-            bpmDisplay.style.opacity = '0.5';
+            // Animação de "pulso" mais lenta
+            bpmDisplay.style.opacity = '0.7';
             setTimeout(() => { 
                 bpmDisplay.style.opacity = '1'; 
-            }, 150);
+            }, 300);
         }
     }
     
-    // Atualiza a cada 2 segundos (Ritmo acelerado do pânico)
-    setInterval(simulateHeartBeat, 2000);
+    // Atualiza a cada 3.5 segundos (Ritmo calmo)
+    setInterval(simulateHeartBeat, 3500);
     simulateHeartBeat(); 
 
     // Log de sistema
-    console.log("Einstein NeuroChip: ALERTA CRÍTICO. Pico de pânico recente detectado. Sugerindo exercícios de respiração.");
+    console.log("Einstein NeuroChip: RECUPERAÇÃO ATIVA. Taquicardia encerrada. Gerenciando déficit de sono.");
 });
