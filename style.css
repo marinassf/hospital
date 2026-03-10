@@ -109,23 +109,34 @@ body {
 }
 
 .chip-link.active {
-    border-left: 4px solid #ff5252;
+    border-left: 4px solid var(--warning-orange);
 }
 
-.pulse-dot.status-alert {
+.pulse-dot.status-warning {
     width: 8px;
     height: 8px;
-    background-color: #ff5252;
+    background-color: var(--warning-orange);
     border-radius: 50%;
     margin-right: 10px;
-    box-shadow: 0 0 0 rgba(255, 82, 82, 0.4);
-    animation: pulseAlert 1s infinite;
+    box-shadow: 0 0 0 rgba(245, 124, 0, 0.4);
+    animation: pulseWarning 1.5s infinite;
 }
 
-@keyframes pulseAlert {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(255, 82, 82, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 82, 82, 0); }
+@keyframes pulseWarning {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(245, 124, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(245, 124, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(245, 124, 0, 0);
+    }
 }
 
 .sidebar-footer {
@@ -179,8 +190,15 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .card {
@@ -352,14 +370,14 @@ body {
     margin-bottom: 25px;
 }
 
-.health-alert.danger {
-    background-color: #ffebee;
-    border: 1px solid #ffcdd2;
-    color: #b71c1c;
+.health-alert.warning {
+    background-color: #fff3e0;
+    border: 1px solid #ffe0b2;
+    color: #e65100;
 }
 
-.alert-symbol.danger {
-    color: var(--danger-red);
+.alert-symbol.warning {
+    color: var(--warning-orange);
     font-size: 1.5rem;
 }
 
@@ -398,6 +416,14 @@ body {
 
 .warning-card {
     border-top: 4px solid var(--warning-orange);
+}
+
+.info-card {
+    border-top: 4px solid var(--mood-blue);
+}
+
+.success-card {
+    border-top: 4px solid var(--success-green);
 }
 
 .mc-header {
@@ -444,6 +470,14 @@ body {
     background: var(--warning-orange);
 }
 
+.bar-fill.optimal {
+    background: #2196f3;
+}
+
+.bar-fill.success {
+    background: var(--success-green);
+}
+
 .mc-status {
     font-size: 0.9rem;
     color: #333;
@@ -456,22 +490,25 @@ body {
     margin: 0;
 }
 
-/* EKG Animado (Acelerado para o Alerta) */
+/* EKG Animado (Moderado para Atenção) */
 .ekg-line {
     height: 30px;
     width: 100%;
     margin: 5px 0 15px 0;
 }
 
-.ekg-line.fast polyline {
+.ekg-line.moderate polyline {
     stroke-dasharray: 100;
     stroke-dashoffset: 100;
-    animation: drawEKG 1s linear infinite; /* Rápido! */
-    stroke: var(--danger-red);
+    animation: drawEKG 2s linear infinite;
+    /* Ritmo intermediário */
+    stroke: var(--warning-orange);
 }
 
 @keyframes drawEKG {
-    to { stroke-dashoffset: 0; }
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 /* Timeline */
@@ -509,6 +546,7 @@ body {
 .bio-timeline .danger {
     border-left-color: #ef9a9a;
 }
+
 .bio-timeline .danger::before {
     background: var(--danger-red);
 }
@@ -516,8 +554,17 @@ body {
 .bio-timeline .warning {
     border-left-color: #ffcc80;
 }
+
 .bio-timeline .warning::before {
     background: var(--warning-orange);
+}
+
+.bio-timeline .normal {
+    border-left-color: #90caf9;
+}
+
+.bio-timeline .normal::before {
+    background: #2196f3;
 }
 
 .bio-timeline .time {
@@ -540,12 +587,18 @@ body {
 }
 
 /* Classe utilitária JS */
-.bpm-danger {
-    color: var(--danger-red) !important;
+.bpm-warning {
+    color: var(--warning-orange) !important;
     transition: opacity 0.2s ease;
 }
 
 @media (max-width: 768px) {
-    .dashboard-container { flex-direction: column; }
-    .sidebar { width: 100%; height: auto; }
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
 }
