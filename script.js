@@ -50,25 +50,25 @@ document.addEventListener('DOMContentLoaded', function () {
             
             clockElement.textContent = timeString;
             
-            // Atualiza também o horário do último evento na timeline
-            if(timelineTime) {
-                timelineTime.textContent = shortTime;
-            }
+            // Ocultado temporariamente para não sobrepor o horário de 20:02 na timeline
+            // if(timelineTime) {
+            //    timelineTime.textContent = shortTime;
+            // }
         }
     }
     // Atualiza a cada segundo
     setInterval(updateClock, 1000);
     updateClock();
 
-    // --- 3. SIMULAÇÃO DE BATIMENTOS CARDÍACOS (NORMALIZADO / FATIGADO - 74 a 84 BPM) ---
+    // --- 3. SIMULAÇÃO DE BATIMENTOS CARDÍACOS (CALMO / NORMALIZADO - 68 a 76 BPM) ---
     function simulateHeartBeat() {
         const bpmDisplay = document.getElementById('live-bpm');
         
         if (bpmDisplay) {
-            const minBPM = 74; 
-            const maxBPM = 84; 
+            const minBPM = 68; 
+            const maxBPM = 76; 
             
-            // Gera valor randômico no estado atual
+            // Gera valor randômico na faixa normal saudável
             const currentBPM = Math.floor(Math.random() * (maxBPM - minBPM + 1)) + minBPM;
             
             bpmDisplay.textContent = currentBPM;
@@ -89,5 +89,5 @@ document.addEventListener('DOMContentLoaded', function () {
     simulateHeartBeat(); 
 
     // Log de sistema
-    console.log("Einstein NeuroChip: RECUPERAÇÃO ATIVA. Taquicardia encerrada. Gerenciando déficit de sono.");
+    console.log("Einstein NeuroChip: HOMEOSTASE ALCANÇADA. Pico de endorfina registrado. Sinais vitais normalizados.");
 });
