@@ -50,23 +50,23 @@ document.addEventListener('DOMContentLoaded', function () {
             
             clockElement.textContent = timeString;
             
-            // Ocultado temporariamente para não sobrepor o horário de 20:02 na timeline
-            // if(timelineTime) {
-            //    timelineTime.textContent = shortTime;
-            // }
+            // Atualiza também o horário do último evento na timeline
+            if(timelineTime) {
+                timelineTime.textContent = shortTime;
+            }
         }
     }
     // Atualiza a cada segundo
     setInterval(updateClock, 1000);
     updateClock();
 
-    // --- 3. SIMULAÇÃO DE BATIMENTOS CARDÍACOS (CALMO / NORMALIZADO - 68 a 76 BPM) ---
+    // --- 3. SIMULAÇÃO DE BATIMENTOS CARDÍACOS (CALMO / NORMAL - 68 a 78 BPM) ---
     function simulateHeartBeat() {
         const bpmDisplay = document.getElementById('live-bpm');
         
         if (bpmDisplay) {
             const minBPM = 68; 
-            const maxBPM = 76; 
+            const maxBPM = 78; 
             
             // Gera valor randômico na faixa normal saudável
             const currentBPM = Math.floor(Math.random() * (maxBPM - minBPM + 1)) + minBPM;
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Garante cor normal
             bpmDisplay.style.color = '#4caf50'; 
             
-            // Animação de "pulso" mais lenta
+            // Animação de "pulso"
             bpmDisplay.style.opacity = '0.7';
             setTimeout(() => { 
                 bpmDisplay.style.opacity = '1'; 
@@ -89,5 +89,5 @@ document.addEventListener('DOMContentLoaded', function () {
     simulateHeartBeat(); 
 
     // Log de sistema
-    console.log("Einstein NeuroChip: HOMEOSTASE ALCANÇADA. Pico de endorfina registrado. Sinais vitais normalizados.");
+    console.log("Einstein NeuroChip: Modo Diurno. Sinais vitais normais.");
 });
