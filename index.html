@@ -4,261 +4,1006 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal do Paciente - Einstein NeuroChip</title>
+    <title>Portal Einstein · NeuroChip · Marina Santana</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Sora:wght@400;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
+    <div class="app">
 
-    <div class="dashboard-container">
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="sidebar-logo-placeholder">MS</div>
-                <h2>Meu Einstein</h2>
-                <span>Portal do Paciente</span>
+        <!-- ═══════════ SIDEBAR ═══════════ -->
+        <aside class="sb">
+            <div class="sb-brand">
+                <div class="sb-av">MS</div>
+                <div>
+                    <span class="sb-name">Marina Santana</span>
+                    <span class="sb-sub">Portal do Paciente · 31 anos</span>
+                </div>
             </div>
-            <nav class="sidebar-nav">
+            <nav class="sb-nav">
+                <span class="nav-sec">Geral</span>
                 <ul>
-                    <li><a href="#" class="nav-link" data-content="inicio">Início</a></li>
-
-                    <li><a href="#" class="nav-link chip-link active" data-content="neurochip">
-                            <span class="pulse-dot status-ok"></span> Monitoramento (Chip)
+                    <li><a href="#" class="nav-a" data-tab="inicio">
+                            <svg class="nav-ico" viewBox="0 0 24 24">
+                                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                            </svg>Início
                         </a></li>
-
-                    <li><a href="#" class="nav-link" data-content="resultados">Meus Resultados</a></li>
-                    <li><a href="#" class="nav-link" data-content="consulta-dermatologica">Rotina de Skincare</a></li>
-                    <li><a href="#" class="nav-link" data-content="laudos">Histórico de Laudos</a></li>
-                    <li><a href="#" class="nav-link" data-content="exames">Resultados de Exames</a></li>
-                    <li><a href="#" class="nav-link" data-content="contratos">Meus Contratos</a></li>
-                    <li><a href="#" class="nav-link" data-content="agenda">Agendamentos</a></li>
-                    <li><a href="#" class="nav-link" data-content="perfil">Paciente</a></li>
+                    <li><a href="#" class="nav-a active" data-tab="chip">
+                            <svg class="nav-ico" viewBox="0 0 24 24">
+                                <path
+                                    d="M6 3h12v2h2V3c0-1.1-.9-2-2-2H6C4.9 1 4 1.9 4 3v2h2V3zm12 18H6v-2H4v2c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-2h-2v2zM21 8h-2V6h-2v2h-2V6h-2v2h-2V6H9v2H7V6H5v2H3c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2zm0 6H3v-4h18v4z" />
+                            </svg>
+                            Monitoramento<span class="nav-live">AO VIVO</span>
+                        </a></li>
+                    <li><a href="#" class="nav-a" data-tab="agenda">
+                            <svg class="nav-ico" viewBox="0 0 24 24">
+                                <path
+                                    d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" />
+                            </svg>Agendamentos
+                        </a></li>
+                </ul>
+                <span class="nav-sec">Saúde</span>
+                <ul>
+                    <li><a href="#" class="nav-a" data-tab="resultados">
+                            <svg class="nav-ico" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" />
+                            </svg>Meus Resultados
+                        </a></li>
+                    <li><a href="#" class="nav-a" data-tab="exames">
+                            <svg class="nav-ico" viewBox="0 0 24 24">
+                                <path
+                                    d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                            </svg>Resultados de Exames
+                        </a></li>
+                    <li><a href="#" class="nav-a" data-tab="laudos">
+                            <svg class="nav-ico" viewBox="0 0 24 24">
+                                <path
+                                    d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z" />
+                            </svg>Histórico de Laudos
+                        </a></li>
+                </ul>
+                <span class="nav-sec">Conta</span>
+                <ul>
+                    <li><a href="#" class="nav-a" data-tab="contratos">
+                            <svg class="nav-ico" viewBox="0 0 24 24">
+                                <path
+                                    d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z" />
+                            </svg>Meus Contratos
+                        </a></li>
+                    <li><a href="#" class="nav-a" data-tab="perfil">
+                            <svg class="nav-ico" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                            </svg>Perfil do Paciente
+                        </a></li>
                 </ul>
             </nav>
-            <div class="sidebar-footer">
-                <a href="#">Sair com Segurança</a>
+            <div class="sb-chip">
+                <div class="scs-dot"></div>
+                <div class="scs-info"><span class="scs-id">Chip 884-XJ-09</span><span class="scs-ok">Operacional</span>
+                </div>
+                <span class="scs-bat">92%</span>
+            </div>
+            <div class="sb-foot">
+                <a href="#" class="logout">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z" />
+                    </svg>Sair com segurança
+                </a>
             </div>
         </aside>
 
-        <div class="main-wrapper">
-            <header class="main-header">
-                <h1 id="page-title">Monitoramento (Chip)</h1>
-                <div class="patient-info">
-                    Paciente: <strong>MARINA SANTANA FREITAS</strong>
-                    <span>ID CHIP: 884-XJ-09 (Ativo - Modo Diurno)</span>
+        <!-- ═══════════ MAIN ═══════════ -->
+        <div class="main">
+            <header class="topbar">
+                <div class="tb-l">
+                    <h1 id="page-title">Monitoramento</h1>
+                    <div class="tb-crumb">
+                        <span>Einstein NeuroChip</span>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                        </svg>
+                        <span class="tb-crumb-act">Bio-Monitoramento Integral</span>
+                    </div>
+                </div>
+                <div class="tb-r">
+                    <div class="tb-loc">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                        Sinop, MT · 34°C
+                    </div>
+                    <div class="tb-live"><span class="tb-pulse"></span><span id="clock">--:--:--</span></div>
+                    <div class="tb-av">MS</div>
                 </div>
             </header>
 
-            <main class="content-area">
+            <main class="content">
 
-                <section id="inicio-content" class="content-section">
-                    <div class="card">
-                        <h3>Bem-vinda, MARINA.</h3>
+                <section id="inicio-sec" class="sec">
+                    <div class="blank-card">
+                        <h3>Bem-vinda, Marina.</h3>
                         <p>Seu hub de saúde centralizado.</p>
                     </div>
                 </section>
 
-                <section id="neurochip-content" class="content-section active">
+                <!-- ════════ CHIP ════════ -->
+                <section id="chip-sec" class="sec active">
 
-                    <div class="chip-dashboard-header"
-                        style="background: linear-gradient(135deg, #263238 0%, #2e7d32 100%);">
-                        <div class="chip-info">
-                            <h2>Bio-Monitoramento Integral</h2>
-                            <div class="chip-badges">
-                                <span class="badge-live" style="color: #00e676;">● HOMEOSTASE (IDEAL)</span>
-                                <span class="badge-stable">Sincronizado: <span id="clock-live">--:--:--</span></span>
+                    <div class="status-row">
+                        <div class="sp sp-g">
+                            <div class="sp-d"></div>
+                            <div>
+                                <div class="sp-lbl">Homeostase</div>
+                                <div class="sp-val">Ideal</div>
                             </div>
                         </div>
-                        <div class="chip-battery">
-                            <span>Bateria do Implante: 93%</span>
-                            <div class="battery-bar">
-                                <div style="width:93%; background-color: #4caf50;"></div>
+                        <div class="sp sp-b">
+                            <div class="sp-d"></div>
+                            <div>
+                                <div class="sp-lbl">Ciclo</div>
+                                <div class="sp-val">Noturno</div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="doctor-message-card">
-                        <div class="dm-header">
-                            <div class="dm-title">
-                                <span class="dm-icon">📩</span>
-                                <h3>Acompanhamento de Rotina e Bem-estar</h3>
+                        <div class="sp sp-v">
+                            <div class="sp-d"></div>
+                            <div>
+                                <div class="sp-lbl">Bateria</div>
+                                <div class="sp-val">92%</div>
                             </div>
-                            <span class="dm-date">Novo</span>
                         </div>
-                        <div class="dm-body">
-                            <p>Bom dia, Marina!</p>
-
-                            <p>Concluímos a investigação sobre o seu caso e gostaria de compartilhar algumas
-                                observações importantes.
-
-                            <p>Lembra das manchas semelhantes a queimaduras na lateral da sua coxa que apareceram há
-                                alguns
-                                meses? Identificamos que elas são compatíveis com marcas causadas por cigarro apagado
-                                diretamente na pele. Não temos como afirmar se isso ocorreu por você mesma ou por alguém
-                                que
-                                esteve com você naquele período, mas há indícios de que o cigarro utilizado continha
-                                methamphetamine.</p>
-
-                            <p>Essa substância pode permanecer no organismo por algum tempo e interferir em processos
-                                metabólicos, o que possivelmente está contribuindo para a dificuldade que você tem
-                                observado
-                                nos resultados do tratamento.
-
-                            <p>Nesse cenário, mudanças na dieta isoladamente não tendem a produzir grandes efeitos no
-                                curto
-                                prazo. O mais indicado é permitir que o organismo elimine gradualmente os resíduos da
-                                substância.</p>
-
-                            <p>Algumas medidas que podem ajudar nesse processo incluem:
-
-                            <div class="dm-recipe-box">
-                                <ul>
-                                    <li>Higienizar bem e esfoliar suavemente a região afetada para estimular a renovação
-                                        da pele;</li>
-                                    <li>Praticar atividade física regularmente, o que pode auxiliar o metabolismo e a
-                                        eliminação de toxinas;</li>
-                                    <li>Manter uma boa hidratação;</li>
-                                    <li>Atividade sexual também pode contribuir para estimular processos metabólicos e
-                                        hormonais que auxiliam na regulação do organismo
-                                    <li>Tirar momentos para você, fazendo coisas que gosta, para estimular a liberação
-                                        de hormônios positivos (como dopamina e ocitocina).</li>
-                                </ul>
-                            </div>
-
-                            <p>Vou continuar acompanhando e te atualizando conforme monitorarmos a redução desses níveis
-                                no organismo.</p>
-                            <p>Também gostaria de fazer uma sugestão adicional: se houver possibilidade, considere se
-                                mudar temporariamente para um imóvel mais novo, pois isso
-                                pode contribuir positivamente para o seu bem-estar geral durante esse período.</p>
-
-                                <p>Qualquer novidade ou alteração relevante eu entro em contato novamente. Abraço!</p>
-
-                            <div class="dm-signature">
-                                <strong>Equipe Médica de Acompanhamento</strong>
+                        <div class="sp sp-ora">
+                            <div class="sp-d"></div>
+                            <div>
+                                <div class="sp-lbl">Índice UV Sinop</div>
+                                <div class="sp-val">Extremo</div>
                             </div>
                         </div>
                     </div>
-                    <div class="health-alert success">
-                        <div class="alert-symbol success">✓</div>
-                        <div class="alert-content">
-                            <h4>ESTABILIDADE SISTÊMICA ALCANÇADA</h4>
-                            <p>O pico de estresse registrado anteriormente foi dissipado com sucesso. Sinais vitais
-                                perfeitamente normalizados.</p>
+
+                    <div class="alert alert-g">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg>
+                        <div>
+                            <strong>Sinais Vitais Estabilizados — Boa Noite, Marina</strong>
+                            <p>Cortisol normalizado após pico das 14:09. Melatonina em síntese ativa. Temperatura
+                                corporal em declínio.</p>
                         </div>
                     </div>
 
-                    <div class="metrics-grid">
-
-                        <div class="metric-card success-card">
-                            <div class="mc-header">
-                                <span>Nível de Cortisol</span>
-                                <i class="icon-stress" style="color: var(--success-green);">⚡</i>
+                    <div class="mg">
+                        <div class="mc mc-g">
+                            <div class="mc-top"><span class="mc-lbl">Frequência Cardíaca</span>
+                                <svg class="mc-ico ico-g" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z" />
+                                </svg>
                             </div>
-                            <div class="mc-value">11.4 <small>mcg/dL</small></div>
-                            <div class="mc-graph-bar">
-                                <div class="bar-fill success" style="width: 35%;"></div>
-                            </div>
-                            <div class="mc-status" style="color: var(--success-green);">Status: <strong>Normal
-                                    (Saudável)</strong></div>
-                            <p class="mc-desc">Hormônios do estresse estabilizados pós-pico.</p>
-                        </div>
-
-                        <div class="metric-card info-card">
-                            <div class="mc-header">
-                                <span>Índice Dopaminérgico</span>
-                                <i class="icon-mood" style="color: var(--mood-blue);">💧</i>
-                            </div>
-                            <div class="mc-value">Bom <small>Fluxo</small></div>
-                            <div class="mc-graph-bar">
-                                <div class="bar-fill optimal" style="width: 75%;"></div>
-                            </div>
-                            <div class="mc-status" style="color: var(--mood-blue);">Status: <strong>Equilibrado</strong>
-                            </div>
-                            <p class="mc-desc">Neurotransmissores em padrão basal de repouso.</p>
-                        </div>
-
-                        <div class="metric-card success-card">
-                            <div class="mc-header">
-                                <span>Frequência Cardíaca</span>
-                                <i class="icon-heart" style="color: var(--success-green);">❤️</i>
-                            </div>
-                            <div class="mc-value"><span id="live-bpm" class="bpm-normal">74</span> <small>bpm</small>
-                            </div>
-
-                            <svg class="ekg-line normal" viewBox="0 0 100 20" preserveAspectRatio="none">
-                                <polyline points="0,10 30,10 35,5 40,15 45,10 80,10 85,5 90,15 95,10 100,10"
-                                    style="fill:none;stroke:#4caf50;stroke-width:2" />
+                            <div class="mc-big"><span id="bpm">72</span><small>bpm</small></div>
+                            <svg class="ekg" viewBox="0 0 200 40" preserveAspectRatio="none">
+                                <polyline points="0,20 50,20 60,8 70,32 80,20 130,20 140,8 150,32 160,20 200,20"
+                                    fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" />
                             </svg>
-
-                            <div class="mc-status" style="color: var(--success-green);">Status: <strong>Ritmo
-                                    Sinusal</strong></div>
-                            <p class="mc-desc">Batimentos tranquilos e regulares (Repouso).</p>
+                            <div class="mc-tag tag-g">Repouso Profundo</div>
                         </div>
-
-                        <div class="metric-card success-card">
-                            <div class="mc-header">
-                                <span>Ciclo Circadiano</span>
-                                <i class="icon-sun" style="color: var(--success-green);">☀️</i>
+                        <div class="mc mc-g">
+                            <div class="mc-top"><span class="mc-lbl">Cortisol</span>
+                                <svg class="mc-ico ico-g" viewBox="0 0 24 24">
+                                    <path
+                                        d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z" />
+                                </svg>
                             </div>
-                            <div class="mc-value">Ativo <small>Tarde</small></div>
-                            <div class="sleep-detail">
-                                <span style="color: var(--text-dark); font-weight: bold;">Temp: 36.6°C</span>
-                                <span>Oxt: 99%</span>
+                            <div class="mc-big">4.2<small>mcg/dL</small></div>
+                            <div class="mc-bar">
+                                <div class="mc-fill fill-g" style="width:15%"></div>
                             </div>
-                            <div class="mc-status" style="color: var(--success-green);">Status: <strong>Vigília
-                                    Calma</strong></div>
-                            <p class="mc-desc">Oxigenação máxima. Metabolismo operando bem.</p>
+                            <p class="mc-note">Normalizado após pico das 14:09.</p>
+                            <div class="mc-tag tag-g">Baixo · Ideal</div>
+                        </div>
+                        <div class="mc mc-v">
+                            <div class="mc-top"><span class="mc-lbl">Melatonina</span>
+                                <svg class="mc-ico ico-v" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                                </svg>
+                            </div>
+                            <div class="mc-big" style="font-size:1.6rem">Em Alta</div>
+                            <div class="mc-bar">
+                                <div class="mc-fill fill-v" style="width:82%"></div>
+                            </div>
+                            <p class="mc-note">Preparando o organismo para o ciclo REM.</p>
+                            <div class="mc-tag tag-v">Síntese Ativa</div>
+                        </div>
+                        <div class="mc mc-b">
+                            <div class="mc-top"><span class="mc-lbl">Ciclo Circadiano</span>
+                                <svg class="mc-ico ico-b" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                                </svg>
+                            </div>
+                            <div class="mc-big" style="font-size:1.45rem">Repouso<small
+                                    style="font-size:.72rem;margin-left:4px">Noturno</small></div>
+                            <div class="mc-vitals">
+                                <div class="vc"><span class="vl">Temp</span><span class="vv">36.2°C</span></div>
+                                <div class="vc"><span class="vl">SpO₂</span><span class="vv">98%</span></div>
+                            </div>
+                            <div class="mc-tag tag-b">Desaceleração Metabólica</div>
                         </div>
                     </div>
 
-                    <div class="card timeline-card">
-                        <h3>Linha do Tempo Biológica (Hoje)</h3>
-                        <ul class="bio-timeline">
+                    <!-- GRID PRINCIPAL -->
+                    <div class="two-col">
 
-                            <li class="event success"
-                                style="border-left: 3px solid #4caf50; padding-left: 15px; margin-bottom: 20px;">
-                                <span class="time" style="color: #4caf50; font-weight: bold;">17:01</span>
-                                <div class="details">
-                                    <strong style="color: #2e7d32;">Estabilização Sistêmica</strong>
-                                    <p>Retorno completo ao estado de calma. Frequência cardíaca e níveis de cortisol
-                                        retornaram à linha basal de normalidade após a tensão da tarde.</p>
+                        <!-- ════ PAINEL PROTOCOLO ════ -->
+                        <div class="panel">
+                            <div class="panel-hdr">
+                                <div class="panel-hdr-l">
+                                    <div class="panel-ico ico-vio"><svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                                        </svg></div>
+                                    <div>
+                                        <div class="panel-title">Protocolo de Beleza &amp; Saúde</div>
+                                        <div class="panel-sub">Dra. Camila Rocha · Dermatologista &amp; Tricologista ·
+                                            CRM 98.321</div>
+                                    </div>
                                 </div>
-                            </li>
+                                <span class="badge-new">NOVA</span>
+                            </div>
+                            <div class="msg-meta">
+                                <span>Einstein Dermatologia · Linha Profissional · Sinop MT</span>
+                                <span>Hoje, 15:40</span>
+                            </div>
+                            <div class="msg-body">
+                                <p>Boa tarde, Marina! Boa tarde, Marina!
 
-                            <li class="event warning">
-                                <span class="time">14:24</span>
-                                <div class="details">
-                                    <strong style="color: var(--warning-orange);">Pico de Estresse</strong>
-                                    <p>Alerta: Elevação repentina de cortisol e taquicardia leve. Sistema registrou
-                                        ativação do sistema nervoso simpático.</p>
+                                    Atualizei toda a sua rotina com base em linhas dermocosméticas e profissionais
+                                    disponíveis no Brasil, incluindo L'Oréal Professionnel, Wella Professionals, Redken
+                                    e Vichy para os cuidados capilares, além de Bioderma, ISDIN, Eucerin e ADCOS para a
+                                    pele.
+
+                                    A seleção foi estruturada de forma criteriosa, considerando seu perfil clínico e
+                                    fisiológico: cabelos ondulados com padrão de ressecamento, frizz e queixa associada
+                                    à queda capilar (possivelmente relacionada a fatores como eflúvio telógeno, estresse
+                                    metabólico e/ou alterações hormonais), além de pele sensível, com tendência a
+                                    hiperpigmentação pós-inflamatória (manchas de acne) e queratose pilar.<p>
+
+                                    Também foram consideradas as condições ambientais de Sinop, caracterizadas por altas
+                                    temperaturas, elevada umidade e intensa radiação UV, fatores que impactam
+                                    diretamente a integridade da barreira cutânea, a oxidação lipídica e a saúde do
+                                    couro cabeludo.
+
+                                    <p>A proposta da rotina é atuar em múltiplos mecanismos biológicos:<p>
+                                    – restauração da barreira cutânea e retenção hídrica
+                                   <p> – controle da inflamação perifolicular e equilíbrio do microbioma do couro cabeludo
+                                  <p>  – fortalecimento da fibra capilar e redução da quebra
+                                    <p>– estímulo indireto do ciclo anágeno, com foco na redução da queda
+                                    <p>– uniformização do tom da pele e regulação da queratinização
+                                   <p> – fotoproteção avançada contra radiação UV e luz visível
+
+                                   <p>Trata-se de uma abordagem integrada, com foco em eficácia clínica, prevenção de
+                                    danos cumulativos e adaptação ao seu contexto ambiental e fisiológico.
+
+                                    Se quiser, posso te passar a rotina completa com protocolos de uso (manhã, noite e
+                                    semanal), incluindo ativos-chave e ordem de aplicação.
+                                </p>
+                            </div>
+
+                            <!-- ABAS -->
+                            <div class="proto-tabs">
+                                <button class="ptab active" data-ptab="cabelo">💇‍♀️ Cabelo</button>
+                                <button class="ptab" data-ptab="facial">✨ Facial</button>
+                                <button class="ptab" data-ptab="cronograma">📅 Cronograma</button>
+                                <button class="ptab" data-ptab="corpo">🛁 Corpo</button>
+                            </div>
+
+                            <!-- ══ ABA CABELO ══ -->
+                            <div class="ptab-content active" id="ptab-cabelo">
+                                <div class="sub-sec-hdr">
+                                    <div class="ssh-info">
+                                        <div class="ssh-title">Sistema Capilar Profissional · 8 Semanas</div>
+                                        <div class="ssh-sub">Ondulados · Frizz · Ressecamento · Antiqueda ·
+                                            Fortalecimento</div>
+                                    </div>
+                                    <div class="ssh-badges">
+                                        <span class="sbadge b-lr">L'Oréal Pro</span>
+                                        <span class="sbadge b-we">Wella</span>
+                                        <span class="sbadge b-rk">Redken</span>
+                                        <span class="sbadge b-vi">Vichy</span>
+                                    </div>
                                 </div>
-                            </li>
 
-                            <li class="event normal">
-                                <span class="time">10:32</span>
-                                <div class="details">
-                                    <strong style="color: #1976d2;">Despertar</strong>
-                                    <p>Fim do ciclo de repouso. Transição de ondas cerebrais e adequação circadiana para
-                                        o início do dia.</p>
+                                <div class="prod-grid-4">
+
+                                    <!-- SHAMPOO -->
+                                    <div class="pc pc-lr">
+                                        <div class="pc-header">
+                                            <div class="pc-brand-dot lr-dot"></div>
+                                            <div class="pc-brand">L'Oréal Professionnel</div>
+                                            <div class="pc-step">BASE</div>
+                                        </div>
+                                        <div class="pc-name">Curl Expression Shampoo Creme Rico</div>
+                                        <div class="pc-line">Serie Expert · Sem Sulfato · 300ml · Cacheados &amp;
+                                            Ondulados</div>
+                                        <div class="pc-tags"><span>Sem sulfato</span><span>Específico
+                                                ondulados</span><span>pH balanceado</span></div>
+                                        <div class="pc-how">
+                                            <div class="pc-how-lbl">Modo de uso</div>Couro cabeludo úmido. Massagear 2–3
+                                            min. Enxaguar com água morna. Toda lavagem como 1ª etapa.
+                                        </div>
+                                        <div class="pc-freq">3× / semana</div>
+                                    </div>
+
+                                    <!-- MÁSCARA HIDRATAÇÃO -->
+                                    <div class="pc pc-lr">
+                                        <div class="pc-header">
+                                            <div class="pc-brand-dot lr-dot"></div>
+                                            <div class="pc-brand">L'Oréal Professionnel</div>
+                                            <div class="pc-step step-h">HIDRATAÇÃO</div>
+                                        </div>
+                                        <div class="pc-name">Curl Expression Máscara Hidratante</div>
+                                        <div class="pc-line">Serie Expert · Manteiga de Karité · 250ml</div>
+                                        <div class="pc-tags"><span>Repõe água</span><span>Manteiga
+                                                karité</span><span>Antifrizz</span></div>
+                                        <div class="pc-how">
+                                            <div class="pc-how-lbl">Modo de uso</div>Pós-shampoo, do comprimento às
+                                            pontas. Touca térmica 20 min. Enxague com água fria. Semanas ímpares.
+                                        </div>
+                                        <div class="pc-freq step-h-freq">Sem. 1, 3, 5, 7</div>
+                                    </div>
+
+                                    <!-- MÁSCARA RECONSTRUÇÃO -->
+                                    <div class="pc pc-we">
+                                        <div class="pc-header">
+                                            <div class="pc-brand-dot we-dot"></div>
+                                            <div class="pc-brand">Wella Professionals</div>
+                                            <div class="pc-step step-r">RECONSTRUÇÃO</div>
+                                        </div>
+                                        <div class="pc-name">Fusion Mask</div>
+                                        <div class="pc-line">Aminoácidos + Proteína · 500ml · Cabelos Frágeis</div>
+                                        <div class="pc-tags"><span>Repõe
+                                                proteína</span><span>Antifrizz</span><span>Força + elasticidade</span>
+                                        </div>
+                                        <div class="pc-how">
+                                            <div class="pc-how-lbl">Modo de uso</div>Pós-shampoo. Touca térmica 25 min.
+                                            Enxague com água bem gelada para selar cutícula. Semanas pares.
+                                        </div>
+                                        <div class="pc-freq step-r-freq">Sem. 2, 4, 6, 8</div>
+                                    </div>
+
+                                    <!-- MÁSCARA NUTRIÇÃO -->
+                                    <div class="pc pc-rk">
+                                        <div class="pc-header">
+                                            <div class="pc-brand-dot rk-dot"></div>
+                                            <div class="pc-brand">Redken</div>
+                                            <div class="pc-step step-n">NUTRIÇÃO</div>
+                                        </div>
+                                        <div class="pc-name">All Soft Mega Curls Mask</div>
+                                        <div class="pc-line">Manteiga de Coco + Óleo de Jojoba · 250ml · Onduladas</div>
+                                        <div class="pc-tags"><span>Repõe
+                                                lipídeos</span><span>Suavidade</span><span>Definição</span></div>
+                                        <div class="pc-how">
+                                            <div class="pc-how-lbl">Modo de uso</div>1× por mês como banho de creme
+                                            noturno. Aplicar generosamente, deixar 1h ou overnight. Enxaguar.
+                                        </div>
+                                        <div class="pc-freq step-n-freq">1× / mês · noturno</div>
+                                    </div>
+
+                                    <!-- LEAVE-IN -->
+                                    <div class="pc pc-lr">
+                                        <div class="pc-header">
+                                            <div class="pc-brand-dot lr-dot"></div>
+                                            <div class="pc-brand">L'Oréal Professionnel</div>
+                                            <div class="pc-step">LEAVE-IN</div>
+                                        </div>
+                                        <div class="pc-name">Curl Expression Creme de Pentear</div>
+                                        <div class="pc-line">Serie Expert · Definição · Sem Enxague · 150ml</div>
+                                        <div class="pc-tags"><span>Define ondas</span><span>Antifrizz
+                                                48h</span><span>Leveza</span></div>
+                                        <div class="pc-how">
+                                            <div class="pc-how-lbl">Modo de uso</div>No cabelo úmido mecha por mecha, de
+                                            baixo para cima (plopping). Não enxaguar. Base para o difusor.
+                                        </div>
+                                        <div class="pc-freq">Toda lavagem</div>
+                                    </div>
+
+                                    <!-- ÓLEO -->
+                                    <div class="pc pc-we">
+                                        <div class="pc-header">
+                                            <div class="pc-brand-dot we-dot"></div>
+                                            <div class="pc-brand">Wella Professionals</div>
+                                            <div class="pc-step">ÓLEO</div>
+                                        </div>
+                                        <div class="pc-name">Oil Reflections Luminous Smoothening Oil</div>
+                                        <div class="pc-line">Óleo Finalizador Antifrizz · 100ml</div>
+                                        <div class="pc-tags"><span>Sela cutícula</span><span>Brilho
+                                                intenso</span><span>Antifrizz final</span></div>
+                                        <div class="pc-how">
+                                            <div class="pc-how-lbl">Modo de uso</div>2–3 gotas nas palmas. Aplicar
+                                            apenas nas pontas após o difusor. Pode usar em cabelo seco para brilho
+                                            extra.
+                                        </div>
+                                        <div class="pc-freq">Finalização diária</div>
+                                    </div>
+
+                                    <!-- ANTIQUEDA -->
+                                    <div class="pc pc-vi">
+                                        <div class="pc-header">
+                                            <div class="pc-brand-dot vi-dot"></div>
+                                            <div class="pc-brand">Vichy Dercos</div>
+                                            <div class="pc-step step-aq">ANTIQUEDA</div>
+                                        </div>
+                                        <div class="pc-name">Aminexil Clinical 5</div>
+                                        <div class="pc-line">Ampola Clínica Antiqueda · Couro Cabeludo · 21 amp.</div>
+                                        <div class="pc-tags">
+                                            <span>Antiqueda</span><span>Folículo</span><span>Raiz</span>
+                                        </div>
+                                        <div class="pc-how">
+                                            <div class="pc-how-lbl">Modo de uso</div>1 ampola no couro cabeludo seco em
+                                            6 mechas. Massagear 5 min. <strong>Não enxaguar.</strong>
+                                        </div>
+                                        <div class="pc-freq step-aq-freq">2× / semana · 6 sem.</div>
+                                    </div>
+
+                                    <!-- DICA DIFUSOR -->
+                                    <div class="pc pc-extra">
+                                        <div class="pc-header">
+                                            <div class="pc-brand-dot extra-dot"></div>
+                                            <div class="pc-brand">Técnica Essencial</div>
+                                            <div class="pc-step">DIFUSOR</div>
+                                        </div>
+                                        <div class="pc-name">Plopping + Difusor</div>
+                                        <div class="pc-line">Método de aplicação e secagem para ondulados</div>
+                                        <div class="pc-tags"><span>Define ondas</span><span>Reduz frizz</span><span>Sem
+                                                calor direto</span></div>
+                                        <div class="pc-how">
+                                            <div class="pc-how-lbl">Técnica</div>Aplicar todos os produtos de baixo para
+                                            cima. Secar com difusor em temperatura morna. Não tocar até secar
+                                            completamente.
+                                        </div>
+                                        <div class="pc-freq">Toda lavagem</div>
+                                    </div>
+
                                 </div>
-                            </li>
+                            </div><!-- /ptab-cabelo -->
 
-                        </ul>
-                    </div>
+                            <!-- ══ ABA FACIAL ══ -->
+                            <div class="ptab-content" id="ptab-facial">
+                                <div class="sub-sec-hdr">
+                                    <div class="ssh-info">
+                                        <div class="ssh-title">Rotina Facial · 31 anos · Sinop MT</div>
+                                        <div class="ssh-sub">Manchas de acne · Pele sensível · UV extremo · Clima quente
+                                            e úmido</div>
+                                    </div>
+                                    <div class="sinop-pill">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+                                        </svg>
+                                        FPS 60+ · obrigatório em Sinop
+                                    </div>
+                                </div>
+
+                                <!-- MANHÃ -->
+                                <div class="routine-block">
+                                    <div class="routine-hdr routine-am">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z" />
+                                        </svg>
+                                        Rotina Manhã
+                                    </div>
+                                    <div class="routine-steps">
+                                        <div class="rstep">
+                                            <div class="rstep-num">1</div>
+                                            <div class="rstep-body">
+                                                <div class="rstep-name">Limpeza Suave</div>
+                                                <div class="rstep-prod">Bioderma · Sensibio Gel Moussant 200ml</div>
+                                                <div class="rstep-desc">Gel de limpeza para pele sensível com Carbômero
+                                                    e glicerina. Remove suor e oleosidade sem agredir a barreira cutânea
+                                                    — fundamental antes do sérum antimanchas.</div>
+                                            </div>
+                                            <div class="rstep-badge b-bioderma">Bioderma</div>
+                                        </div>
+                                        <div class="rstep">
+                                            <div class="rstep-num">2</div>
+                                            <div class="rstep-body">
+                                                <div class="rstep-name">Sérum Vitamina C · Antimanchas</div>
+                                                <div class="rstep-prod">ADCOS · Vitamina C Sérum 20% 30ml</div>
+                                                <div class="rstep-desc">Fórmula profissional brasileira com Vitamina C
+                                                    20% estabilizada. Clareia manchas de acne (PIH), uniformiza o tom e
+                                                    potencializa o FPS. Textura leve, ideal para Sinop. Aguardar 5 min
+                                                    para absorção.</div>
+                                            </div>
+                                            <div class="rstep-badge b-adcos">ADCOS</div>
+                                        </div>
+                                        <div class="rstep">
+                                            <div class="rstep-num">3</div>
+                                            <div class="rstep-body">
+                                                <div class="rstep-name">Hidratante Gel Levíssimo</div>
+                                                <div class="rstep-prod">ISDIN · Isdinceutics Hyaluronic Booster 30ml
+                                                </div>
+                                                <div class="rstep-desc">Sérum-gel com Ácido Hialurônico puro. Textura
+                                                    aquosa — perfeito para o calor de Sinop. Hidrata sem peso, sem
+                                                    oleosidade. Pele bem hidratada = manchas claream mais rápido.</div>
+                                            </div>
+                                            <div class="rstep-badge b-isdin">ISDIN</div>
+                                        </div>
+                                        <div class="rstep rstep-fps">
+                                            <div class="rstep-num fps-num">FPS</div>
+                                            <div class="rstep-body">
+                                                <div class="rstep-name">Protetor Solar FPS 60+ · NUNCA PULAR</div>
+                                                <div class="rstep-prod">ISDIN · Eryfotona Actinica Ultra Light Emulsion
+                                                    SPF 60 · 50ml</div>
+                                                <div class="rstep-desc">Protetor fluido ultraleve com proteção
+                                                    UVA/UVB/IR. Em Sinop, o UV é extremo o ano todo. Sem FPS, qualquer
+                                                    rotina antimanchas é inútil — o sol escurece manchas de acne mais
+                                                    rápido do que os ativos clareiam. <strong>Reaplicar a cada
+                                                        2h.</strong></div>
+                                            </div>
+                                            <div class="rstep-badge b-isdin">ISDIN</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- NOITE -->
+                                <div class="routine-block">
+                                    <div class="routine-hdr routine-pm">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                                        </svg>
+                                        Rotina Noite
+                                    </div>
+                                    <div class="routine-steps">
+                                        <div class="rstep">
+                                            <div class="rstep-num">1</div>
+                                            <div class="rstep-body">
+                                                <div class="rstep-name">Limpeza Dupla</div>
+                                                <div class="rstep-prod">Bioderma · Sensibio H2O 250ml → Sensibio Gel
+                                                    Moussant</div>
+                                                <div class="rstep-desc">Micelar primeiro para dissolver FPS e maquiagem.
+                                                    Depois o gel para limpeza profunda. Limpeza dupla à noite = ativos
+                                                    penetram corretamente.</div>
+                                            </div>
+                                            <div class="rstep-badge b-bioderma">Bioderma</div>
+                                        </div>
+                                        <div class="rstep">
+                                            <div class="rstep-num">2</div>
+                                            <div class="rstep-body">
+                                                <div class="rstep-name">Niacinamida 10% · Poros + Manchas + Sebo</div>
+                                                <div class="rstep-prod">ADCOS · Nicotinamida Concentrado Facial 30ml
+                                                </div>
+                                                <div class="rstep-desc">Niacinamida 10% + Zinco profissional. Reduz
+                                                    manchas de acne, regula sebo (importante no calor de Sinop), fecha
+                                                    poros visíveis e uniformiza o tom. Usar toda noite.</div>
+                                            </div>
+                                            <div class="rstep-badge b-adcos">ADCOS</div>
+                                        </div>
+                                        <div class="rstep">
+                                            <div class="rstep-num">3</div>
+                                            <div class="rstep-body">
+                                                <div class="rstep-name">Sérum Antimanchas Ativo · Renovação</div>
+                                                <div class="rstep-prod">Eucerin · Even Pigment Perfector Sérum Dual 30ml
+                                                </div>
+                                                <div class="rstep-desc">Thiamidol + Ácido Glicólico — ativo patenteado
+                                                    que reduz melanina diretamente na fonte. Esfoliação química suave
+                                                    que renova a pele sem irritar. <strong>Usar 3× semana, alternando
+                                                        com a niacinamida.</strong></div>
+                                            </div>
+                                            <div class="rstep-badge b-eucerin">Eucerin</div>
+                                        </div>
+                                        <div class="rstep">
+                                            <div class="rstep-num">4</div>
+                                            <div class="rstep-body">
+                                                <div class="rstep-name">Hidratante Noturno Reparador</div>
+                                                <div class="rstep-prod">Eucerin · UreaRepair Plus Creme Facial 5% Ureia
+                                                    50ml</div>
+                                                <div class="rstep-desc">Ceramidas + ureia 5% + lactato. Reconstrói a
+                                                    barreira cutânea durante o sono — especialmente importante em pele
+                                                    sensível com tendência à QP. Textura mais densa, usada apenas à
+                                                    noite.</div>
+                                            </div>
+                                            <div class="rstep-badge b-eucerin">Eucerin</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SINOP BOX -->
+                                <div class="sinop-box">
+                                    <div class="sinop-icon">☀️</div>
+                                    <div>
+                                        <div class="sinop-title">Protocolo Específico para Sinop, MT</div>
+                                        <div class="sinop-text">Sinop tem índice UV extremo praticamente o ano todo. O
+                                            FPS 60+ é o produto mais importante da rotina — sem ele, toda a vitamina C e
+                                            niacinamida do mundo não vão clarear as manchas porque o sol as reescurece
+                                            diariamente. Use chapéu de abas largas ao sair. Reaplicar FPS a cada 2h
+                                            durante exposição solar.</div>
+                                    </div>
+                                </div>
+                            </div><!-- /ptab-facial -->
+
+                            <!-- ══ ABA CRONOGRAMA ══ -->
+                            <div class="ptab-content" id="ptab-cronograma">
+
+                                <!-- CICLO MÁSCARAS -->
+                                <div class="cycle-hdr">Ciclo de Máscaras Capilares · 8 Semanas</div>
+                                <div class="cycle-row">
+                                    <div class="cycle-item ci-h">
+                                        <div class="ci-icon">💧</div>
+                                        <div class="ci-label">HIDRATAÇÃO</div>
+                                        <div class="ci-weeks">Semanas 1, 3, 5, 7</div>
+                                        <div class="ci-prod">Curl Expression Máscara</div>
+                                        <div class="ci-brand">L'Oréal Professionnel</div>
+                                        <div class="ci-desc">Repõe água · manteiga de karité · frizz reduzido</div>
+                                    </div>
+                                    <div class="cycle-arrow">→</div>
+                                    <div class="cycle-item ci-r">
+                                        <div class="ci-icon">🔬</div>
+                                        <div class="ci-label">RECONSTRUÇÃO</div>
+                                        <div class="ci-weeks">Semanas 2, 4, 6, 8</div>
+                                        <div class="ci-prod">Fusion Mask</div>
+                                        <div class="ci-brand">Wella Professionals</div>
+                                        <div class="ci-desc">Repõe proteína · fio forte · menos quebra</div>
+                                    </div>
+                                    <div class="cycle-arrow">→</div>
+                                    <div class="cycle-item ci-n">
+                                        <div class="ci-icon">✨</div>
+                                        <div class="ci-label">NUTRIÇÃO</div>
+                                        <div class="ci-weeks">1× por mês · banho de creme</div>
+                                        <div class="ci-prod">All Soft Mega Curls Mask</div>
+                                        <div class="ci-brand">Redken</div>
+                                        <div class="ci-desc">Repõe lipídeos · brilho · selamento máximo</div>
+                                    </div>
+                                </div>
+
+                                <div class="week-lbl">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" />
+                                    </svg>
+                                    Grade Semanal · Rotina Integrada
+                                </div>
+                                <div class="week-grid">
+                                    <div class="wd">
+                                        <div class="wd-n">SEG</div>
+                                        <div class="wd-label">Lavagem</div>
+                                        <div class="wd-items">
+                                            <div class="wi wi-lr">Curl Exp. Shampoo</div>
+                                            <div class="wi wi-mask-h">💧 Máscara (ciclo)</div>
+                                            <div class="wi wi-lr">Leave-in Curl Exp.</div>
+                                            <div class="wi wi-we">Óleo Oil Reflections</div>
+                                            <div class="wi wi-am">☀️ Facial manhã</div>
+                                            <div class="wi wi-pm">🌙 Niac + Eucerin</div>
+                                        </div>
+                                    </div>
+                                    <div class="wd">
+                                        <div class="wd-n">TER</div>
+                                        <div class="wd-label">Descanso</div>
+                                        <div class="wd-items">
+                                            <div class="wi wi-rs">Cabelo livre</div>
+                                            <div class="wi wi-vi">🟣 Aminexil (seco)</div>
+                                            <div class="wi wi-we">Óleo pontas (seco)</div>
+                                            <div class="wi wi-am">☀️ Facial manhã</div>
+                                            <div class="wi wi-serum">🔴 Eucerin sérum</div>
+                                        </div>
+                                    </div>
+                                    <div class="wd">
+                                        <div class="wd-n">QUA</div>
+                                        <div class="wd-label">Lavagem</div>
+                                        <div class="wd-items">
+                                            <div class="wi wi-lr">Curl Exp. Shampoo</div>
+                                            <div class="wi wi-mask-h">💧 Máscara (ciclo)</div>
+                                            <div class="wi wi-lr">Leave-in Curl Exp.</div>
+                                            <div class="wi wi-we">Óleo Oil Reflections</div>
+                                            <div class="wi wi-am">☀️ Facial manhã</div>
+                                            <div class="wi wi-pm">🌙 Niac + Eucerin</div>
+                                        </div>
+                                    </div>
+                                    <div class="wd">
+                                        <div class="wd-n">QUI</div>
+                                        <div class="wd-label">Descanso</div>
+                                        <div class="wd-items">
+                                            <div class="wi wi-rs">Cabelo livre</div>
+                                            <div class="wi wi-vi">🟣 Aminexil (seco)</div>
+                                            <div class="wi wi-we">Óleo pontas (seco)</div>
+                                            <div class="wi wi-am">☀️ Facial manhã</div>
+                                            <div class="wi wi-serum">🔴 Eucerin sérum</div>
+                                        </div>
+                                    </div>
+                                    <div class="wd">
+                                        <div class="wd-n">SEX</div>
+                                        <div class="wd-label">Lavagem</div>
+                                        <div class="wd-items">
+                                            <div class="wi wi-lr">Curl Exp. Shampoo</div>
+                                            <div class="wi wi-mask-h">💧 Máscara (ciclo)</div>
+                                            <div class="wi wi-lr">Leave-in Curl Exp.</div>
+                                            <div class="wi wi-we">Óleo Oil Reflections</div>
+                                            <div class="wi wi-am">☀️ Facial manhã</div>
+                                            <div class="wi wi-pm">🌙 Niac + Eucerin</div>
+                                        </div>
+                                    </div>
+                                    <div class="wd">
+                                        <div class="wd-n">SAB</div>
+                                        <div class="wd-label">Completo</div>
+                                        <div class="wd-items">
+                                            <div class="wi wi-lr">Curl Exp. Shampoo</div>
+                                            <div class="wi wi-mask-h">💧 Máscara (ciclo)</div>
+                                            <div class="wi wi-lr">Leave-in Curl Exp.</div>
+                                            <div class="wi wi-we">Óleo Oil Reflections</div>
+                                            <div class="wi wi-am">☀️ Facial manhã</div>
+                                            <div class="wi wi-serum">🔴 Eucerin sérum</div>
+                                        </div>
+                                    </div>
+                                    <div class="wd">
+                                        <div class="wd-n">DOM</div>
+                                        <div class="wd-label">Recuperação</div>
+                                        <div class="wd-items">
+                                            <div class="wi wi-rs">Cabelo: descanso</div>
+                                            <div class="wi wi-rs">🌙 Fronha cetim</div>
+                                            <div class="wi wi-am">☀️ Facial manhã</div>
+                                            <div class="wi wi-pm">🌙 Niac + Eucerin</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="legend-row">
+                                    <div class="leg-item">
+                                        <div class="leg-dot" style="background:var(--lr-c)"></div>L'Oréal Professionnel
+                                    </div>
+                                    <div class="leg-item">
+                                        <div class="leg-dot" style="background:var(--we-c)"></div>Wella Professionals
+                                    </div>
+                                    <div class="leg-item">
+                                        <div class="leg-dot" style="background:var(--vi-c)"></div>Vichy Aminexil
+                                    </div>
+                                    <div class="leg-item">
+                                        <div class="leg-dot" style="background:#1d6b2d"></div>Facial Manhã (ADCOS+ISDIN)
+                                    </div>
+                                    <div class="leg-item">
+                                        <div class="leg-dot" style="background:var(--eu-c)"></div>Facial Noite
+                                        (ADCOS+Eucerin)
+                                    </div>
+                                    <div class="leg-item">
+                                        <div class="leg-dot" style="background:var(--pc-c)"></div>Eucerin Sérum (3×/sem)
+                                    </div>
+                                </div>
+
+                            </div><!-- /ptab-cronograma -->
+
+                            <!-- ══ ABA CORPO ══ -->
+                            <div class="ptab-content" id="ptab-corpo">
+                                <div class="sub-sec-hdr">
+                                    <div class="ssh-info">
+                                        <div class="ssh-title">Rotina Corporal · Queratose Pilar + Pele Sensível</div>
+                                        <div class="ssh-sub">Protocolo Ureia + BHA · Bioderma + Eucerin · dissolução
+                                            química suave</div>
+                                    </div>
+                                </div>
+
+                                <div class="prod-grid-4">
+                                    <div class="pc pc-bd">
+                                        <div class="pc-header">
+                                            <div class="pc-brand-dot bd-dot"></div>
+                                            <div class="pc-brand">Bioderma · Atoderm</div>
+                                            <div class="pc-step">BANHO</div>
+                                        </div>
+                                        <div class="pc-name">Huile de Douche</div>
+                                        <div class="pc-line">Óleo Lavante · Pele Sensível e Atópica · 200ml</div>
+                                        <div class="pc-tags"><span>Óleo lavante</span><span>Sem
+                                                sabão</span><span>Barreira íntegra</span></div>
+                                        <div class="pc-how">
+                                            <div class="pc-how-lbl">Uso</div>No corpo úmido no banho. Emulsiona com a
+                                            água e limpa suavemente. Água sempre morna — calor piora QP e ressecamento.
+                                        </div>
+                                        <div class="pc-freq pc-freq-gold">Diário · banho</div>
+                                    </div>
+
+                                    <div class="pc pc-eu">
+                                        <div class="pc-header">
+                                            <div class="pc-brand-dot eu-dot"></div>
+                                            <div class="pc-brand">Eucerin · UreaRepair Plus</div>
+                                            <div class="pc-step step-h">UREIA 10%</div>
+                                        </div>
+                                        <div class="pc-name">Loção Corporal 10% Ureia</div>
+                                        <div class="pc-line">Queratolítico Clínico · Queratose Pilar · 250ml</div>
+                                        <div class="pc-tags"><span>Dissolve queratina</span><span>QP
+                                                específico</span><span>Clínico</span></div>
+                                        <div class="pc-how">
+                                            <div class="pc-how-lbl">Uso</div>Logo após o banho, pele ainda ligeiramente
+                                            úmida. Toda área com QP. Não enxaguar. Resultado visível em 4–6 semanas de
+                                            uso contínuo.
+                                        </div>
+                                        <div class="pc-freq pc-freq-gold">Diário · pós-banho</div>
+                                    </div>
+
+                                    <div class="pc pc-eu">
+                                        <div class="pc-header">
+                                            <div class="pc-brand-dot eu-dot"></div>
+                                            <div class="pc-brand">Eucerin · UreaRepair Plus</div>
+                                            <div class="pc-step step-r">BHA SUAVE</div>
+                                        </div>
+                                        <div class="pc-name">Loção 5% Ureia + 3% AHA</div>
+                                        <div class="pc-line">Renovação Celular Suave · 250ml</div>
+                                        <div class="pc-tags"><span>AHA 3%</span><span>Esfoliação
+                                                suave</span><span>Renovação</span></div>
+                                        <div class="pc-how">
+                                            <div class="pc-how-lbl">Uso</div>Alternativa ao BHA nos dias intercalados.
+                                            30 min após a ureia 10% nas áreas com QP. Ação complementar mais suave. 3×
+                                            por semana.
+                                        </div>
+                                        <div class="pc-freq step-r-freq">3× / semana · noite</div>
+                                    </div>
+
+                                    <div class="pc pc-bd">
+                                        <div class="pc-header">
+                                            <div class="pc-brand-dot bd-dot"></div>
+                                            <div class="pc-brand">Bioderma · Atoderm</div>
+                                            <div class="pc-step">BÁLSAMO</div>
+                                        </div>
+                                        <div class="pc-name">Intensive Baume</div>
+                                        <div class="pc-line">Bálsamo Calmante Intensivo · Pele Atópica · 500ml</div>
+                                        <div class="pc-tags"><span>Reconstrói
+                                                barreira</span><span>Calmante</span><span>Sem perfume</span></div>
+                                        <div class="pc-how">
+                                            <div class="pc-how-lbl">Uso</div>Nos dias sem esfoliação, após a ureia em
+                                            todo o corpo. Manutenção da barreira — pele hidratada = QP mais suave.
+                                        </div>
+                                        <div class="pc-freq">Dias sem AHA · noite</div>
+                                    </div>
+                                </div>
+
+                                <div class="tips">
+                                    <div class="tips-t">Regras para Queratose Pilar — Não Negociáveis</div>
+                                    <ul>
+                                        <li><strong>Nunca use bucha ou esfoliante granular</strong> nas áreas com QP —
+                                            irrita, inflama e piora os bolinhos. Somente esfoliação química.</li>
+                                        <li>Ureia 10% (dissolve queratina) e AHA/BHA (renova célula) têm ações
+                                            complementares — aplique a ureia primeiro, espere 30 min, depois o ácido.
+                                        </li>
+                                        <li>Resultados visíveis a partir de <strong>4 a 6 semanas</strong> de uso
+                                            contínuo. Não abandone o protocolo antes disso.</li>
+                                        <li>O calor do banho morno dilata o poro e ajuda os ativos a penetrarem —
+                                            aplique sempre logo após sair do banho.</li>
+                                        <li>Pele bem hidratada = queratose pilar mais branda. A consistência do bálsamo
+                                            nos dias sem ácido é tão importante quanto o ácido em si.</li>
+                                    </ul>
+                                </div>
+                            </div><!-- /ptab-corpo -->
+
+                            <span class="msg-close">Todo o protocolo usa produtos encontrados em farmácias, redes como
+                                Ultrafarma, Drogasil, Panvel e lojas especializadas no Brasil. Qualquer dúvida, me chame
+                                pelo portal! 💙</span>
+                            <div class="msg-sig">
+                                <strong>Dra. Camila Rocha</strong>
+                                <span>CRM 98.321 · Dermatologista &amp; Tricologista · Einstein · Sinop MT</span>
+                            </div>
+                        </div><!-- /panel -->
+
+                        <!-- TIMELINE + RESUMO -->
+                        <div class="panel panel-tl">
+                            <div class="panel-hdr" style="margin-bottom:20px">
+                                <div class="panel-hdr-l">
+                                    <div class="panel-ico ico-blue"><svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z" />
+                                        </svg></div>
+                                    <div>
+                                        <div class="panel-title">Linha do Tempo</div>
+                                        <div class="panel-sub" id="tl-date">28 de março de 2026</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tl">
+                                <div class="tl-item tl-vi">
+                                    <div class="tl-line"></div>
+                                    <div class="tl-dot"></div>
+                                    <div class="tl-body">
+                                        <div class="tl-time">15:40</div>
+                                        <div class="tl-title">Protocolo Profissional Recebido</div>
+                                        <div class="tl-desc">Rotina completa com L'Oréal Pro, Wella, Redken, Vichy,
+                                            Bioderma, ISDIN, Eucerin e ADCOS.</div>
+                                    </div>
+                                </div>
+                                <div class="tl-item tl-gr">
+                                    <div class="tl-line"></div>
+                                    <div class="tl-dot"></div>
+                                    <div class="tl-body">
+                                        <div class="tl-time">17:19</div>
+                                        <div class="tl-title">Normalização Sistêmica</div>
+                                        <div class="tl-desc">Cortisol e FC retornaram ao basal. Recuperação completa em
+                                            3h10min.</div>
+                                    </div>
+                                </div>
+                                <div class="tl-item tl-or">
+                                    <div class="tl-line"></div>
+                                    <div class="tl-dot"></div>
+                                    <div class="tl-body">
+                                        <div class="tl-time">14:09</div>
+                                        <div class="tl-title">Pico de Estresse Detectado</div>
+                                        <div class="tl-desc">Elevação de cortisol + taquicardia leve. Monitoramento
+                                            intensivo ativado.</div>
+                                    </div>
+                                </div>
+                                <div class="tl-item tl-bl">
+                                    <div class="tl-line"></div>
+                                    <div class="tl-dot"></div>
+                                    <div class="tl-body">
+                                        <div class="tl-time">11:46</div>
+                                        <div class="tl-title">Despertar Registrado</div>
+                                        <div class="tl-desc">FC e temperatura em elevação gradual. Sono total: ~11
+                                            horas.</div>
+                                    </div>
+                                </div>
+                                <div class="tl-item tl-sl">
+                                    <div class="tl-line"></div>
+                                    <div class="tl-dot"></div>
+                                    <div class="tl-body">
+                                        <div class="tl-time">00:30</div>
+                                        <div class="tl-title">Início do Sono Profundo</div>
+                                        <div class="tl-desc">Fase NREM III. Temperatura 36.0°C. Batimentos: 58 bpm.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- RESUMO PROTOCOLO -->
+                            <div class="quick-summary">
+                                <div class="qs-title">Arsenal Completo</div>
+                                <div class="qs-section">
+                                    <div class="qs-sec-label">💇‍♀️ Cabelo</div>
+                                    <div class="qs-item"><span class="qs-dot"
+                                            style="background:var(--lr-c)"></span>L'Oréal Pro Curl Expression</div>
+                                    <div class="qs-item"><span class="qs-dot"
+                                            style="background:var(--we-c)"></span>Wella Fusion + Oil Reflections</div>
+                                    <div class="qs-item"><span class="qs-dot"
+                                            style="background:var(--rk-c)"></span>Redken All Soft Mega Curls</div>
+                                    <div class="qs-item"><span class="qs-dot"
+                                            style="background:var(--vi-c)"></span>Vichy Aminexil 2×/sem</div>
+                                </div>
+                                <div class="qs-section">
+                                    <div class="qs-sec-label">✨ Facial</div>
+                                    <div class="qs-item"><span class="qs-dot"
+                                            style="background:var(--bd-c)"></span>Bioderma Sensibio (limpeza)</div>
+                                    <div class="qs-item"><span class="qs-dot"
+                                            style="background:var(--adcos-c)"></span>ADCOS Vit C + Niacinamida</div>
+                                    <div class="qs-item"><span class="qs-dot"
+                                            style="background:var(--isdin-c)"></span>ISDIN Hyaluronic + FPS 60</div>
+                                    <div class="qs-item"><span class="qs-dot"
+                                            style="background:var(--eu-c)"></span>Eucerin Even Pigment + Ureia</div>
+                                </div>
+                                <div class="qs-section">
+                                    <div class="qs-sec-label">🛁 Corpo · QP</div>
+                                    <div class="qs-item"><span class="qs-dot"
+                                            style="background:var(--bd-c)"></span>Bioderma Atoderm (banho)</div>
+                                    <div class="qs-item"><span class="qs-dot"
+                                            style="background:var(--eu-c)"></span>Eucerin Ureia 10% diário</div>
+                                </div>
+                            </div>
+                        </div><!-- /panel-tl -->
+
+                    </div><!-- /two-col -->
                 </section>
 
-                <section id="resultados-content" class="content-section"></section>
-                <section id="consulta-dermatologica-content" class="content-section"></section>
-                <section id="laudos-content" class="content-section"></section>
-                <section id="exames-content" class="content-section"></section>
-                <section id="contratos-content" class="content-section"></section>
-                <section id="agenda-content" class="content-section"></section>
-                <section id="perfil-content" class="content-section"></section>
+                <section id="agenda-sec" class="sec"></section>
+                <section id="resultados-sec" class="sec"></section>
+                <section id="exames-sec" class="sec"></section>
+                <section id="laudos-sec" class="sec"></section>
+                <section id="contratos-sec" class="sec"></section>
+                <section id="perfil-sec" class="sec"></section>
 
             </main>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 
