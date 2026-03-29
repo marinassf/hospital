@@ -35,8 +35,6 @@
     --lr-bg: #fff8f8;
     --we-c: #1d4ed8;
     --we-bg: #f0f5ff;
-    --rk-c: #15803d;
-    --rk-bg: #f0fdf4;
     --vi-c: #8b5cf6;
     --vi-bg: #f5f3ff;
     --extra-c: #475569;
@@ -49,8 +47,6 @@
     --isdin-bg: #fff8f3;
     --eu-c: #004494;
     --eu-bg: #f0f4ff;
-    --adcos-c: #7c3aed;
-    --adcos-bg: #faf5ff;
     --pc-c: #c0392b;
     --pc-bg: #fff5f5;
 
@@ -1044,11 +1040,6 @@ svg {
     background: var(--we-bg)
 }
 
-.pc-rk {
-    border-left-color: var(--rk-c);
-    background: var(--rk-bg)
-}
-
 .pc-vi {
     border-left-color: var(--vi-c);
     background: var(--vi-bg)
@@ -1096,10 +1087,6 @@ svg {
     background: var(--we-c)
 }
 
-.rk-dot {
-    background: var(--rk-c)
-}
-
 .vi-dot {
     background: var(--vi-c)
 }
@@ -1134,10 +1121,6 @@ svg {
 
 .pc-we .pc-brand {
     color: var(--we-c)
-}
-
-.pc-rk .pc-brand {
-    color: var(--rk-c)
 }
 
 .pc-vi .pc-brand {
